@@ -1,0 +1,236 @@
+/* style.css */
+
+/* --- Paleta de Colores (Hex Codes extraídos de la imagen) --- */
+:root {
+    --color-near-black: #1E1E1E; /* Negro para textos principales */
+    --color-off-white-cream: #F7F3E9; /* Blanco/crema para fondos claros */
+    --color-soft-terracotta: #DC7A5F; /* Terracota para acentos/botones */
+    --color-muted-red: #CD3B3B; /* Rojo más intenso para acentos/advertencias */
+    --color-light-beige-sand: #DDC8A4; /* Beige claro para fondos sutiles */
+    --color-muted-greenish-grey: #A39E88; /* Verde grisáceo para elementos secundarios */
+    --color-medium-brown: #7A5C40; /* Marrón para elementos secundarios o textos alternativos */
+    --color-very-light-grey: #FBFBFB; /* Blanco muy suave para fondos */
+    --color-light-warm-grey: #EAE3DB; /* Beige cálido para fondos */
+    --color-cool-beige: #BFA796; /* Beige más frío */
+    --color-light-grey: #D6D2CB; /* Gris claro */
+}
+
+/* --- Tipografía --- */
+body {
+    font-family: 'Manrope', sans-serif;
+    color: var(--color-near-black);
+    line-height: 1.6;
+    background-color: var(--color-very-light-grey); /* Fondo general muy claro */
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', sans-serif;
+    color: var(--color-near-black);
+    font-weight: 700; /* Bold */
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+}
+
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.5em; }
+
+p, ul, ol, li, a {
+    font-family: 'Lato', sans-serif; /* Lato como secundaria para el cuerpo de texto */
+    font-size: 1em;
+}
+
+/* --- Estilos Generales --- */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- Header --- */
+.header-home {
+    background-color: var(--color-off-white-cream); /* Fondo suave para el header principal */
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--color-light-grey);
+}
+
+.header-home h1 {
+    font-size: 3em;
+    margin-bottom: 0.2em;
+    color: var(--color-near-black);
+    line-height: 1.1;
+    text-transform: lowercase; /* Para asegurar el lowercase inicial */
+}
+
+.header-home h1 span { /* Para "serprofesionalonline" en el claim */
+    text-transform: none; /* Asegura que no se aplique si se pone en mayúscula en el HTML */
+}
+
+.header-home .claim {
+    font-size: 1.2em;
+    font-family: 'Lato', sans-serif;
+    color: var(--color-medium-brown); /* Un color que dé un toque distinto al claim */
+    margin-bottom: 0.5em;
+    text-transform: lowercase;
+}
+
+.header-home .subclaim {
+    font-size: 1em;
+    font-family: 'Lato', sans-serif;
+    color: var(--color-muted-greenish-grey);
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    text-transform: lowercase;
+}
+
+.header-simple { /* Header para la página de impulso inicial */
+    background-color: var(--color-off-white-cream);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--color-light-grey);
+}
+
+.header-simple h1 a {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 1.8em;
+    color: var(--color-near-black);
+    text-decoration: none;
+    text-transform: lowercase;
+}
+
+
+/* --- Botones --- */
+.button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: var(--color-soft-terracotta); /* Color principal del botón */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    font-family: 'Manrope', sans-serif;
+    text-transform: lowercase;
+}
+
+.button:hover {
+    background-color: var(--color-muted-red); /* Un rojo más fuerte al pasar el mouse */
+}
+
+/* --- Secciones de Contenido --- */
+.content-section {
+    padding: 40px 20px;
+}
+
+.section-block {
+    margin-bottom: 60px;
+    background-color: var(--color-off-white-cream); /* Fondo para bloques de contenido */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.section-block h2, .section-block h3 {
+    color: var(--color-medium-brown); /* Títulos de sección en un marrón suave */
+    margin-top: 0;
+    text-transform: lowercase;
+}
+
+.section-block ul {
+    list-style: none;
+    padding: 0;
+}
+
+.section-block ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+    font-family: 'Lato', sans-serif;
+    text-transform: lowercase;
+}
+
+.section-block ul li::before { /* Estilo de bullet personalizado */
+    content: '👉'; /* Puedes cambiar esto por un icono SVG si quieres algo más custom */
+    position: absolute;
+    left: 0;
+    color: var(--color-soft-terracotta);
+    font-size: 1.1em;
+    line-height: 1;
+}
+
+.section-block ol {
+    padding-left: 20px;
+}
+
+.section-block ol li {
+    margin-bottom: 10px;
+    font-family: 'Lato', sans-serif;
+    text-transform: lowercase;
+}
+
+.highlight-point {
+    font-weight: 700;
+    color: var(--color-medium-brown);
+    text-transform: lowercase;
+}
+
+.image-placeholder {
+    background-color: var(--color-light-beige-sand);
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-medium-brown);
+    font-style: italic;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--color-near-black);
+    color: var(--color-off-white-cream);
+    text-align: center;
+    padding: 30px 20px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9em;
+    text-transform: lowercase;
+}
+
+.footer p {
+    margin: 5px 0;
+    text-transform: lowercase;
+}
+
+.footer a {
+    color: var(--color-soft-terracotta);
+    text-decoration: none;
+    text-transform: lowercase;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* --- Responsive Design Básico --- */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .header-home h1 {
+        font-size: 2.2em;
+    }
+
+    .header-home .claim {
+        font-size: 1em;
+    }
+
+    .section-block {
+        padding: 20px;
+    }
+}
