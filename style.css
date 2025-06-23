@@ -61,7 +61,7 @@ body {
     font-size: 1.6em; /* Más pequeño y delicado */
     color: var(--color-text-dark);
     text-decoration: none;
-    text-transform: lowercase;
+    text-transform: lowercase; /* Nombre de la marca siempre en minúscula */
     letter-spacing: -0.03em;
 }
 
@@ -69,7 +69,7 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
+    display: flex; /* Para menú horizontal */
     align-items: center; /* Para alinear con los puntitos */
 }
 
@@ -181,7 +181,6 @@ body {
     color: var(--color-text-dark);
 }
 
-
 /* --- Hero Section (Home Page) --- */
 .hero-home {
     background-color: var(--color-bg-light);
@@ -206,7 +205,7 @@ body {
     line-height: 1.1;
     letter-spacing: -0.04em;
     font-weight: 700;
-    text-transform: lowercase; /* Titular principal en minúsculas */
+    /* REMOVIDO: text-transform: lowercase; para permitir mayúsculas en el HTML */
 }
 
 .hero-home .subclaim {
@@ -215,7 +214,7 @@ body {
     color: var(--color-text-secondary);
     max-width: 750px; /* Más ancho para el subtítulo */
     margin: 0 auto 40px auto;
-    text-transform: lowercase; /* Subtítulo principal en minúsculas */
+    /* REMOVIDO: text-transform: lowercase; para permitir mayúsculas en el HTML */
 }
 
 /* Letras clave de fondo (SPO) */
@@ -244,19 +243,20 @@ body {
     transform: rotate(15deg);
 }
 
+
 /* --- Botones --- */
 .button {
     display: inline-block;
     padding: 15px 35px;
     background-color: var(--color-accent-terracotta);
-    color: var(--color-off-white-cream);
+    color: var(--color-off-white-cream); /* Texto blanco/crema en botones */
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 8px; /* Bordes más suaves */
     font-weight: 700;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
     font-family: 'Manrope', sans-serif;
-    text-transform: lowercase;
-    box-shadow: 0 5px 15px var(--color-shadow);
+    text-transform: lowercase; /* Texto de botones en minúscula */
+    box-shadow: 0 5px 15px var(--color-shadow); /* Sombra para botones */
     cursor: pointer;
 }
 
@@ -268,11 +268,11 @@ body {
 
 /* --- Secciones de Contenido (General) --- */
 .content-section {
-    padding: 60px 25px; /* Menos padding vertical para reducir espacio vacío */
+    padding: 40px 25px; /* Menos padding vertical para reducir espacio vacío */
 }
 
 .section-block {
-    margin-bottom: 60px; /* Menos margen entre bloques */
+    margin-bottom: 40px; /* Menos margen entre bloques */
     background-color: var(--color-bg-light);
     padding: 40px; /* Padding interno */
     border-radius: 12px;
@@ -308,14 +308,14 @@ body {
 .section-block h2, .section-block h3 {
     color: var(--color-text-dark);
     margin-top: 0;
-    text-transform: lowercase; /* Títulos de sección en minúscula por elección estética */
+    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
     font-weight: 700;
 }
 .section-block h2 { font-size: 2.2em; }
 .section-block h3 { font-size: 1.6em; }
 
 .section-block p {
-    text-transform: lowercase; /* Párrafos en minúscula (salvo mayúscula inicial por HTML) */
+    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
     font-size: 1.1em;
 }
 
@@ -332,14 +332,14 @@ body {
     font-family: 'Lato', sans-serif;
     font-size: 1.1em;
     line-height: 1.4;
-    text-transform: lowercase; /* Ítems de lista en minúscula (salvo mayúscula inicial por HTML) */
+    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
     color: var(--color-text-dark);
 }
 
 .section-block ul li i.fas { /* Estilo del icono (Font Awesome Solid) */
     position: absolute;
     left: 0;
-    top: 5px; /* Ajuste vertical */
+    top: 5px; /* Ajuste vertical del icono */
     font-size: 1.4em; /* Iconos un poco más grandes */
     color: var(--color-accent-terracotta);
 }
@@ -360,10 +360,10 @@ body {
 }
 
 .blog-list article.blog-entry h3 {
+    font-size: 1.8em;
     margin-top: 0;
     margin-bottom: 10px;
-    font-size: 1.8em;
-    text-transform: lowercase;
+    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
 }
 
 .blog-list article.blog-entry h3 a {
@@ -380,7 +380,7 @@ body {
 .blog-list article.blog-entry p {
     font-size: 1.05em;
     color: var(--color-text-secondary);
-    text-transform: lowercase;
+    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
 }
 
 /* Links de texto "Leer más" en blog */
@@ -390,7 +390,7 @@ a.link-text {
     color: var(--color-accent-terracotta);
     text-decoration: none;
     transition: color 0.3s ease, text-decoration 0.3s ease;
-    text-transform: lowercase;
+    text-transform: lowercase; /* Links de texto en minúscula */
 }
 
 a.link-text:hover {
@@ -405,24 +405,24 @@ a.link-text:hover {
     text-align: center;
     margin-bottom: 0.8em;
     line-height: 1.1;
-    text-transform: lowercase;
+    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
 }
 
 .blog-post h3, .blog-post h4 {
     color: var(--color-medium-brown);
-    text-transform: lowercase;
+    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
 }
 
 .blog-post p {
     margin-bottom: 1em;
-    text-transform: lowercase;
+    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
 }
 
 .blog-post ol li {
     font-family: 'Lato', sans-serif;
     font-size: 1.1em;
     margin-bottom: 10px;
-    text-transform: lowercase;
+    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
 }
 
 .blog-post em { /* Para texto en cursiva dentro de posts (ej. gráficos mentales) */
@@ -436,7 +436,7 @@ a.link-text:hover {
     font-style: normal; /* Para evitar cursiva en todo el bloque */
     color: var(--color-text-dark);
     font-family: 'Lato', sans-serif;
-    text-transform: lowercase;
+    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
 }
 
 
@@ -453,28 +453,91 @@ a.link-text:hover {
     font-size: 1.1em;
     color: var(--color-text-dark);
     margin-bottom: 20px;
-    text-transform: lowercase;
+    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
 }
 
 /* --- Footer --- */
 .footer {
-    background-color: var(--color-text-dark);
-    color: var(--color-off-white-cream);
+    background-color: var(--color-text-dark); /* Color de fondo oscuro */
+    color: var(--color-off-white-cream); /* Color de texto claro */
     text-align: center;
     padding: 40px 20px;
     font-family: 'Lato', sans-serif;
     font-size: 0.9em;
-    text-transform: lowercase;
+    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
 }
 
-.footer p, .footer a {
-    color: inherit;
-    text-transform: lowercase;
+.footer p {
+    margin: 5px 0;
+    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
+}
+
+.footer a {
+    color: inherit; /* Hereda el color claro del footer */
+    text-decoration: none;
+    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
 }
 
 .footer a:hover {
     color: var(--color-accent-terracotta);
 }
+
+/* --- Formulario de Contacto (Nuevo Estilo) --- */
+.contact-form {
+    margin-top: 30px;
+    text-align: left; /* Alinea los elementos del formulario a la izquierda */
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    text-transform: lowercase; /* Labels en minúscula */
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-light-grey);
+    border-radius: 6px;
+    font-family: 'Lato', sans-serif; /* Fuente consistente para inputs */
+    font-size: 1.05em;
+    color: var(--color-text-dark);
+    background-color: var(--color-very-light-grey);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05); /* Sombra interna para el input */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: var(--color-accent-terracotta);
+    outline: none;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.08), 0 0 0 3px rgba(var(--color-accent-terracotta-rgb), 0.2); /* Sombra al enfocar */
+}
+
+.contact-form textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 100px; /* Altura mínima para el área de mensaje */
+}
+
+.contact-form button.button {
+    width: auto; /* Para que el botón no ocupe todo el ancho */
+    margin-top: 10px;
+    /* El resto del estilo del botón ya está definido en .button */
+}
+
 
 /* --- Animaciones (Scroll Reveal) --- */
 .reveal-on-scroll {
@@ -504,16 +567,6 @@ a.link-text:hover {
     transition: transform 0.1s ease-out, width 0.2s ease, height 0.2s ease; /* Transición para suavizar movimiento y tamaño */
     mix-blend-mode: difference; /* Efecto Dendra, si funciona bien */
     filter: blur(2px); /* Suavizar el punto */
-}
-
-/* Cursor trail/hover effect */
-body:hover #custom-cursor {
-    transform: scale(1.2); /* Crece un poco al pasar sobre el body */
-}
-a:hover ~ #custom-cursor, button:hover ~ #custom-cursor {
-    width: 30px; /* Tamaño más grande al pasar sobre enlaces/botones */
-    height: 30px;
-    box-shadow: 0 0 25px var(--color-accent-red), 0 0 10px var(--color-accent-red); /* Sombra diferente */
 }
 
 /* Ocultar cursor nativo */
