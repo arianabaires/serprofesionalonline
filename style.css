@@ -31,22 +31,17 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700; /* Bold */
     line-height: 1.2;
     margin-bottom: 0.5em;
+    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
 }
 
 h1 { font-size: 2.5em; }
 h2 { font-size: 2em; }
 h3 { font-size: 1.5em; }
 
-p, ul, ol, li, a {
+p, ul, ol, li { /* REMOVIDO 'a' de aquí, se maneja el botón aparte */
     font-family: 'Lato', sans-serif; /* Lato como secundaria para el cuerpo de texto */
     font-size: 1em;
-}
-
-/* --- Estilos Generales --- */
-.container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
+    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
 }
 
 /* --- Header --- */
@@ -62,11 +57,7 @@ p, ul, ol, li, a {
     margin-bottom: 0.2em;
     color: var(--color-near-black);
     line-height: 1.1;
-    text-transform: lowercase; /* Para asegurar el lowercase inicial */
-}
-
-.header-home h1 span { /* Para "serprofesionalonline" en el claim */
-    text-transform: none; /* Asegura que no se aplique si se pone en mayúscula en el HTML */
+    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
 }
 
 .header-home .claim {
@@ -74,7 +65,7 @@ p, ul, ol, li, a {
     font-family: 'Lato', sans-serif;
     color: var(--color-medium-brown); /* Un color que dé un toque distinto al claim */
     margin-bottom: 0.5em;
-    text-transform: lowercase;
+    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
 }
 
 .header-home .subclaim {
@@ -83,7 +74,7 @@ p, ul, ol, li, a {
     color: var(--color-muted-greenish-grey);
     max-width: 700px;
     margin: 0 auto 30px auto;
-    text-transform: lowercase;
+    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
 }
 
 .header-simple { /* Header para la página de impulso inicial */
@@ -99,9 +90,8 @@ p, ul, ol, li, a {
     font-size: 1.8em;
     color: var(--color-near-black);
     text-decoration: none;
-    text-transform: lowercase;
+    text-transform: lowercase; /* Mantenemos minúscula para el nombre de la marca en el header */
 }
-
 
 /* --- Botones --- */
 .button {
@@ -114,12 +104,25 @@ p, ul, ol, li, a {
     font-weight: 700;
     transition: background-color 0.3s ease;
     font-family: 'Manrope', sans-serif;
-    text-transform: lowercase;
+    text-transform: lowercase; /* Mantenemos minúscula para el texto de los botones, como pediste */
 }
 
 .button:hover {
     background-color: var(--color-muted-red); /* Un rojo más fuerte al pasar el mouse */
 }
+
+/* --- Enlaces de texto dentro del contenido (como "ver más →") --- */
+.link-text {
+    color: var(--color-soft-terracotta); /* Color del link de texto */
+    text-decoration: none;
+    text-transform: lowercase; /* Puedes decidir si quieres que estos links sean siempre minúsculas o que respeten las mayúsculas del HTML */
+                               /* Por ahora, lo mantengo en lowercase para que se vea como en tu ejemplo */
+}
+
+.link-text:hover {
+    text-decoration: underline;
+}
+
 
 /* --- Secciones de Contenido --- */
 .content-section {
@@ -137,7 +140,7 @@ p, ul, ol, li, a {
 .section-block h2, .section-block h3 {
     color: var(--color-medium-brown); /* Títulos de sección en un marrón suave */
     margin-top: 0;
-    text-transform: lowercase;
+    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
 }
 
 .section-block ul {
@@ -150,7 +153,7 @@ p, ul, ol, li, a {
     position: relative;
     padding-left: 25px;
     font-family: 'Lato', sans-serif;
-    text-transform: lowercase;
+    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
 }
 
 .section-block ul li::before { /* Estilo de bullet personalizado */
@@ -169,13 +172,13 @@ p, ul, ol, li, a {
 .section-block ol li {
     margin-bottom: 10px;
     font-family: 'Lato', sans-serif;
-    text-transform: lowercase;
+    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
 }
 
 .highlight-point {
     font-weight: 700;
     color: var(--color-medium-brown);
-    text-transform: lowercase;
+    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
 }
 
 .image-placeholder {
@@ -198,18 +201,18 @@ p, ul, ol, li, a {
     padding: 30px 20px;
     font-family: 'Lato', sans-serif;
     font-size: 0.9em;
-    text-transform: lowercase;
+    text-transform: lowercase; /* Mantenemos minúscula para el footer, como pediste */
 }
 
 .footer p {
     margin: 5px 0;
-    text-transform: lowercase;
+    text-transform: lowercase; /* Mantenemos minúscula para los párrafos del footer */
 }
 
 .footer a {
     color: var(--color-soft-terracotta);
     text-decoration: none;
-    text-transform: lowercase;
+    text-transform: lowercase; /* Mantenemos minúscula para los links del footer */
 }
 
 .footer a:hover {
