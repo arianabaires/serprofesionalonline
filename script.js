@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Efectos de hover para el cursor
-        document.querySelectorAll('a, button, .blog-entry').forEach(el => {
+        document.querySelectorAll('a, button, .blog-entry, .contact-form input, .contact-form textarea').forEach(el => {
             el.addEventListener('mouseenter', () => {
                 customCursor.style.width = '30px';
                 customCursor.style.height = '30px';
