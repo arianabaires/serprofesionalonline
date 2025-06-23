@@ -13,6 +13,9 @@
     --color-shadow: rgba(0, 0, 0, 0.08); /* Sombra suave para elementos */
     --color-shadow-strong: rgba(0, 0, 0, 0.15); /* Sombra más pronunciada para pop-ups o elementos flotantes */
     --color-link-hover: #CD3B3B; /* Color al pasar el mouse sobre links */
+    /* Variables para RGB para uso en rgba() */
+    --color-accent-terracotta-rgb: 220, 122, 95;
+    --color-accent-red-rgb: 205, 59, 59;
 }
 
 /* --- Base --- */
@@ -27,18 +30,19 @@ body {
     -moz-osx-font-smoothing: grayscale; /* Mejor renderizado de fuentes en Firefox */
     position: relative;
     overflow-x: hidden; /* Evita scroll horizontal */
+    /* Textura de ruido sutil en el body */
     background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8ZmlsdGVyIGlkPSJub2lzZSI+CiAgPHZ1cmxpZW4gYmFzZUZyZXF1ZW5jeT0iLjIiIG51bU9jdGF2ZXM9IjIiIHN0aXRjaFRpbGVzPSJub3dyaXgiIHR5cGU9ImZyYWN0YWxOb2lzZSIvPgogPC9maWx0ZXI+CiA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRjNGM0U5Ii8+CiA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI25vaXNlKSIgb3BhY2l0eT0iLjA0Ii8+Cjwvc3ZnPg==');
     background-repeat: repeat;
-    background-size: 60px 60px; /* Tamaño del patrón de ruido */
+    background-size: 60px 60px;
 }
 
 .container {
-    max-width: 1100px; /* Ancho del contenido */
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 0 25px; /* Padding horizontal */
+    padding: 0 25px;
 }
 
-/* --- Header Global (Nuevo Diseño) --- */
+/* --- Header Global --- */
 .header-global {
     background-color: var(--color-bg-light);
     padding: 15px 0;
@@ -58,7 +62,7 @@ body {
 .header-global .logo a {
     font-family: 'Manrope', sans-serif;
     font-weight: 700;
-    font-size: 1.6em; /* Más pequeño y delicado */
+    font-size: 1.6em;
     color: var(--color-text-dark);
     text-decoration: none;
     text-transform: lowercase; /* Nombre de la marca siempre en minúscula */
@@ -69,20 +73,20 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex; /* Para menú horizontal */
-    align-items: center; /* Para alinear con los puntitos */
+    display: flex;
+    align-items: center;
 }
 
 .header-global nav ul li {
-    margin-left: 25px; /* Espacio entre ítems */
+    margin-left: 25px;
     position: relative;
 }
 
 .header-global nav ul li:not(:last-child)::after { /* Puntitos separadores */
     content: '•';
     position: absolute;
-    right: -15px; /* Ajuste la posición del punto */
-    color: var(--color-text-light); /* Color tenue para el punto */
+    right: -15px;
+    color: var(--color-text-light);
     font-size: 0.8em;
     top: 50%;
     transform: translateY(-50%);
@@ -119,20 +123,20 @@ body {
 }
 
 .desktop-cta {
-    margin-left: 30px; /* Espacio entre el menú y el botón CTA */
+    margin-left: 30px;
 }
 
 
 /* Hamburguer Menu (Mobile) */
 .hamburger-menu {
-    display: none; /* Oculto en desktop */
+    display: none;
     font-size: 1.8em;
     cursor: pointer;
     color: var(--color-text-dark);
 }
 
 .mobile-nav {
-    display: none; /* Oculto por defecto */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -143,14 +147,14 @@ body {
     align-items: center;
     justify-content: center;
     z-index: 1001;
-    transition: transform 0.4s ease-in-out; /* Suavizar apertura/cierre */
+    transition: transform 0.4s ease-in-out;
     transform: translateX(100%);
-    overflow-y: auto; /* Para scroll si el menú es largo */
+    overflow-y: auto;
 }
 
 .mobile-nav.is-active {
     transform: translateX(0);
-    display: flex; /* Asegura que sea flex para el centrado */
+    display: flex;
 }
 
 .mobile-nav ul {
@@ -160,7 +164,7 @@ body {
 }
 
 .mobile-nav ul li {
-    margin: 25px 0; /* Más espacio entre ítems */
+    margin: 25px 0;
 }
 
 .mobile-nav ul li a {
@@ -168,7 +172,7 @@ body {
     color: var(--color-text-dark);
     text-decoration: none;
     text-transform: lowercase;
-    font-family: 'Manrope', sans-serif; /* Fuentes del menú móvil */
+    font-family: 'Manrope', sans-serif;
     font-weight: 600;
 }
 
@@ -188,7 +192,6 @@ body {
     text-align: center;
     position: relative;
     overflow: hidden;
-    /* Degradado sutil de fondo */
     background-image: linear-gradient(135deg, var(--color-bg-light) 0%, var(--color-bg-neutral) 100%);
 }
 
@@ -200,21 +203,21 @@ body {
 }
 
 .hero-home h1 {
-    font-size: 3.8em; /* Un poco más grande para impacto */
+    font-size: 3.8em;
     margin-bottom: 0.4em;
     line-height: 1.1;
     letter-spacing: -0.04em;
     font-weight: 700;
-    /* REMOVIDO: text-transform: lowercase; para permitir mayúsculas en el HTML */
+    /* text-transform: lowercase; Se define en el HTML */
 }
 
 .hero-home .subclaim {
     font-size: 1.3em;
     font-family: 'Lato', sans-serif;
     color: var(--color-text-secondary);
-    max-width: 750px; /* Más ancho para el subtítulo */
+    max-width: 750px;
     margin: 0 auto 40px auto;
-    /* REMOVIDO: text-transform: lowercase; para permitir mayúsculas en el HTML */
+    /* text-transform: lowercase; Se define en el HTML */
 }
 
 /* Letras clave de fondo (SPO) */
@@ -223,9 +226,9 @@ body {
     position: absolute;
     font-family: 'Manrope', sans-serif;
     font-weight: 900;
-    font-size: 25em; /* Tamaño grande */
-    color: var(--color-bg-subtle); /* Color muy sutil */
-    opacity: 0.08; /* Transparencia */
+    font-size: 25em;
+    color: var(--color-bg-subtle);
+    opacity: 0.08;
     z-index: 0;
     pointer-events: none;
     user-select: none;
@@ -249,20 +252,20 @@ body {
     display: inline-block;
     padding: 15px 35px;
     background-color: var(--color-accent-terracotta);
-    color: var(--color-off-white-cream); /* Texto blanco/crema en botones */
+    color: var(--color-off-white-cream);
     text-decoration: none;
-    border-radius: 8px; /* Bordes más suaves */
+    border-radius: 8px;
     font-weight: 700;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
     font-family: 'Manrope', sans-serif;
-    text-transform: lowercase; /* Texto de botones en minúscula */
-    box-shadow: 0 5px 15px var(--color-shadow); /* Sombra para botones */
+    text-transform: lowercase; /* Texto de botones en minúscula, como pediste */
+    box-shadow: 0 5px 15px var(--color-shadow);
     cursor: pointer;
 }
 
 .button:hover {
     background-color: var(--color-accent-red);
-    transform: translateY(-3px); /* Efecto de levantamiento más notorio */
+    transform: translateY(-3px);
     box-shadow: 0 8px 20px var(--color-shadow-strong);
 }
 
@@ -274,15 +277,14 @@ body {
 .section-block {
     margin-bottom: 40px; /* Menos margen entre bloques */
     background-color: var(--color-bg-light);
-    padding: 40px; /* Padding interno */
+    padding: 40px;
     border-radius: 12px;
-    box-shadow: 0 10px 30px var(--color-shadow); /* Sombra más pronunciada */
+    box-shadow: 0 10px 30px var(--color-shadow);
     position: relative;
     overflow: hidden;
-    /* Degradado de fondo y textura sutil */
-    background-image: linear-gradient(45deg, var(--color-bg-light) 0%, var(--color-bg-neutral) 100%); /* Degradado */
+    background-image: linear-gradient(45deg, var(--color-bg-light) 0%, var(--color-bg-neutral) 100%);
     background-size: cover;
-    background-blend-mode: multiply; /* Para que la textura se mezcle con el degradado */
+    background-blend-mode: multiply;
 }
 
 /* Textura de ruido sutil en los bloques */
@@ -293,13 +295,13 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8ZmlsdGVlciBpZD0ibm9pc2UiPgogICA8dnVybGllbiBiYXNlRnJlcXVlbmN5PSIuMiIgbnVtT2N0YXZlcz0iMiIgc3RpdGNoVGlsZXM9Im5vd3JpeCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+CiA8L2ZpbHRlcj4KIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNGRkZGRkYiLz4KIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjaGFzaGZpbHRlciIpIiBvcGFjaXR5PSIuMDQiLz4KPC9zdmc+');
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8ZmlsdGVyIGlkPSJub2lzZSI+CiAgPHZ1cmxpZW4gYmFzZUZyZXF1ZW5jeT0iLjIiIG51bU9jdGF2ZXM9IjIiIHN0aXRjaFRpbGVzPSJub3dyaXgiIHR5cGU9ImZyYWN0YWxOb2lzZSIvPgogPC9maWx0ZXI+CiA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRkZGRkZGIi8+CiA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2hhc2hmaWx0ZXIpIiBvcGFjaXR5PSIuMDQiLz4KPC9zdmc+');
     background-size: 60px 60px;
     opacity: 0.6;
     pointer-events: none;
-    z-index: 1; /* Asegura que la textura esté detrás del contenido */
+    z-index: 1;
 }
-.section-block > *:not(::before) { /* Asegura que el contenido esté por encima de la textura */
+.section-block > *:not(::before) {
     position: relative;
     z-index: 2;
 }
@@ -308,14 +310,14 @@ body {
 .section-block h2, .section-block h3 {
     color: var(--color-text-dark);
     margin-top: 0;
-    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
+    /* text-transform: lowercase; Removido para permitir mayúsculas iniciales */
     font-weight: 700;
 }
 .section-block h2 { font-size: 2.2em; }
 .section-block h3 { font-size: 1.6em; }
 
 .section-block p {
-    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
+    /* text-transform: lowercase; Removido para permitir mayúsculas iniciales */
     font-size: 1.1em;
 }
 
@@ -328,19 +330,19 @@ body {
 .section-block ul li {
     margin-bottom: 15px;
     position: relative;
-    padding-left: 45px; /* Espacio para el icono */
+    padding-left: 45px;
     font-family: 'Lato', sans-serif;
     font-size: 1.1em;
     line-height: 1.4;
-    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
+    /* text-transform: lowercase; Removido para permitir mayúsculas iniciales */
     color: var(--color-text-dark);
 }
 
-.section-block ul li i.fas { /* Estilo del icono (Font Awesome Solid) */
+.section-block ul li i.fas {
     position: absolute;
     left: 0;
-    top: 5px; /* Ajuste vertical del icono */
-    font-size: 1.4em; /* Iconos un poco más grandes */
+    top: 5px;
+    font-size: 1.4em;
     color: var(--color-accent-terracotta);
 }
 
@@ -363,7 +365,7 @@ body {
     font-size: 1.8em;
     margin-top: 0;
     margin-bottom: 10px;
-    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
+    /* text-transform: lowercase; Removido */
 }
 
 .blog-list article.blog-entry h3 a {
@@ -380,7 +382,7 @@ body {
 .blog-list article.blog-entry p {
     font-size: 1.05em;
     color: var(--color-text-secondary);
-    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
+    /* text-transform: lowercase; Removido */
 }
 
 /* Links de texto "Leer más" en blog */
@@ -390,7 +392,7 @@ a.link-text {
     color: var(--color-accent-terracotta);
     text-decoration: none;
     transition: color 0.3s ease, text-decoration 0.3s ease;
-    text-transform: lowercase; /* Links de texto en minúscula */
+    text-transform: lowercase; /* Links de texto en minúscula, como pediste */
 }
 
 a.link-text:hover {
@@ -405,24 +407,24 @@ a.link-text:hover {
     text-align: center;
     margin-bottom: 0.8em;
     line-height: 1.1;
-    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
+    /* text-transform: lowercase; Removido */
 }
 
 .blog-post h3, .blog-post h4 {
     color: var(--color-medium-brown);
-    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
+    /* text-transform: lowercase; Removido */
 }
 
 .blog-post p {
     margin-bottom: 1em;
-    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
+    /* text-transform: lowercase; Removido */
 }
 
 .blog-post ol li {
     font-family: 'Lato', sans-serif;
     font-size: 1.1em;
     margin-bottom: 10px;
-    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
+    /* text-transform: lowercase; Removido */
 }
 
 .blog-post em { /* Para texto en cursiva dentro de posts (ej. gráficos mentales) */
@@ -433,10 +435,10 @@ a.link-text:hover {
     background-color: var(--color-bg-neutral);
     border-left: 5px solid var(--color-accent-terracotta);
     border-radius: 5px;
-    font-style: normal; /* Para evitar cursiva en todo el bloque */
+    font-style: normal;
     color: var(--color-text-dark);
     font-family: 'Lato', sans-serif;
-    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
+    /* text-transform: lowercase; Removido */
 }
 
 
@@ -453,29 +455,29 @@ a.link-text:hover {
     font-size: 1.1em;
     color: var(--color-text-dark);
     margin-bottom: 20px;
-    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
+    /* text-transform: lowercase; Removido */
 }
 
 /* --- Footer --- */
 .footer {
-    background-color: var(--color-text-dark); /* Color de fondo oscuro */
-    color: var(--color-off-white-cream); /* Color de texto claro */
+    background-color: var(--color-text-dark);
+    color: var(--color-off-white-cream);
     text-align: center;
     padding: 40px 20px;
     font-family: 'Lato', sans-serif;
     font-size: 0.9em;
-    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
+    /* text-transform: lowercase; Removido */
 }
 
 .footer p {
     margin: 5px 0;
-    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
+    /* text-transform: lowercase; Removido */
 }
 
 .footer a {
-    color: inherit; /* Hereda el color claro del footer */
+    color: inherit;
     text-decoration: none;
-    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
+    /* text-transform: lowercase; Removido */
 }
 
 .footer a:hover {
@@ -485,7 +487,7 @@ a.link-text:hover {
 /* --- Formulario de Contacto (Nuevo Estilo) --- */
 .contact-form {
     margin-top: 30px;
-    text-align: left; /* Alinea los elementos del formulario a la izquierda */
+    text-align: left;
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
@@ -515,7 +517,7 @@ a.link-text:hover {
     font-size: 1.05em;
     color: var(--color-text-dark);
     background-color: var(--color-very-light-grey);
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05); /* Sombra interna para el input */
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -524,26 +526,25 @@ a.link-text:hover {
 .contact-form textarea:focus {
     border-color: var(--color-accent-terracotta);
     outline: none;
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.08), 0 0 0 3px rgba(var(--color-accent-terracotta-rgb), 0.2); /* Sombra al enfocar */
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.08), 0 0 0 3px rgba(var(--color-accent-terracotta-rgb), 0.2);
 }
 
 .contact-form textarea {
-    resize: vertical; /* Permite redimensionar verticalmente */
-    min-height: 100px; /* Altura mínima para el área de mensaje */
+    resize: vertical;
+    min-height: 100px;
 }
 
 .contact-form button.button {
-    width: auto; /* Para que el botón no ocupe todo el ancho */
+    width: auto;
     margin-top: 10px;
-    /* El resto del estilo del botón ya está definido en .button */
 }
 
 
 /* --- Animaciones (Scroll Reveal) --- */
 .reveal-on-scroll {
     opacity: 0;
-    transform: translateY(30px); /* Más desplazamiento */
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Transición más lenta y suave */
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .reveal-on-scroll.is-visible {
@@ -556,17 +557,17 @@ a.link-text:hover {
     position: fixed;
     top: 0;
     left: 0;
-    pointer-events: none; /* Crucial para que no bloquee clics */
+    pointer-events: none;
     z-index: 9999;
-    width: 16px; /* Tamaño del punto */
+    width: 16px;
     height: 16px;
-    background-color: var(--color-accent-terracotta); /* Color del punto */
+    background-color: var(--color-accent-terracotta);
     border-radius: 50%;
-    transform: translate(-50%, -50%); /* Centra el punto en el cursor */
-    box-shadow: 0 0 15px var(--color-accent-terracotta), 0 0 5px var(--color-accent-terracotta); /* Doble sombra para más efecto */
-    transition: transform 0.1s ease-out, width 0.2s ease, height 0.2s ease; /* Transición para suavizar movimiento y tamaño */
-    mix-blend-mode: difference; /* Efecto Dendra, si funciona bien */
-    filter: blur(2px); /* Suavizar el punto */
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 15px var(--color-accent-terracotta), 0 0 5px var(--color-accent-terracotta);
+    transition: transform 0.1s ease-out, width 0.2s ease, height 0.2s ease;
+    mix-blend-mode: difference;
+    filter: blur(2px);
 }
 
 /* Ocultar cursor nativo */
@@ -574,13 +575,20 @@ body {
     cursor: none;
 }
 
+/* Cursor hover effects */
+a:hover ~ #custom-cursor, button:hover ~ #custom-cursor, .blog-entry:hover ~ #custom-cursor {
+    width: 30px;
+    height: 30px;
+    box-shadow: 0 0 25px var(--color-accent-red), 0 0 10px var(--color-accent-red);
+}
+
 /* --- Responsive Design --- */
 @media (max-width: 992px) {
     .desktop-nav, .desktop-cta {
-        display: none; /* Oculta menú y CTA de desktop */
+        display: none;
     }
     .hamburger-menu {
-        display: block; /* Muestra hamburguesa */
+        display: block;
     }
     .hero-home h1 {
         font-size: 2.8em;
@@ -588,7 +596,7 @@ body {
     .hero-home .subclaim {
         font-size: 1.1em;
     }
-    .hero-home::before, .hero-home::after { /* Ocultar SPO en mobile */
+    .hero-home::before, .hero-home::after {
         display: none;
     }
     .section-block {
@@ -599,17 +607,17 @@ body {
     }
     /* Deshabilitar custom cursor en touch devices (o pantallas pequeñas) */
     body {
-        cursor: default; /* Restaurar cursor nativo */
+        cursor: default;
     }
     #custom-cursor {
-        display: none; /* Ocultar el cursor personalizado */
+        display: none;
     }
     .mobile-nav.is-active {
-        width: 100%; /* Menú móvil ocupa todo el ancho */
+        width: 100%;
     }
 }
 
-@media (max-width: 576px) { /* Breakpoint para móviles más pequeños */
+@media (max-width: 576px) {
     h1 { font-size: 2em; }
     h2 { font-size: 1.8em; }
     h3 { font-size: 1.4em; }
