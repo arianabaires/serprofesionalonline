@@ -21,7 +21,7 @@
 /* --- Base --- */
 body {
     font-family: 'Manrope', sans-serif;
-    color: var(--color-text-dark); /* Color de texto principal oscuro */
+    color: var(--color-text-dark); /* ¡Color de texto principal oscuro, para asegurar legibilidad! */
     line-height: 1.6;
     background-color: var(--color-bg-light); /* Fondo general principal */
     margin: 0;
@@ -96,7 +96,7 @@ body {
     font-family: 'Manrope', sans-serif;
     font-size: 1em;
     font-weight: 500;
-    color: var(--color-text-dark);
+    color: var(--color-text-dark); /* Color de link de menú oscuro */
     text-decoration: none;
     position: relative;
     transition: color 0.3s ease;
@@ -208,7 +208,6 @@ body {
     line-height: 1.1;
     letter-spacing: -0.04em;
     font-weight: 700;
-    /* text-transform se maneja en el HTML directamente */
 }
 
 .hero-home .subclaim {
@@ -217,7 +216,6 @@ body {
     color: var(--color-text-secondary); /* Color más suave para el subclaim */
     max-width: 750px;
     margin: 0 auto 40px auto;
-    /* text-transform se maneja en el HTML directamente */
 }
 
 /* Letras clave de fondo (SPO) */
@@ -295,7 +293,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8ZmlsdGVlciBpZD0ibm9pc2UiPgogICA8dnVybGllbiBiYXNlRnJlcXVlbmN5PSIuMiIgbnVtT2N0YXZlcz0iMiIgc3RpdGNoVGlsZXM9Im5vd3JpeCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+CiA8L2ZpbHRlcj4KIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNGRkZGRkYiLz4KIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjaGFzZmlsdGVyIpIiBvcGFjaXR5PSIuMDQiLz4KPC9zdmc+');
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8ZmlsdGVyIGlkPSJub2lzZSI+CiAgPHZ1cmxpZW4gYmFzZUZyZXF1ZW5jeT0iLjIiIG51bU9jdGF2ZXM9IjIiIHN0aXRjaFRpbGVzPSJub3dyaXgiIHR5cGU9ImZyYWN0YWxOb2lzZSIvPgogPC9maWx0ZXI+CiA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRkZGRkZGIi8+CiA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2hhc2hmaWx0ZXIpIiBvcGFjaXR5PSIuMDQiLz4KPC9zdmc+');
     background-size: 60px 60px;
     opacity: 0.6;
     pointer-events: none;
@@ -307,19 +305,24 @@ body {
 }
 
 
+/* Re-asegurar color de texto oscuro y que text-transform se maneje por HTML */
+h1, h2, h3, h4, h5, h6,
+p, ul li, ol li, .blog-list article.blog-entry h3, .blog-list article.blog-entry p,
+.blog-post h2, .blog-post h3, .blog-post h4, .blog-post p, .blog-post ol li, .blog-post em, .blog-cta p {
+    color: var(--color-text-dark); /* Color de texto oscuro para todo el contenido principal */
+    /* text-transform: lowercase; REMOVIDO para que el HTML controle */
+}
+
+
 .section-block h2, .section-block h3 {
-    color: var(--color-text-dark); /* Color de texto oscuro para títulos de sección */
     margin-top: 0;
-    /* text-transform se maneja en el HTML directamente */
     font-weight: 700;
 }
 .section-block h2 { font-size: 2.2em; }
 .section-block h3 { font-size: 1.6em; }
 
 .section-block p {
-    color: var(--color-text-dark); /* Color de texto oscuro para párrafos */
     font-size: 1.1em;
-    /* text-transform se maneja en el HTML directamente */
 }
 
 /* Lista con iconos (sustituyendo bullets) */
@@ -335,8 +338,6 @@ body {
     font-family: 'Lato', sans-serif;
     font-size: 1.1em;
     line-height: 1.4;
-    color: var(--color-text-dark); /* Color de texto oscuro para ítems de lista */
-    /* text-transform se maneja en el HTML directamente */
 }
 
 .section-block ul li i.fas {
@@ -366,7 +367,6 @@ body {
     font-size: 1.8em;
     margin-top: 0;
     margin-bottom: 10px;
-    /* text-transform se maneja en el HTML directamente */
 }
 
 .blog-list article.blog-entry h3 a {
@@ -383,7 +383,6 @@ body {
 .blog-list article.blog-entry p {
     font-size: 1.05em;
     color: var(--color-text-secondary); /* Este puede ser más claro si es una descripción */
-    /* text-transform se maneja en el HTML directamente */
 }
 
 /* Links de texto "Leer más" en blog */
@@ -408,25 +407,20 @@ a.link-text:hover {
     text-align: center;
     margin-bottom: 0.8em;
     line-height: 1.1;
-    /* text-transform se maneja en el HTML directamente */
 }
 
 .blog-post h3, .blog-post h4 {
     color: var(--color-medium-brown);
-    /* text-transform se maneja en el HTML directamente */
 }
 
 .blog-post p {
     margin-bottom: 1em;
-    /* text-transform se maneja en el HTML directamente */
 }
 
 .blog-post ol li {
     font-family: 'Lato', sans-serif;
     font-size: 1.1em;
     margin-bottom: 10px;
-    color: var(--color-text-dark); /* Color de texto oscuro para ítems de lista */
-    /* text-transform se maneja en el HTML directamente */
 }
 
 .blog-post em { /* Para texto en cursiva dentro de posts (ej. gráficos mentales) */
@@ -440,7 +434,6 @@ a.link-text:hover {
     font-style: normal;
     color: var(--color-text-dark);
     font-family: 'Lato', sans-serif;
-    /* text-transform se maneja en el HTML directamente */
 }
 
 
@@ -457,29 +450,25 @@ a.link-text:hover {
     font-size: 1.1em;
     color: var(--color-text-dark);
     margin-bottom: 20px;
-    /* text-transform se maneja en el HTML directamente */
 }
 
 /* --- Footer --- */
 .footer {
     background-color: var(--color-text-dark); /* Fondo oscuro */
-    color: var(--color-off-white-cream); /* Texto claro */
+    color: var(--color-off-white-cream); /* ¡Color de texto claro para que se vea! */
     text-align: center;
     padding: 40px 20px;
     font-family: 'Lato', sans-serif;
     font-size: 0.9em;
-    /* text-transform se maneja en el HTML directamente */
 }
 
 .footer p {
     margin: 5px 0;
-    /* text-transform se maneja en el HTML directamente */
 }
 
 .footer a {
     color: inherit;
     text-decoration: none;
-    /* text-transform se maneja en el HTML directamente */
 }
 
 .footer a:hover {
@@ -563,7 +552,7 @@ a.link-text:hover {
     z-index: 9999;
     width: 16px;
     height: 16px;
-    background-color: var(--color-accent-terracotta);
+    background-color: var(--color-accent-terracotta); /* Color correcto de la paleta */
     border-radius: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 0 0 15px var(--color-accent-terracotta), 0 0 5px var(--color-accent-terracotta);
