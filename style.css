@@ -10,11 +10,12 @@
     --color-bg-subtle: #DDC8A4; /* Beige arena para fondos muy sutiles o elementos */
     --color-text-secondary: #7A5C40; /* Marrón medio para textos secundarios o claims */
     --color-text-light: #BFA796; /* Beige más frío para texto de contraste */
-    --color-shadow: rgba(0, 0, 0, 0.08); /* Sombra suave */
+    --color-shadow: rgba(0, 0, 0, 0.08); /* Sombra suave para elementos */
+    --color-shadow-strong: rgba(0, 0, 0, 0.15); /* Sombra más pronunciada para pop-ups o elementos flotantes */
     --color-link-hover: #CD3B3B; /* Color al pasar el mouse sobre links */
 }
 
-/* --- Tipografía --- */
+/* --- Base --- */
 body {
     font-family: 'Manrope', sans-serif;
     color: var(--color-text-dark);
@@ -24,39 +25,25 @@ body {
     padding: 0;
     -webkit-font-smoothing: antialiased; /* Mejor renderizado de fuentes en WebKit */
     -moz-osx-font-smoothing: grayscale; /* Mejor renderizado de fuentes en Firefox */
+    position: relative;
+    overflow-x: hidden; /* Evita scroll horizontal */
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8ZmlsdGVyIGlkPSJub2lzZSI+CiAgPHZ1cmxpZW4gYmFzZUZyZXF1ZW5jeT0iLjIiIG51bU9jdGF2ZXM9IjIiIHN0aXRjaFRpbGVzPSJub3dyaXgiIHR5cGU9ImZyYWN0YWxOb2lzZSIvPgogPC9maWx0ZXI+CiA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRjNGM0U5Ii8+CiA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI25vaXNlKSIgb3BhY2l0eT0iLjA0Ii8+Cjwvc3ZnPg==');
+    background-repeat: repeat;
+    background-size: 60px 60px; /* Tamaño del patrón de ruido */
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Manrope', sans-serif;
-    color: var(--color-text-dark);
-    font-weight: 700; /* Bold */
-    line-height: 1.2;
-    margin-bottom: 0.5em;
-    letter-spacing: -0.02em; /* Ajuste para un look más moderno */
-}
-
-h1 { font-size: 3em; } /* Hero */
-h2 { font-size: 2.2em; } /* Sección */
-h3 { font-size: 1.6em; } /* Subtítulos de sección/post */
-
-p, ul, ol, li {
-    font-family: 'Lato', sans-serif; /* Lato como secundaria para el cuerpo de texto */
-    font-size: 1.1em; /* Un poco más grande para mejor lectura */
-}
-
-/* --- Estilos Generales --- */
 .container {
-    max-width: 1080px; /* Un poco más ancho */
+    max-width: 1100px; /* Ancho del contenido */
     margin: 0 auto;
-    padding: 0 20px; /* Padding horizontal */
+    padding: 0 25px; /* Padding horizontal */
 }
 
 /* --- Header Global (Nuevo Diseño) --- */
 .header-global {
     background-color: var(--color-bg-light);
-    padding: 20px 0;
-    border-bottom: 1px solid var(--color-bg-neutral); /* Línea sutil */
-    box-shadow: 0 2px 5px var(--color-shadow); /* Sombra suave para el header */
+    padding: 15px 0;
+    border-bottom: 1px solid var(--color-bg-neutral);
+    box-shadow: 0 2px 8px var(--color-shadow);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -71,10 +58,10 @@ p, ul, ol, li {
 .header-global .logo a {
     font-family: 'Manrope', sans-serif;
     font-weight: 700;
-    font-size: 1.5em;
+    font-size: 1.6em; /* Más pequeño y delicado */
     color: var(--color-text-dark);
     text-decoration: none;
-    text-transform: lowercase; /* Nombre de la marca siempre en minúscula */
+    text-transform: lowercase;
     letter-spacing: -0.03em;
 }
 
@@ -82,11 +69,23 @@ p, ul, ol, li {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex; /* Para menú horizontal */
+    display: flex;
+    align-items: center; /* Para alinear con los puntitos */
 }
 
 .header-global nav ul li {
-    margin-left: 30px;
+    margin-left: 25px; /* Espacio entre ítems */
+    position: relative;
+}
+
+.header-global nav ul li:not(:last-child)::after { /* Puntitos separadores */
+    content: '•';
+    position: absolute;
+    right: -15px; /* Ajuste la posición del punto */
+    color: var(--color-text-light); /* Color tenue para el punto */
+    font-size: 0.8em;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .header-global nav ul li a {
@@ -95,7 +94,7 @@ p, ul, ol, li {
     font-weight: 500;
     color: var(--color-text-dark);
     text-decoration: none;
-    position: relative; /* Para efecto underline al hover */
+    position: relative;
     transition: color 0.3s ease;
     text-transform: lowercase; /* Links del menú en minúscula */
 }
@@ -104,7 +103,7 @@ p, ul, ol, li {
     color: var(--color-accent-terracotta);
 }
 
-.header-global nav ul li a::after { /* Underline effect */
+.header-global nav ul li a::after { /* Underline effect on hover */
     content: '';
     position: absolute;
     width: 0;
@@ -117,6 +116,10 @@ p, ul, ol, li {
 
 .header-global nav ul li a:hover::after {
     width: 100%;
+}
+
+.desktop-cta {
+    margin-left: 30px; /* Espacio entre el menú y el botón CTA */
 }
 
 
@@ -140,13 +143,14 @@ p, ul, ol, li {
     align-items: center;
     justify-content: center;
     z-index: 1001;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.4s ease-in-out; /* Suavizar apertura/cierre */
     transform: translateX(100%);
+    overflow-y: auto; /* Para scroll si el menú es largo */
 }
 
 .mobile-nav.is-active {
     transform: translateX(0);
-    display: flex;
+    display: flex; /* Asegura que sea flex para el centrado */
 }
 
 .mobile-nav ul {
@@ -156,7 +160,7 @@ p, ul, ol, li {
 }
 
 .mobile-nav ul li {
-    margin: 20px 0;
+    margin: 25px 0; /* Más espacio entre ítems */
 }
 
 .mobile-nav ul li a {
@@ -164,24 +168,29 @@ p, ul, ol, li {
     color: var(--color-text-dark);
     text-decoration: none;
     text-transform: lowercase;
+    font-family: 'Manrope', sans-serif; /* Fuentes del menú móvil */
+    font-weight: 600;
 }
 
 .mobile-nav .close-btn {
     position: absolute;
     top: 20px;
-    right: 20px;
-    font-size: 2em;
+    right: 25px;
+    font-size: 2.2em;
     cursor: pointer;
     color: var(--color-text-dark);
 }
 
+
 /* --- Hero Section (Home Page) --- */
 .hero-home {
     background-color: var(--color-bg-light);
-    padding: 80px 20px;
+    padding: 80px 25px;
     text-align: center;
-    position: relative; /* Para letras de fondo */
-    overflow: hidden; /* Para que las letras no se salgan */
+    position: relative;
+    overflow: hidden;
+    /* Degradado sutil de fondo */
+    background-image: linear-gradient(135deg, var(--color-bg-light) 0%, var(--color-bg-neutral) 100%);
 }
 
 .hero-home .claim {
@@ -189,107 +198,125 @@ p, ul, ol, li {
     font-family: 'Lato', sans-serif;
     color: var(--color-text-secondary);
     margin-bottom: 0.5em;
-    text-transform: lowercase;
 }
 
 .hero-home h1 {
-    font-size: 3.5em;
+    font-size: 3.8em; /* Un poco más grande para impacto */
     margin-bottom: 0.4em;
     line-height: 1.1;
     letter-spacing: -0.04em;
-    text-transform: lowercase; /* Titular principal en minúsculas */
     font-weight: 700;
+    text-transform: lowercase; /* Titular principal en minúsculas */
 }
 
 .hero-home .subclaim {
     font-size: 1.3em;
     font-family: 'Lato', sans-serif;
     color: var(--color-text-secondary);
-    max-width: 700px;
+    max-width: 750px; /* Más ancho para el subtítulo */
     margin: 0 auto 40px auto;
     text-transform: lowercase; /* Subtítulo principal en minúsculas */
 }
 
 /* Letras clave de fondo (SPO) */
 .hero-home::before, .hero-home::after {
-    content: 'SPO'; /* Puedes cambiar estas letras */
+    content: 'SPO';
     position: absolute;
     font-family: 'Manrope', sans-serif;
     font-weight: 900;
-    font-size: 20em; /* Tamaño grande */
+    font-size: 25em; /* Tamaño grande */
     color: var(--color-bg-subtle); /* Color muy sutil */
-    opacity: 0.1; /* Transparencia */
+    opacity: 0.08; /* Transparencia */
     z-index: 0;
-    pointer-events: none; /* Para que no interfiera con el mouse */
-    user-select: none; /* Para que no se pueda seleccionar */
+    pointer-events: none;
+    user-select: none;
 }
 
 .hero-home::before {
-    top: -50px;
-    left: -50px;
-    transform: rotate(-10deg);
+    top: -100px;
+    left: -100px;
+    transform: rotate(-15deg);
 }
 
 .hero-home::after {
-    bottom: -50px;
-    right: -50px;
-    transform: rotate(10deg);
+    bottom: -100px;
+    right: -100px;
+    transform: rotate(15deg);
 }
-
 
 /* --- Botones --- */
 .button {
     display: inline-block;
     padding: 15px 35px;
     background-color: var(--color-accent-terracotta);
-    color: var(--color-off-white-cream); /* Texto blanco/crema en botones */
+    color: var(--color-off-white-cream);
     text-decoration: none;
-    border-radius: 8px; /* Bordes más suaves */
+    border-radius: 8px;
     font-weight: 700;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
     font-family: 'Manrope', sans-serif;
-    text-transform: lowercase; /* Texto de botones en minúscula */
-    box-shadow: 0 4px 8px var(--color-shadow); /* Sombra para botones */
+    text-transform: lowercase;
+    box-shadow: 0 5px 15px var(--color-shadow);
+    cursor: pointer;
 }
 
 .button:hover {
     background-color: var(--color-accent-red);
-    transform: translateY(-2px); /* Pequeño efecto de levantamiento */
-    box-shadow: 0 6px 12px var(--color-shadow);
+    transform: translateY(-3px); /* Efecto de levantamiento más notorio */
+    box-shadow: 0 8px 20px var(--color-shadow-strong);
 }
 
 /* --- Secciones de Contenido (General) --- */
 .content-section {
-    padding: 80px 20px;
+    padding: 60px 25px; /* Menos padding vertical para reducir espacio vacío */
 }
 
 .section-block {
-    margin-bottom: 80px; /* Más espacio entre bloques */
+    margin-bottom: 60px; /* Menos margen entre bloques */
     background-color: var(--color-bg-light);
-    padding: 50px; /* Más padding interno */
-    border-radius: 12px; /* Bordes más redondeados */
-    box-shadow: 0 8px 20px var(--color-shadow); /* Sombra más pronunciada */
-    position: relative; /* Para el fondo de textura */
-    overflow: hidden; /* Para que la textura no se salga */
-
+    padding: 40px; /* Padding interno */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px var(--color-shadow); /* Sombra más pronunciada */
+    position: relative;
+    overflow: hidden;
     /* Degradado de fondo y textura sutil */
-    background-image: radial-gradient(circle at top left, var(--color-bg-neutral) 0%, transparent 50%),
-                      url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8ZmlsdGVyIGlkPSJub2lzZSI+CiAgPHZ1cmxpZW4gYmFzZUZyZXF1ZW5jeT0iLjUiIG51bU9jdGF2ZXM9IjIiIHN0aXRjaFRpbGVzPSJub3dyaXgiIHR5cGU9ImZyYWN0YWxOb2lzZSIvPgogPC9maWx0ZXI+CiA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRjBGMEVBIi8+CiA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI25vaXNlKSIgb3BhY2l0eT0iLjA2Ii8+Cjwvc3ZnPg==');
+    background-image: linear-gradient(45deg, var(--color-bg-light) 0%, var(--color-bg-neutral) 100%); /* Degradado */
     background-size: cover;
     background-blend-mode: multiply; /* Para que la textura se mezcle con el degradado */
 }
 
+/* Textura de ruido sutil en los bloques */
+.section-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8ZmlsdGVlciBpZD0ibm9pc2UiPgogICA8dnVybGllbiBiYXNlRnJlcXVlbmN5PSIuMiIgbnVtT2N0YXZlcz0iMiIgc3RpdGNoVGlsZXM9Im5vd3JpeCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+CiA8L2ZpbHRlcj4KIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNGRkZGRkYiLz4KIDxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjaGFzaGZpbHRlciIpIiBvcGFjaXR5PSIuMDQiLz4KPC9zdmc+');
+    background-size: 60px 60px;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 1; /* Asegura que la textura esté detrás del contenido */
+}
+.section-block > *:not(::before) { /* Asegura que el contenido esté por encima de la textura */
+    position: relative;
+    z-index: 2;
+}
+
+
 .section-block h2, .section-block h3 {
-    color: var(--color-text-dark); /* Títulos de sección en color oscuro */
+    color: var(--color-text-dark);
     margin-top: 0;
-    text-transform: lowercase; /* Los títulos de sección se mantienen en minúscula por elección estética */
+    text-transform: lowercase; /* Títulos de sección en minúscula por elección estética */
     font-weight: 700;
 }
 .section-block h2 { font-size: 2.2em; }
 .section-block h3 { font-size: 1.6em; }
 
 .section-block p {
-    text-transform: lowercase; /* Texto de párrafos en minúscula, salvo mayúscula inicial */
+    text-transform: lowercase; /* Párrafos en minúscula (salvo mayúscula inicial por HTML) */
+    font-size: 1.1em;
 }
 
 /* Lista con iconos (sustituyendo bullets) */
@@ -299,71 +326,71 @@ p, ul, ol, li {
 }
 
 .section-block ul li {
-    margin-bottom: 15px; /* Más espacio entre ítems */
+    margin-bottom: 15px;
     position: relative;
-    padding-left: 40px; /* Espacio para el icono */
+    padding-left: 45px; /* Espacio para el icono */
     font-family: 'Lato', sans-serif;
     font-size: 1.1em;
     line-height: 1.4;
-    text-transform: lowercase; /* Ítems de lista en minúscula, salvo mayúscula inicial */
+    text-transform: lowercase; /* Ítems de lista en minúscula (salvo mayúscula inicial por HTML) */
     color: var(--color-text-dark);
 }
 
 .section-block ul li i.fas { /* Estilo del icono (Font Awesome Solid) */
     position: absolute;
     left: 0;
-    top: 5px; /* Ajuste vertical del icono */
-    font-size: 1.2em;
-    color: var(--color-accent-terracotta); /* Color del icono */
+    top: 5px; /* Ajuste vertical */
+    font-size: 1.4em; /* Iconos un poco más grandes */
+    color: var(--color-accent-terracotta);
 }
 
 /* Blog Listado */
 .blog-list article.blog-entry {
     background-color: var(--color-bg-light);
     border-radius: 12px;
-    box-shadow: 0 4px 15px var(--color-shadow); /* Sombra más sutil en el listado */
+    box-shadow: 0 6px 20px var(--color-shadow);
     padding: 30px;
     margin-bottom: 30px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .blog-list article.blog-entry:hover {
-    transform: translateY(-5px); /* Pequeño levantamiento al pasar el mouse */
-    box-shadow: 0 8px 25px var(--color-shadow);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--color-shadow-strong);
 }
 
 .blog-list article.blog-entry h3 {
     margin-top: 0;
     margin-bottom: 10px;
     font-size: 1.8em;
-    text-transform: lowercase; /* Título del post en minúscula */
+    text-transform: lowercase;
 }
 
 .blog-list article.blog-entry h3 a {
-    color: var(--color-text-dark); /* Color de link de título de post */
+    color: var(--color-text-dark);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .blog-list article.blog-entry h3 a:hover {
-    color: var(--color-accent-terracotta); /* Resaltado al pasar el mouse */
+    color: var(--color-accent-terracotta);
     text-decoration: underline;
 }
 
 .blog-list article.blog-entry p {
-    font-size: 1em;
+    font-size: 1.05em;
     color: var(--color-text-secondary);
-    text-transform: lowercase; /* Párrafos del blog en minúscula, salvo mayúscula inicial */
+    text-transform: lowercase;
 }
 
 /* Links de texto "Leer más" en blog */
 a.link-text {
     font-family: 'Manrope', sans-serif;
     font-weight: 700;
-    color: var(--color-accent-terracotta); /* Color del link de texto */
+    color: var(--color-accent-terracotta);
     text-decoration: none;
     transition: color 0.3s ease, text-decoration 0.3s ease;
-    text-transform: lowercase; /* Links de texto en minúscula */
+    text-transform: lowercase;
 }
 
 a.link-text:hover {
@@ -378,22 +405,40 @@ a.link-text:hover {
     text-align: center;
     margin-bottom: 0.8em;
     line-height: 1.1;
-    text-transform: lowercase; /* Título del post individual en minúscula */
+    text-transform: lowercase;
 }
 
 .blog-post h3, .blog-post h4 {
     color: var(--color-medium-brown);
-    text-transform: lowercase; /* Subtítulos de post individual en minúscula */
+    text-transform: lowercase;
 }
 
 .blog-post p {
     margin-bottom: 1em;
-    text-transform: lowercase; /* Párrafos del post individual en minúscula, salvo mayúscula inicial */
+    text-transform: lowercase;
 }
 
-.blog-post ul li::before {
-    /* Mismo estilo de icono de lista */
+.blog-post ol li {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    text-transform: lowercase;
 }
+
+.blog-post em { /* Para texto en cursiva dentro de posts (ej. gráficos mentales) */
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    padding: 15px 20px;
+    background-color: var(--color-bg-neutral);
+    border-left: 5px solid var(--color-accent-terracotta);
+    border-radius: 5px;
+    font-style: normal; /* Para evitar cursiva en todo el bloque */
+    color: var(--color-text-dark);
+    font-family: 'Lato', sans-serif;
+    text-transform: lowercase;
+}
+
 
 .blog-cta {
     background-color: var(--color-light-beige-sand);
@@ -408,7 +453,7 @@ a.link-text:hover {
     font-size: 1.1em;
     color: var(--color-text-dark);
     margin-bottom: 20px;
-    text-transform: lowercase; /* Párrafos del CTA en minúscula, salvo mayúscula inicial */
+    text-transform: lowercase;
 }
 
 /* --- Footer --- */
@@ -419,12 +464,12 @@ a.link-text:hover {
     padding: 40px 20px;
     font-family: 'Lato', sans-serif;
     font-size: 0.9em;
-    text-transform: lowercase; /* Texto del footer en minúscula */
+    text-transform: lowercase;
 }
 
 .footer p, .footer a {
-    color: inherit; /* Hereda el color claro del footer */
-    text-transform: lowercase; /* Párrafos y links del footer en minúscula */
+    color: inherit;
+    text-transform: lowercase;
 }
 
 .footer a:hover {
@@ -434,8 +479,8 @@ a.link-text:hover {
 /* --- Animaciones (Scroll Reveal) --- */
 .reveal-on-scroll {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transform: translateY(30px); /* Más desplazamiento */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Transición más lenta y suave */
 }
 
 .reveal-on-scroll.is-visible {
@@ -450,13 +495,25 @@ a.link-text:hover {
     left: 0;
     pointer-events: none; /* Crucial para que no bloquee clics */
     z-index: 9999;
-    width: 20px; /* Tamaño del punto */
-    height: 20px;
+    width: 16px; /* Tamaño del punto */
+    height: 16px;
     background-color: var(--color-accent-terracotta); /* Color del punto */
     border-radius: 50%;
     transform: translate(-50%, -50%); /* Centra el punto en el cursor */
-    box-shadow: 0 0 15px var(--color-accent-terracotta); /* Sombra alrededor del punto */
-    transition: transform 0.1s ease-out; /* Transición para suavizar movimiento */
+    box-shadow: 0 0 15px var(--color-accent-terracotta), 0 0 5px var(--color-accent-terracotta); /* Doble sombra para más efecto */
+    transition: transform 0.1s ease-out, width 0.2s ease, height 0.2s ease; /* Transición para suavizar movimiento y tamaño */
+    mix-blend-mode: difference; /* Efecto Dendra, si funciona bien */
+    filter: blur(2px); /* Suavizar el punto */
+}
+
+/* Cursor trail/hover effect */
+body:hover #custom-cursor {
+    transform: scale(1.2); /* Crece un poco al pasar sobre el body */
+}
+a:hover ~ #custom-cursor, button:hover ~ #custom-cursor {
+    width: 30px; /* Tamaño más grande al pasar sobre enlaces/botones */
+    height: 30px;
+    box-shadow: 0 0 25px var(--color-accent-red), 0 0 10px var(--color-accent-red); /* Sombra diferente */
 }
 
 /* Ocultar cursor nativo */
@@ -465,20 +522,20 @@ body {
 }
 
 /* --- Responsive Design --- */
-@media (max-width: 900px) {
-    .header-global nav {
-        display: none; /* Oculta menú de desktop */
+@media (max-width: 992px) {
+    .desktop-nav, .desktop-cta {
+        display: none; /* Oculta menú y CTA de desktop */
     }
     .hamburger-menu {
         display: block; /* Muestra hamburguesa */
     }
     .hero-home h1 {
-        font-size: 2.5em;
+        font-size: 2.8em;
     }
     .hero-home .subclaim {
         font-size: 1.1em;
     }
-    .header-home::before, .header-home::after { /* Ocultar SPO en mobile */
+    .hero-home::before, .hero-home::after { /* Ocultar SPO en mobile */
         display: none;
     }
     .section-block {
@@ -494,18 +551,32 @@ body {
     #custom-cursor {
         display: none; /* Ocultar el cursor personalizado */
     }
+    .mobile-nav.is-active {
+        width: 100%; /* Menú móvil ocupa todo el ancho */
+    }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 576px) { /* Breakpoint para móviles más pequeños */
     h1 { font-size: 2em; }
     h2 { font-size: 1.8em; }
     h3 { font-size: 1.4em; }
     p, ul li, ol li { font-size: 1em; }
     .section-block {
         padding: 20px;
+        margin-bottom: 40px;
     }
     .button {
         padding: 12px 25px;
         font-size: 0.9em;
+    }
+    .hero-home {
+        padding: 60px 15px;
+    }
+    .section-block ul li {
+        padding-left: 35px;
+    }
+    .section-block ul li i.fas {
+        font-size: 1.2em;
+        top: 3px;
     }
 }
