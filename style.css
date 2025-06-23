@@ -1,239 +1,511 @@
 /* style.css */
 
-/* --- Paleta de Colores (Hex Codes extraídos de la imagen) --- */
+/* --- Paleta de Colores (Hex Codes extraídos de la imagen y optimizados) --- */
 :root {
-    --color-near-black: #1E1E1E; /* Negro para textos principales */
-    --color-off-white-cream: #F7F3E9; /* Blanco/crema para fondos claros */
-    --color-soft-terracotta: #DC7A5F; /* Terracota para acentos/botones */
-    --color-muted-red: #CD3B3B; /* Rojo más intenso para acentos/advertencias */
-    --color-light-beige-sand: #DDC8A4; /* Beige claro para fondos sutiles */
-    --color-muted-greenish-grey: #A39E88; /* Verde grisáceo para elementos secundarios */
-    --color-medium-brown: #7A5C40; /* Marrón para elementos secundarios o textos alternativos */
-    --color-very-light-grey: #FBFBFB; /* Blanco muy suave para fondos */
-    --color-light-warm-grey: #EAE3DB; /* Beige cálido para fondos */
-    --color-cool-beige: #BFA796; /* Beige más frío */
-    --color-light-grey: #D6D2CB; /* Gris claro */
+    --color-text-dark: #1E1E1E; /* Casi negro para textos principales */
+    --color-bg-light: #F7F3E9; /* Blanco/crema para fondos claros y principales */
+    --color-accent-terracotta: #DC7A5F; /* Terracota para acentos y botones principales */
+    --color-accent-red: #CD3B3B; /* Rojo para acentos más fuertes o estados hover */
+    --color-bg-neutral: #EAE3DB; /* Beige cálido para secciones, fondos */
+    --color-bg-subtle: #DDC8A4; /* Beige arena para fondos muy sutiles o elementos */
+    --color-text-secondary: #7A5C40; /* Marrón medio para textos secundarios o claims */
+    --color-text-light: #BFA796; /* Beige más frío para texto de contraste */
+    --color-shadow: rgba(0, 0, 0, 0.08); /* Sombra suave */
+    --color-link-hover: #CD3B3B; /* Color al pasar el mouse sobre links */
 }
 
 /* --- Tipografía --- */
 body {
     font-family: 'Manrope', sans-serif;
-    color: var(--color-near-black);
+    color: var(--color-text-dark);
     line-height: 1.6;
-    background-color: var(--color-very-light-grey); /* Fondo general muy claro */
+    background-color: var(--color-bg-light); /* Fondo general principal */
     margin: 0;
     padding: 0;
+    -webkit-font-smoothing: antialiased; /* Mejor renderizado de fuentes en WebKit */
+    -moz-osx-font-smoothing: grayscale; /* Mejor renderizado de fuentes en Firefox */
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Manrope', sans-serif;
-    color: var(--color-near-black);
+    color: var(--color-text-dark);
     font-weight: 700; /* Bold */
     line-height: 1.2;
     margin-bottom: 0.5em;
-    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
+    letter-spacing: -0.02em; /* Ajuste para un look más moderno */
 }
 
-h1 { font-size: 2.5em; }
-h2 { font-size: 2em; }
-h3 { font-size: 1.5em; }
+h1 { font-size: 3em; } /* Hero */
+h2 { font-size: 2.2em; } /* Sección */
+h3 { font-size: 1.6em; } /* Subtítulos de sección/post */
 
-p, ul, ol, li { /* REMOVIDO 'a' de aquí, se maneja el botón aparte */
+p, ul, ol, li {
     font-family: 'Lato', sans-serif; /* Lato como secundaria para el cuerpo de texto */
-    font-size: 1em;
-    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
+    font-size: 1.1em; /* Un poco más grande para mejor lectura */
 }
 
-/* --- Header --- */
-.header-home {
-    background-color: var(--color-off-white-cream); /* Fondo suave para el header principal */
-    padding: 60px 20px;
-    text-align: center;
-    border-bottom: 1px solid var(--color-light-grey);
+/* --- Estilos Generales --- */
+.container {
+    max-width: 1080px; /* Un poco más ancho */
+    margin: 0 auto;
+    padding: 0 20px; /* Padding horizontal */
 }
 
-.header-home h1 {
-    font-size: 3em;
-    margin-bottom: 0.2em;
-    color: var(--color-near-black);
-    line-height: 1.1;
-    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
+/* --- Header Global (Nuevo Diseño) --- */
+.header-global {
+    background-color: var(--color-bg-light);
+    padding: 20px 0;
+    border-bottom: 1px solid var(--color-bg-neutral); /* Línea sutil */
+    box-shadow: 0 2px 5px var(--color-shadow); /* Sombra suave para el header */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.header-home .claim {
-    font-size: 1.2em;
-    font-family: 'Lato', sans-serif;
-    color: var(--color-medium-brown); /* Un color que dé un toque distinto al claim */
-    margin-bottom: 0.5em;
-    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.header-home .subclaim {
-    font-size: 1em;
-    font-family: 'Lato', sans-serif;
-    color: var(--color-muted-greenish-grey);
-    max-width: 700px;
-    margin: 0 auto 30px auto;
-    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
-}
-
-.header-simple { /* Header para la página de impulso inicial */
-    background-color: var(--color-off-white-cream);
-    padding: 20px;
-    text-align: center;
-    border-bottom: 1px solid var(--color-light-grey);
-}
-
-.header-simple h1 a {
+.header-global .logo a {
     font-family: 'Manrope', sans-serif;
     font-weight: 700;
-    font-size: 1.8em;
-    color: var(--color-near-black);
+    font-size: 1.5em;
+    color: var(--color-text-dark);
     text-decoration: none;
-    text-transform: lowercase; /* Mantenemos minúscula para el nombre de la marca en el header */
+    text-transform: lowercase; /* Nombre de la marca siempre en minúscula */
+    letter-spacing: -0.03em;
 }
+
+.header-global nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Para menú horizontal */
+}
+
+.header-global nav ul li {
+    margin-left: 30px;
+}
+
+.header-global nav ul li a {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--color-text-dark);
+    text-decoration: none;
+    position: relative; /* Para efecto underline al hover */
+    transition: color 0.3s ease;
+    text-transform: lowercase; /* Links del menú en minúscula */
+}
+
+.header-global nav ul li a:hover {
+    color: var(--color-accent-terracotta);
+}
+
+.header-global nav ul li a::after { /* Underline effect */
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--color-accent-terracotta);
+    transition: width 0.3s ease;
+}
+
+.header-global nav ul li a:hover::after {
+    width: 100%;
+}
+
+
+/* Hamburguer Menu (Mobile) */
+.hamburger-menu {
+    display: none; /* Oculto en desktop */
+    font-size: 1.8em;
+    cursor: pointer;
+    color: var(--color-text-dark);
+}
+
+.mobile-nav {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg-light);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%);
+}
+
+.mobile-nav.is-active {
+    transform: translateX(0);
+    display: flex;
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.mobile-nav ul li {
+    margin: 20px 0;
+}
+
+.mobile-nav ul li a {
+    font-size: 1.8em;
+    color: var(--color-text-dark);
+    text-decoration: none;
+    text-transform: lowercase;
+}
+
+.mobile-nav .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2em;
+    cursor: pointer;
+    color: var(--color-text-dark);
+}
+
+/* --- Hero Section (Home Page) --- */
+.hero-home {
+    background-color: var(--color-bg-light);
+    padding: 80px 20px;
+    text-align: center;
+    position: relative; /* Para letras de fondo */
+    overflow: hidden; /* Para que las letras no se salgan */
+}
+
+.hero-home .claim {
+    font-size: 1.1em;
+    font-family: 'Lato', sans-serif;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.5em;
+    text-transform: lowercase;
+}
+
+.hero-home h1 {
+    font-size: 3.5em;
+    margin-bottom: 0.4em;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    text-transform: lowercase; /* Titular principal en minúsculas */
+    font-weight: 700;
+}
+
+.hero-home .subclaim {
+    font-size: 1.3em;
+    font-family: 'Lato', sans-serif;
+    color: var(--color-text-secondary);
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    text-transform: lowercase; /* Subtítulo principal en minúsculas */
+}
+
+/* Letras clave de fondo (SPO) */
+.hero-home::before, .hero-home::after {
+    content: 'SPO'; /* Puedes cambiar estas letras */
+    position: absolute;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 900;
+    font-size: 20em; /* Tamaño grande */
+    color: var(--color-bg-subtle); /* Color muy sutil */
+    opacity: 0.1; /* Transparencia */
+    z-index: 0;
+    pointer-events: none; /* Para que no interfiera con el mouse */
+    user-select: none; /* Para que no se pueda seleccionar */
+}
+
+.hero-home::before {
+    top: -50px;
+    left: -50px;
+    transform: rotate(-10deg);
+}
+
+.hero-home::after {
+    bottom: -50px;
+    right: -50px;
+    transform: rotate(10deg);
+}
+
 
 /* --- Botones --- */
 .button {
     display: inline-block;
-    padding: 15px 30px;
-    background-color: var(--color-soft-terracotta); /* Color principal del botón */
-    color: white;
+    padding: 15px 35px;
+    background-color: var(--color-accent-terracotta);
+    color: var(--color-off-white-cream); /* Texto blanco/crema en botones */
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 8px; /* Bordes más suaves */
     font-weight: 700;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
     font-family: 'Manrope', sans-serif;
-    text-transform: lowercase; /* Mantenemos minúscula para el texto de los botones, como pediste */
+    text-transform: lowercase; /* Texto de botones en minúscula */
+    box-shadow: 0 4px 8px var(--color-shadow); /* Sombra para botones */
 }
 
 .button:hover {
-    background-color: var(--color-muted-red); /* Un rojo más fuerte al pasar el mouse */
+    background-color: var(--color-accent-red);
+    transform: translateY(-2px); /* Pequeño efecto de levantamiento */
+    box-shadow: 0 6px 12px var(--color-shadow);
 }
 
-/* --- Enlaces de texto dentro del contenido (como "ver más →") --- */
-.link-text {
-    color: var(--color-soft-terracotta); /* Color del link de texto */
-    text-decoration: none;
-    text-transform: lowercase; /* Puedes decidir si quieres que estos links sean siempre minúsculas o que respeten las mayúsculas del HTML */
-                               /* Por ahora, lo mantengo en lowercase para que se vea como en tu ejemplo */
-}
-
-.link-text:hover {
-    text-decoration: underline;
-}
-
-
-/* --- Secciones de Contenido --- */
+/* --- Secciones de Contenido (General) --- */
 .content-section {
-    padding: 40px 20px;
+    padding: 80px 20px;
 }
 
 .section-block {
-    margin-bottom: 60px;
-    background-color: var(--color-off-white-cream); /* Fondo para bloques de contenido */
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    margin-bottom: 80px; /* Más espacio entre bloques */
+    background-color: var(--color-bg-light);
+    padding: 50px; /* Más padding interno */
+    border-radius: 12px; /* Bordes más redondeados */
+    box-shadow: 0 8px 20px var(--color-shadow); /* Sombra más pronunciada */
+    position: relative; /* Para el fondo de textura */
+    overflow: hidden; /* Para que la textura no se salga */
+
+    /* Degradado de fondo y textura sutil */
+    background-image: radial-gradient(circle at top left, var(--color-bg-neutral) 0%, transparent 50%),
+                      url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8ZmlsdGVyIGlkPSJub2lzZSI+CiAgPHZ1cmxpZW4gYmFzZUZyZXF1ZW5jeT0iLjUiIG51bU9jdGF2ZXM9IjIiIHN0aXRjaFRpbGVzPSJub3dyaXgiIHR5cGU9ImZyYWN0YWxOb2lzZSIvPgogPC9maWx0ZXI+CiA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRjBGMEVBIi8+CiA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI25vaXNlKSIgb3BhY2l0eT0iLjA2Ii8+Cjwvc3ZnPg==');
+    background-size: cover;
+    background-blend-mode: multiply; /* Para que la textura se mezcle con el degradado */
 }
 
 .section-block h2, .section-block h3 {
-    color: var(--color-medium-brown); /* Títulos de sección en un marrón suave */
+    color: var(--color-text-dark); /* Títulos de sección en color oscuro */
     margin-top: 0;
-    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
+    text-transform: lowercase; /* Los títulos de sección se mantienen en minúscula por elección estética */
+    font-weight: 700;
+}
+.section-block h2 { font-size: 2.2em; }
+.section-block h3 { font-size: 1.6em; }
+
+.section-block p {
+    text-transform: lowercase; /* Texto de párrafos en minúscula, salvo mayúscula inicial */
 }
 
+/* Lista con iconos (sustituyendo bullets) */
 .section-block ul {
     list-style: none;
     padding: 0;
 }
 
 .section-block ul li {
-    margin-bottom: 10px;
+    margin-bottom: 15px; /* Más espacio entre ítems */
     position: relative;
-    padding-left: 25px;
+    padding-left: 40px; /* Espacio para el icono */
     font-family: 'Lato', sans-serif;
-    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
+    font-size: 1.1em;
+    line-height: 1.4;
+    text-transform: lowercase; /* Ítems de lista en minúscula, salvo mayúscula inicial */
+    color: var(--color-text-dark);
 }
 
-.section-block ul li::before { /* Estilo de bullet personalizado */
-    content: '👉'; /* Puedes cambiar esto por un icono SVG si quieres algo más custom */
+.section-block ul li i.fas { /* Estilo del icono (Font Awesome Solid) */
     position: absolute;
     left: 0;
-    color: var(--color-soft-terracotta);
-    font-size: 1.1em;
-    line-height: 1;
+    top: 5px; /* Ajuste vertical del icono */
+    font-size: 1.2em;
+    color: var(--color-accent-terracotta); /* Color del icono */
 }
 
-.section-block ol {
-    padding-left: 20px;
+/* Blog Listado */
+.blog-list article.blog-entry {
+    background-color: var(--color-bg-light);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px var(--color-shadow); /* Sombra más sutil en el listado */
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.section-block ol li {
+.blog-list article.blog-entry:hover {
+    transform: translateY(-5px); /* Pequeño levantamiento al pasar el mouse */
+    box-shadow: 0 8px 25px var(--color-shadow);
+}
+
+.blog-list article.blog-entry h3 {
+    margin-top: 0;
     margin-bottom: 10px;
-    font-family: 'Lato', sans-serif;
-    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
+    font-size: 1.8em;
+    text-transform: lowercase; /* Título del post en minúscula */
 }
 
-.highlight-point {
+.blog-list article.blog-entry h3 a {
+    color: var(--color-text-dark); /* Color de link de título de post */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.blog-list article.blog-entry h3 a:hover {
+    color: var(--color-accent-terracotta); /* Resaltado al pasar el mouse */
+    text-decoration: underline;
+}
+
+.blog-list article.blog-entry p {
+    font-size: 1em;
+    color: var(--color-text-secondary);
+    text-transform: lowercase; /* Párrafos del blog en minúscula, salvo mayúscula inicial */
+}
+
+/* Links de texto "Leer más" en blog */
+a.link-text {
+    font-family: 'Manrope', sans-serif;
     font-weight: 700;
-    color: var(--color-medium-brown);
-    /* REMOVIDO: text-transform: lowercase; */ /* ESTO CAUSABA EL PROBLEMA */
+    color: var(--color-accent-terracotta); /* Color del link de texto */
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+    text-transform: lowercase; /* Links de texto en minúscula */
 }
 
-.image-placeholder {
-    background-color: var(--color-light-beige-sand);
-    min-height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+a.link-text:hover {
+    color: var(--color-accent-red);
+    text-decoration: underline;
+}
+
+
+/* --- Blog Post Individual --- */
+.blog-post h2 {
+    font-size: 2.8em;
+    text-align: center;
+    margin-bottom: 0.8em;
+    line-height: 1.1;
+    text-transform: lowercase; /* Título del post individual en minúscula */
+}
+
+.blog-post h3, .blog-post h4 {
     color: var(--color-medium-brown);
-    font-style: italic;
-    margin-bottom: 20px;
+    text-transform: lowercase; /* Subtítulos de post individual en minúscula */
+}
+
+.blog-post p {
+    margin-bottom: 1em;
+    text-transform: lowercase; /* Párrafos del post individual en minúscula, salvo mayúscula inicial */
+}
+
+.blog-post ul li::before {
+    /* Mismo estilo de icono de lista */
+}
+
+.blog-cta {
+    background-color: var(--color-light-beige-sand);
+    padding: 30px;
     border-radius: 8px;
+    margin-top: 50px;
+    text-align: center;
+    box-shadow: 0 4px 10px var(--color-shadow);
+}
+
+.blog-cta p {
+    font-size: 1.1em;
+    color: var(--color-text-dark);
+    margin-bottom: 20px;
+    text-transform: lowercase; /* Párrafos del CTA en minúscula, salvo mayúscula inicial */
 }
 
 /* --- Footer --- */
 .footer {
-    background-color: var(--color-near-black);
+    background-color: var(--color-text-dark);
     color: var(--color-off-white-cream);
     text-align: center;
-    padding: 30px 20px;
+    padding: 40px 20px;
     font-family: 'Lato', sans-serif;
     font-size: 0.9em;
-    text-transform: lowercase; /* Mantenemos minúscula para el footer, como pediste */
+    text-transform: lowercase; /* Texto del footer en minúscula */
 }
 
-.footer p {
-    margin: 5px 0;
-    text-transform: lowercase; /* Mantenemos minúscula para los párrafos del footer */
-}
-
-.footer a {
-    color: var(--color-soft-terracotta);
-    text-decoration: none;
-    text-transform: lowercase; /* Mantenemos minúscula para los links del footer */
+.footer p, .footer a {
+    color: inherit; /* Hereda el color claro del footer */
+    text-transform: lowercase; /* Párrafos y links del footer en minúscula */
 }
 
 .footer a:hover {
-    text-decoration: underline;
+    color: var(--color-accent-terracotta);
 }
 
-/* --- Responsive Design Básico --- */
-@media (max-width: 768px) {
-    .container {
-        padding: 15px;
-    }
+/* --- Animaciones (Scroll Reveal) --- */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
 
-    .header-home h1 {
-        font-size: 2.2em;
-    }
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-    .header-home .claim {
-        font-size: 1em;
-    }
+/* --- Custom Cursor --- */
+#custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Crucial para que no bloquee clics */
+    z-index: 9999;
+    width: 20px; /* Tamaño del punto */
+    height: 20px;
+    background-color: var(--color-accent-terracotta); /* Color del punto */
+    border-radius: 50%;
+    transform: translate(-50%, -50%); /* Centra el punto en el cursor */
+    box-shadow: 0 0 15px var(--color-accent-terracotta); /* Sombra alrededor del punto */
+    transition: transform 0.1s ease-out; /* Transición para suavizar movimiento */
+}
 
+/* Ocultar cursor nativo */
+body {
+    cursor: none;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 900px) {
+    .header-global nav {
+        display: none; /* Oculta menú de desktop */
+    }
+    .hamburger-menu {
+        display: block; /* Muestra hamburguesa */
+    }
+    .hero-home h1 {
+        font-size: 2.5em;
+    }
+    .hero-home .subclaim {
+        font-size: 1.1em;
+    }
+    .header-home::before, .header-home::after { /* Ocultar SPO en mobile */
+        display: none;
+    }
+    .section-block {
+        padding: 30px;
+    }
+    .blog-post h2 {
+        font-size: 2em;
+    }
+    /* Deshabilitar custom cursor en touch devices (o pantallas pequeñas) */
+    body {
+        cursor: default; /* Restaurar cursor nativo */
+    }
+    #custom-cursor {
+        display: none; /* Ocultar el cursor personalizado */
+    }
+}
+
+@media (max-width: 500px) {
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.8em; }
+    h3 { font-size: 1.4em; }
+    p, ul li, ol li { font-size: 1em; }
     .section-block {
         padding: 20px;
+    }
+    .button {
+        padding: 12px 25px;
+        font-size: 0.9em;
     }
 }
