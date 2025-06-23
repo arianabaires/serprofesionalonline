@@ -21,9 +21,9 @@
             </div>
             <nav class="desktop-nav">
                 <ul>
-                    <li><a href="index.html">home</a></li>
+                    <li><a href="index.html">inicio</a></li>
                     <li><a href="impulso-inicial.html">impulso inicial</a></li>
-                    <li><a href="blog/blog.html">blog</a></li>
+                    <li><a href="blog/blog.html">ideas</a></li>
                     <li><a href="#contact">contacto</a></li>
                 </ul>
             </nav>
@@ -37,9 +37,9 @@
     <nav class="mobile-nav">
         <div class="close-btn"><i class="fas fa-times"></i></div>
         <ul>
-            <li><a href="index.html">home</a></li>
+            <li><a href="index.html">inicio</a></li>
             <li><a href="impulso-inicial.html">impulso inicial</a></li>
-            <li><a href="blog/blog.html">blog</a></li>
+            <li><a href="blog/blog.html">ideas</a></li>
             <li><a href="#contact">contacto</a></li>
         </ul>
         <a href="impulso-inicial.html" class="button">quiero empezar</a>
@@ -49,8 +49,8 @@
     <main>
         <section class="hero-home">
             <div class="container reveal-on-scroll">
-                <p class="claim">presencia real para profesionales que hacen.</p>
-                <h1>Si ya trabajás, ya podés mostrarte mejor.</h1>
+                <p class="claim">Presencia real para profesionales que hacen.</p>
+                <h1>Si trabajás, podés mostrarte mejor.</h1>
                 <p class="subclaim">Tu presencia digital no necesita ser perfecta. Solo tiene que ser real, clara y coherente con el valor que ofrecés.</p>
                 <a href="impulso-inicial.html" class="button">conoce el impulso inicial →</a>
             </div>
@@ -107,10 +107,26 @@
         </section>
 
         <section class="container content-section reveal-on-scroll" id="contact">
-            <div class="section-block cta-final">
-                <h2>¿Querés que te ayudemos a ordenar lo tuyo?</h2>
-                <p>Estamos listos para ayudarte a construir la presencia digital que tu profesionalismo merece. Contanos qué hacés y te proponemos cómo empezar.</p>
-                <a href="impulso-inicial.html" class="button">quiero empezar</a>
+            <div class="section-block">
+                <h2>¿Necesitás ordenar tu presencia online?</h2>
+                <p>Contanos brevemente qué hacés y cuál es tu principal desafío digital. Te contactaremos para proponer cómo empezar a construir tu presencia real.</p>
+                
+                <form action="https://formspree.io/f/xdkzlogg" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Tu nombre:</label>
+                        <input type="text" id="name" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Tu email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Contanos sobre tu servicio y desafío:</label>
+                        <textarea id="message" name="mensaje" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="button">enviar consulta</button>
+                </form>
+                <p style="margin-top: 20px; text-align: center;">o si prefieres, <a href="mailto:tuemail@serprofesionalonline.com" class="link-text">escríbenos directamente</a> o contáctanos por WhatsApp: [tu número de whatsapp].</p>
             </div>
         </section>
     </main>
