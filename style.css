@@ -536,3 +536,6 @@ input:hover ~ #custom-cursor, textarea:hover ~ #custom-cursor, label:hover ~ #cu
         top: 3px;
     }
 }
+* {
+  color: #000000 !important;
+}
