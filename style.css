@@ -306,6 +306,15 @@ body {
 
 
 /* Forzado de color oscuro para todo el contenido textual general */
+/* --- FIX: Textos dentro de section-block no se ven oscuros --- */
+.section-block p,
+.section-block h2,
+.section-block h3,
+.section-block li,
+.section-block span,
+.section-block strong {
+    color: #000000 !important;
+}
 h1, h2, h3, h4, h5, h6,
 p, ul li, ol li,
 .contact-form label,
