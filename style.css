@@ -548,3 +548,7 @@ input:hover ~ #custom-cursor, textarea:hover ~ #custom-cursor, label:hover ~ #cu
 * {
   color: #000000 !important;
 }
+.section-block p, .section-block h2 {
+  font-weight: 500;
+  font-size: 1.05em;
+}
