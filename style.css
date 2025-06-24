@@ -552,3 +552,28 @@ input:hover ~ #custom-cursor, textarea:hover ~ #custom-cursor, label:hover ~ #cu
   font-weight: 500;
   font-size: 1.05em;
 }
+/* --- FIX TOTAL: máxima legibilidad en .section-block --- */
+
+/* 1. Reducir opacidad de la textura de fondo */
+.section-block::before {
+  opacity: 0.2 !important; /* en lugar de 0.6, conserva textura sin lavar el texto */
+}
+
+/* 2. Forzar color negro absoluto en todos los textos posibles dentro del bloque */
+.section-block p,
+.section-block h2,
+.section-block h3,
+.section-block li,
+.section-block span,
+.section-block strong,
+.section-block em {
+  color: #000000 !important;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* 3. Opcional: Reforzar color del título principal si se ve gris */
+.section-block h2 {
+  font-weight: 700;
+  font-size: 1.6em;
+}
