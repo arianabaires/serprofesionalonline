@@ -9,7 +9,7 @@
     --color-bg-neutral: #EAE3DB; /* Beige cálido para secciones, fondos */
     --color-bg-subtle: #DDC8A4; /* Beige arena para fondos muy sutiles o elementos */
     --color-text-secondary: #7A5C40; /* Marrón medio para claims o textos secundarios */
-    --color-text-light: #BFA796; /* Beige más frío para texto de contraste tenue */
+    --color-text-light: #BFA7F0; /* ¡CORREGIDO! Un color más claro pero legible, si el anterior era invisible */
     --color-shadow: rgba(0, 0, 0, 0.08); /* Sombra suave para elementos */
     --color-shadow-strong: rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
     --color-link-hover: #CD3B3B; /* Color al pasar el mouse sobre links */
@@ -21,16 +21,15 @@
 /* --- Base --- */
 body {
     font-family: 'Manrope', sans-serif;
-    color: var(--color-text-dark); /* ¡Color de texto principal oscuro, para asegurar legibilidad! */
+    color: var(--color-text-dark) !important; /* ¡Color de texto principal oscuro FORZADO! */
     line-height: 1.6;
     background-color: var(--color-bg-light); /* Fondo general principal */
     margin: 0;
     padding: 0;
-    -webkit-font-smoothing: antialiased; /* Mejor renderizado de fuentes en WebKit */
-    -moz-osx-font-smoothing: grayscale; /* Mejor renderizado de fuentes en Firefox */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     position: relative;
-    overflow-x: hidden; /* Evita scroll horizontal */
-    /* Textura de ruido sutil en el body */
+    overflow-x: hidden;
     background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8ZmlsdGVyIGlkPSJub2lzZSI+CiAgPHZ1cmxpZW4gYmFzZUZyZXF1ZW5jeT0iLjIiIG51bU9jdGF2ZXM9IjIiIHN0aXRjaFRpbGVzPSJub3dyaXgiIHR5cGU9ImZyYWN0YWxOb2lzZSIvPgogPC9maWx0ZXI+CiA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRjNGM0U5Ii8+CiA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI25vaXNlKSIgb3BhY2l0eT0iLjA0Ii8+Cjwvc3ZnPg==');
     background-repeat: repeat;
     background-size: 60px 60px;
@@ -62,10 +61,10 @@ body {
 .header-global .logo a {
     font-family: 'Manrope', sans-serif;
     font-weight: 700;
-    font-size: 1.6em; /* Más pequeño y delicado */
+    font-size: 1.6em;
     color: var(--color-text-dark);
     text-decoration: none;
-    text-transform: lowercase; /* Nombre de la marca siempre en minúscula */
+    text-transform: lowercase;
     letter-spacing: -0.03em;
 }
 
@@ -82,11 +81,11 @@ body {
     position: relative;
 }
 
-.header-global nav ul li:not(:last-child)::after { /* Puntitos separadores */
+.header-global nav ul li:not(:last-child)::after {
     content: '•';
     position: absolute;
     right: -15px;
-    color: var(--color-text-light);
+    color: var(--color-text-light); /* Color tenue para el punto */
     font-size: 0.8em;
     top: 50%;
     transform: translateY(-50%);
@@ -100,14 +99,14 @@ body {
     text-decoration: none;
     position: relative;
     transition: color 0.3s ease;
-    text-transform: lowercase; /* Links del menú en minúscula */
+    text-transform: lowercase;
 }
 
 .header-global nav ul li a:hover {
     color: var(--color-accent-terracotta);
 }
 
-.header-global nav ul li a::after { /* Underline effect on hover */
+.header-global nav ul li a::after {
     content: '';
     position: absolute;
     width: 0;
@@ -208,7 +207,6 @@ body {
     line-height: 1.1;
     letter-spacing: -0.04em;
     font-weight: 700;
-    /* text-transform se maneja en el HTML directamente */
 }
 
 .hero-home .subclaim {
@@ -217,7 +215,6 @@ body {
     color: var(--color-text-secondary); /* Color más suave para el subclaim */
     max-width: 750px;
     margin: 0 auto 40px auto;
-    /* text-transform se maneja en el HTML directamente */
 }
 
 /* Letras clave de fondo (SPO) */
@@ -315,8 +312,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p, ul li, ol li, .blog-list article.blog-entry p,
-.blog-post p, .blog-post ol li, .blog-post em, .blog-cta p,
-.contact-form label, .contact-form input[type="text"], .contact-form input[type="email"], .contact-form textarea {
+.blog-post p, .blog-post ol li, .blog-post em, .blog-cta p {
     color: var(--color-text-dark) !important; /* ¡¡¡Color de texto oscuro forzado con !important para TODO el contenido principal!!! */
 }
 
@@ -341,6 +337,7 @@ p, ul li, ol li, .blog-list article.blog-entry p,
     font-family: 'Lato', sans-serif;
     font-size: 1.1em;
     line-height: 1.4;
+    color: var(--color-text-dark) !important; /* Color de texto oscuro forzado */
 }
 
 .section-block ul li i.fas {
