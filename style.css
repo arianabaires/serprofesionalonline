@@ -208,6 +208,7 @@ body {
     line-height: 1.1;
     letter-spacing: -0.04em;
     font-weight: 700;
+    /* text-transform se maneja en el HTML directamente */
 }
 
 .hero-home .subclaim {
@@ -216,6 +217,7 @@ body {
     color: var(--color-text-secondary); /* Color más suave para el subclaim */
     max-width: 750px;
     margin: 0 auto 40px auto;
+    /* text-transform se maneja en el HTML directamente */
 }
 
 /* Letras clave de fondo (SPO) */
@@ -306,21 +308,19 @@ body {
 
 
 /* Re-asegurar color de texto oscuro y que text-transform se maneje por HTML */
-h1, h2, h3, h4, h5, h6,
-p, ul li, ol li, .blog-list article.blog-entry h3, .blog-list article.blog-entry p,
-.blog-post h2, .blog-post h3, .blog-post h4, .blog-post p, .blog-post ol li, .blog-post em, .blog-cta p {
-    color: var(--color-text-dark) !important; /* ¡¡¡Color de texto oscuro forzado con !important para TODO el contenido principal!!! */
-}
-
-/* Textos secundarios (claims y subclaims) que deben ser más claros */
-.hero-home .claim, .hero-home .subclaim, .blog-list article.blog-entry p {
-    color: var(--color-text-secondary) !important; /* Vuelven a ser más claros (marrón medio) si son claims o descripciones */
-}
-
-.section-block h2, .section-block h3 {
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-text-dark); /* Color de texto oscuro para títulos */
     margin-top: 0;
     font-weight: 700;
 }
+
+p, ul li, ol li, .blog-list article.blog-entry p,
+.blog-post p, .blog-post ol li, .blog-post em, .blog-cta p,
+.contact-form label, .contact-form input[type="text"], .contact-form input[type="email"], .contact-form textarea {
+    color: var(--color-text-dark) !important; /* ¡¡¡Color de texto oscuro forzado con !important para TODO el contenido principal!!! */
+}
+
+
 .section-block h2 { font-size: 2.2em; }
 .section-block h3 { font-size: 1.6em; }
 
@@ -341,7 +341,6 @@ p, ul li, ol li, .blog-list article.blog-entry h3, .blog-list article.blog-entry
     font-family: 'Lato', sans-serif;
     font-size: 1.1em;
     line-height: 1.4;
-    color: var(--color-text-dark) !important; /* Color de texto oscuro forzado */
 }
 
 .section-block ul li i.fas {
