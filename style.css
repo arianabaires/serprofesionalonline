@@ -2,7 +2,7 @@
 
 /* --- Paleta de Colores (Hex Codes extraídos de la imagen y optimizados) --- */
 :root {
-    --color-text-dark: #1E1E1E; /* Casi negro para textos principales */
+    --color-text-dark: #1E1E1E; /* Casi negro para textos principales (uso interno, pero forzaremos negro puro) */
     --color-bg-light: #F7F3E9; /* Blanco/crema para fondos claros y principales */
     --color-accent-terracotta: #DC7A5F; /* Terracota para acentos y botones principales */
     --color-accent-red: #CD3B3B; /* Rojo para acentos más fuertes o estados hover */
@@ -21,7 +21,7 @@
 /* --- Base --- */
 body {
     font-family: 'Manrope', sans-serif;
-    color: #1E1E1E !important; /* ¡¡¡FORZADO DIRECTAMENTE CON HEX para asegurar LEGIBILIDAD en todo el body!!! */
+    color: #000000 !important; /* ¡¡¡FORZADO A NEGRO PURO #000000 con !important para asegurar LEGIBILIDAD en todo el body!!! */
     line-height: 1.6;
     background-color: var(--color-bg-light); /* Fondo general principal */
     margin: 0;
@@ -63,7 +63,7 @@ body {
     font-family: 'Manrope', sans-serif;
     font-weight: 700;
     font-size: 1.6em; /* Más pequeño y delicado */
-    color: #1E1E1E !important; /* FORZADO CON HEX */
+    color: #000000 !important; /* FORZADO CON HEX */
     text-decoration: none;
     text-transform: lowercase; /* Nombre de la marca siempre en minúscula */
     letter-spacing: -0.03em;
@@ -96,7 +96,7 @@ body {
     font-family: 'Manrope', sans-serif;
     font-size: 1em;
     font-weight: 500;
-    color: #1E1E1E !important; /* FORZADO CON HEX */
+    color: #000000 !important; /* FORZADO CON HEX */
     text-decoration: none;
     position: relative;
     transition: color 0.3s ease;
@@ -132,7 +132,7 @@ body {
     display: none;
     font-size: 1.8em;
     cursor: pointer;
-    color: #1E1E1E !important; /* FORZADO CON HEX */
+    color: #000000 !important; /* FORZADO CON HEX */
 }
 
 .mobile-nav {
@@ -169,7 +169,7 @@ body {
 
 .mobile-nav ul li a {
     font-size: 1.8em;
-    color: #1E1E1E !important; /* FORZADO CON HEX */
+    color: #000000 !important; /* FORZADO CON HEX */
     text-decoration: none;
     text-transform: lowercase;
     font-family: 'Manrope', sans-serif;
@@ -182,7 +182,7 @@ body {
     right: 25px;
     font-size: 2.2em;
     cursor: pointer;
-    color: #1E1E1E !important; /* FORZADO CON HEX */
+    color: #000000 !important; /* FORZADO CON HEX */
 }
 
 /* --- Hero Section (Home Page) --- */
@@ -282,7 +282,7 @@ body {
     overflow: hidden;
     background-image: linear-gradient(45deg, var(--color-bg-light) 0%, var(--color-bg-neutral) 100%);
     background-size: cover;
-    background-blend-mode: multiply;
+    /* mix-blend-mode: multiply; REMOVIDO PARA EVITAR PROBLEMAS DE CLARIDAD */
 }
 
 /* Textura de ruido sutil en los bloques */
@@ -295,7 +295,7 @@ body {
     height: 100%;
     background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8ZmlsdGVyIGlkPSJub2lzZSI+CiAgPHZ1cmxpZW4gYmFzZUZyZXF1ZW5jeT0iLjIiIG51bU9jdGF2ZXM9IjIiIHN0aXRjaFRpbGVzPSJub3dyaXgiIHR5cGU9ImZyYWN0YWxOb2lzZSIvPgogPC9maWx0ZXI+CiA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRkZGRkZGIi8+CiA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2hhc2hmaWx0ZXIpIiBvcGFjaXR5PSIuMDQiLz4KPC9zdmc+');
     background-size: 60px 60px;
-    opacity: 0.6;
+    opacity: 0.6; /* Podrías probar con 0.4 si es muy fuerte */
     pointer-events: none;
     z-index: 1;
 }
@@ -310,10 +310,10 @@ h1, h2, h3, h4, h5, h6,
 p, ul li, ol li,
 .contact-form label,
 .contact-form input[type="text"], .contact-form input[type="email"], .contact-form textarea {
-    color: #1E1E1E !important; /* FORZADO DIRECTAMENTE CON HEX para máxima legibilidad */
+    color: #000000 !important; /* ¡¡¡FORZADO A NEGRO ABSOLUTO #000000 para máxima legibilidad!!! */
 }
 
-/* Excepciones (elementos que deben ser más claros por diseño) */
+/* Textos secundarios (claims y subclaims) que deben ser más claros */
 .hero-home .claim, .hero-home .subclaim, .blog-list article.blog-entry p {
     color: var(--color-text-secondary) !important; /* Marrón medio para descripciones/claims */
 }
@@ -343,15 +343,38 @@ p, ul li, ol li,
 }
 
 /* Blog listado y posts - color de texto forzado */
-.blog-list article.blog-entry h3 a, .blog-list article.blog-entry p,
-.blog-post p, .blog-post ol li, .blog-post em, .blog-cta p {
-    color: #1E1E1E !important; /* Forzado a oscuro */
-}
 .blog-list article.blog-entry h3 {
-    color: #1E1E1E !important; /* Forzado a oscuro */
+    color: #000000 !important; /* Forzado a oscuro */
+}
+.blog-list article.blog-entry h3 a {
+    color: #000000 !important; /* Forzado a oscuro */
+    text-decoration: none;
 }
 .blog-list article.blog-entry h3 a:hover {
     color: var(--color-accent-terracotta);
+}
+.blog-list article.blog-entry p {
+    color: #000000 !important; /* Forzado a oscuro */
+}
+
+.blog-post h2, .blog-post h3, .blog-post h4, .blog-post p, .blog-post ol li, .blog-post em, .blog-cta p {
+    color: #000000 !important; /* Forzado a oscuro en todos los elementos del blog post */
+}
+
+
+/* Links de texto "Leer más" en blog */
+a.link-text {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    color: var(--color-accent-terracotta);
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+    text-transform: lowercase; /* Links de texto en minúscula */
+}
+
+a.link-text:hover {
+    color: var(--color-accent-red);
+    text-decoration: underline;
 }
 
 
@@ -373,6 +396,7 @@ p, ul li, ol li,
     margin-bottom: 8px;
     font-family: 'Manrope', sans-serif;
     font-weight: 600;
+    color: #000000 !important; /* Labels en color oscuro forzado */
     text-transform: lowercase; /* Labels en minúscula */
 }
 
@@ -385,6 +409,7 @@ p, ul li, ol li,
     border-radius: 6px;
     font-family: 'Lato', sans-serif; /* Fuente consistente para inputs */
     font-size: 1.05em;
+    color: #000000 !important; /* Color de texto oscuro para inputs forzado */
     background-color: var(--color-very-light-grey);
     box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
