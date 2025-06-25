@@ -1330,3 +1330,38 @@ main, section, .container, .section-block, .hero-home, h1, h2, h3, p {
   line-height: 1.6;
   color: #333;
 }
+/* ======================================================= */
+/* ALINEACIÓN TIPOGRÁFICA CON GUÍA DE MARCA SPO       */
+/* ======================================================= */
+
+/* Títulos Principales (H1) */
+h1 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800; /* 'Black' es 800 o 900, 800 es más común */
+  font-size: clamp(2rem, 5vw, 2.8rem); /* Tamaño fluido y responsivo */
+}
+
+/* Subtítulos (H2) */
+h2 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700; /* 'Bold' es 700 */
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
+}
+
+/* Subtítulos Secundarios (H3) */
+h3 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500; /* 'Medium' es 500 */
+  font-size: clamp(1.5rem, 3.5vw, 1.8rem);
+}
+
+/* Cuerpo de Texto/Párrafos */
+p, li, span, label, a {
+  font-family: 'Lato', sans-serif; /* Usamos Lato como definiste para el cuerpo */
+  font-weight: 400; /* 'Regular' es 400 */
+}
+
+/* Damos Manrope al texto de los ítems de las listas que creamos */
+.impulso-item span {
+    font-family: 'Manrope', sans-serif;
+}
