@@ -1501,3 +1501,64 @@ body {
   padding: 1rem;
   font-size: 1.2rem;
 }
+/* ======================================================= */
+/* REDISEÑO COMPLETO DEL FORMULARIO DE CONTACTO       */
+/* ======================================================= */
+
+/* 1. Solución al "espacio fantasma" y estructura general */
+.contact-form {
+  margin-top: 2rem !important; /* Anulamos cualquier margen superior excesivo */
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 1.5rem; /* Espacio consistente ENTRE cada campo del formulario */
+}
+
+
+/* 2. Solución a la "invisibilidad": Estilo de los campos de texto */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  /* Hacemos visibles las cajas de texto */
+  background-color: #FFFFFF; /* Fondo blanco bien visible */
+  border: 1px solid #cccccc; /* Borde gris claro para definir el campo */
+  border-radius: 8px; /* Bordes redondeados, más moderno */
+  
+  /* Hacemos el texto interior cómodo para escribir y leer */
+  padding: 14px;
+  font-size: 1rem;
+  font-family: 'Lato', sans-serif;
+  color: #333;
+  
+  /* Hacemos que ocupe todo el ancho disponible */
+  width: 100%;
+  
+  /* Transición suave para el efecto de foco */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 3. Efecto de Foco: Resaltar el campo cuando el usuario hace clic */
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+  outline: none; /* Quitamos el borde por defecto del navegador */
+  border-color: #d96c47; /* El borde cambia al color de tu marca */
+  box-shadow: 0 0 0 3px rgba(217, 108, 71, 0.2); /* Un "resplandor" sutil */
+}
+
+
+/* 4. Estilo de las etiquetas (ej. "tu nombre:") */
+.contact-form label {
+  display: block; /* La etiqueta ocupa su propia línea */
+  margin-bottom: 0.5rem; /* Espacio entre la etiqueta y la caja de texto */
+  font-weight: 700; /* Texto en negrita para que se lea bien */
+  color: #333;
+}
+
+/* 5. Estilo del botón de envío para que sea fácil de presionar */
+.contact-form .button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
