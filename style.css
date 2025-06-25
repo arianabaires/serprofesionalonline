@@ -1,194 +1,128 @@
-/* style.css */
-
-/* ------ Variables ------ */
+/* style.css funcional y minimalista */
 :root {
-  --bg-light: #F7F3E9;
-  --bg-neutral: #EAE3DB;
-  --accent: #DC7A5F;
-  --accent-hover: #CD3B3B;
-  --text-dark: #1E1E1E;
-  --text-secondary: #7A5C40;
-  --shadow: rgba(0,0,0,0.08);
-  --shadow-strong: rgba(0,0,0,0.15);
+  --color-bg-light: #F7F3E9;
+  --color-bg-neutral: #EAE3DB;
+  --color-accent-terracotta: #DC7A5F;
+  --color-accent-red: #CD3B3B;
+  --color-shadow: rgba(0,0,0,0.1);
+  --color-text-dark: #1E1E1E;
+  --color-text-secondary: #7A5C40;
+  --font-sans: 'Manrope', sans-serif;
 }
 
-/* ------ Reset base ------ */
-* { box-sizing: border-box; margin:0; padding:0; }
-html, body { height:100%; scroll-behavior: smooth; }
 body {
-  font-family:'Manrope',sans-serif;
-  background-color: var(--bg-light);
-  color: var(--text-dark);
-  overflow-x:hidden;
+  font-family: var(--font-sans);
+  background: var(--color-bg-light);
+  margin: 0;
+  color: var(--color-text-dark);
 }
 
-/* ------ Container útil ------ */
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 0 25px;
+a {
+  text-decoration: none;
+  color: var(--color-accent-red);
 }
 
-/* ------ Header ------ */
 .header-global {
-  background: var(--bg-light);
+  background: var(--color-bg-light);
+  border-bottom: 1px solid var(--color-bg-neutral);
+  box-shadow: 0 1px 4px var(--color-shadow);
   padding: 15px 0;
-  box-shadow: 0 2px 8px var(--shadow);
-  position:sticky;
-  top:0;
-  z-index:100;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
+
 .header-content {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
-.header-global .logo a {
-  font-size:1.4em;
-  font-weight:700;
-  text-transform:lowercase;
-  color: var(--text-dark);
-  text-decoration:none;
+
+.logo a {
+  font-weight: 700;
+  font-size: 1.4em;
+  color: var(--color-text-dark);
 }
+
 .desktop-nav ul {
-  display:flex;
-  list-style:none;
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-.desktop-nav li {
-  margin-left:25px;
-  position:relative;
-}
-.desktop-nav li:not(:last-child)::after {
-  content:'•';
-  position:absolute;
-  right:-15px;
-  color: var(--text-secondary);
-}
+
 .desktop-nav a {
-  text-decoration:none;
-  color: var(--text-dark);
-  font-weight:500;
-  text-transform:lowercase;
-  transition: color .3s;
-}
-.desktop-nav a:hover {
-  color: var(--accent);
-}
-.desktop-nav a::after {
-  content:'';
-  width:0;
-  height:2px;
-  background: var(--accent);
-  position:absolute;
-  left:0; bottom:-5px;
-  transition:width .3s;
-}
-.desktop-nav a:hover::after {
-  width:100%;
-}
-.desktop-cta .button {
-  margin-left:30px;
+  color: var(--color-text-dark);
+  font-weight: 500;
 }
 
-/* Mobile menu placeholders (if tienes script.js habilitado) */
-.hamburger-menu, .mobile-nav, .close-btn {
-  /* Se asume que lo tenés funcional */
+.button {
+  background: var(--color-accent-terracotta);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
 }
 
-/* ------ Hero ------ */
 .hero-home {
-  background: linear-gradient(135deg, var(--bg-light), var(--bg-neutral));
-  text-align:center;
-  padding:80px 25px;
-  position:relative;
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, var(--color-bg-light), var(--color-bg-neutral));
 }
-.hero-home .claim {
-  color: var(--text-secondary);
-  font-size:1.1em;
+
+.claim {
+  font-size: 1em;
+  color: var(--color-text-secondary);
+  margin-bottom: 10px;
 }
+
 .hero-home h1 {
-  font-size:3.2em;
-  margin: 0.4em 0;
-  line-height:1.1;
-}
-.hero-home .subclaim {
-  color: var(--text-secondary);
-  font-size:1.2em;
-  margin-bottom:40px;
-}
-.hero-home .button {
-  padding:15px 35px;
-  background: var(--accent);
-  color:white;
-  border-radius:8px;
-  font-weight:700;
-  text-decoration:none;
-  box-shadow: 0 5px 15px var(--shadow);
-  transition: transform .2s, background .3s;
-}
-.hero-home .button:hover {
-  background: var(--accent-hover);
-  transform: translateY(-3px);
+  font-size: 2.8em;
+  margin: 10px 0;
 }
 
-/* ------ Cuadrantes de beneficios ------ */
-.content-section {
-  padding:40px 25px;
+.subclaim {
+  font-size: 1.2em;
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--color-text-secondary);
 }
-.grid-2 {
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-  gap:30px;
+
+.container.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
+
 .benefit-item {
-  background:white;
-  padding:25px;
-  border-radius:12px;
-  box-shadow:0 8px 20px var(--shadow);
-  text-align:center;
-  transition: transform .2s;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px var(--color-shadow);
+  text-align: center;
 }
-.benefit-item:hover {
-  transform: translateY(-5px);
-}
+
 .benefit-item i {
-  color: var(--accent);
-  font-size:2em;
-  margin-bottom:10px;
-}
-.benefit-item h3 {
-  margin-bottom:15px;
-}
-.benefit-item p {
-  line-height:1.5;
+  font-size: 2em;
+  color: var(--color-accent-terracotta);
+  margin-bottom: 10px;
 }
 
-/* ------ Footer ------ */
 .footer {
-  background: var(--text-dark);
-  color:white;
-  text-align:center;
-  padding:40px 20px;
-  font-size:0.9em;
-}
-.footer a {
-  color:white;
-  text-decoration:none;
-}
-.footer a:hover {
-  color: var(--accent);
+  text-align: center;
+  padding: 40px 20px;
+  background: #1E1E1E;
+  color: white;
+  font-size: 0.9em;
 }
 
-/* ------ Responsive ajustes ------ */
-@media(max-width: 992px){
-  .desktop-nav, .desktop-cta { display:none; }
-  .hamburger-menu { display:block; }
-  .hero-home h1 { font-size:2.5em; }
-  .hero-home .subclaim { font-size:1.1em; }
-}
-@media(max-width:576px){
-  .hero-home { padding:60px 15px; }
-  .hero-home h1 { font-size:2em; }
-  .hero-home .subclaim { font-size:1em; }
-  .benefit-item { padding:20px; }
+.footer a {
+  color: white;
 }
