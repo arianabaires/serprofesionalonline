@@ -1350,8 +1350,8 @@ body {
 
 /* --- 1. Sección Hero --- */
 .page-impulso-inicial .hero-impulso {
-  background-color: #333; /* Fondo gris oscuro */
-  color: #F7F3E9; /* Color hueso para el texto */
+  background-color: #d96c47; /* NUEVO: Fondo color terracota */
+  color: #F7F3E9;
   padding: 5rem 1.5rem;
   text-align: center;
 }
