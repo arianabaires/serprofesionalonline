@@ -71,3 +71,29 @@ body {
     color: #F7F3E9;
     text-decoration: none;
 }
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+  align-items: stretch;
+}
+
+.benefit-item {
+  background-color: var(--color-bg-light);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px var(--color-shadow);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.benefit-item:hover {
+  transform: translateY(-5px);
+}
+
+.benefit-item i {
+  color: var(--color-accent-terracotta);
+  margin-bottom: 15px;
+  display: block;
+}
