@@ -460,38 +460,6 @@ p, ul li, ol li, .blog-list article.blog-entry p,
     opacity: 1;
     transform: translateY(0);
 }
-
-/* --- Custom Cursor --- */
-#custom-cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 9999;
-    width: 16px;
-    height: 16px;
-    background-color: var(--color-accent-terracotta);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 15px var(--color-accent-terracotta), 0 0 5px var(--color-accent-terracotta);
-    transition: transform 0.1s ease-out, width 0.2s ease, height 0.2s ease;
-    mix-blend-mode: difference;
-    filter: blur(2px);
-}
-
-/* Ocultar cursor nativo */
-body {
-    cursor: none;
-}
-
-/* Cursor hover effects */
-a:hover ~ #custom-cursor, button:hover ~ #custom-cursor, .blog-entry:hover ~ #custom-cursor,
-input:hover ~ #custom-cursor, textarea:hover ~ #custom-cursor, label:hover ~ #custom-cursor {
-    width: 30px;
-    height: 30px;
-    box-shadow: 0 0 25px var(--color-accent-red), 0 0 10px var(--color-accent-red);
-}
-
 /* --- Responsive Design --- */
 @media (max-width: 992px) {
     .desktop-nav, .desktop-cta {
