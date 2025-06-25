@@ -615,31 +615,39 @@ input:hover ~ #custom-cursor, textarea:hover ~ #custom-cursor, label:hover ~ #cu
   }
 }
 /* ================================================== */
-/* AJUSTE DE ESPACIOS VERTICALES (PADDING)     */
+/* PRUEBA 2: AJUSTE FORZADO DE ESPACIOS VERTICALES   */
 /* ================================================== */
 
-/* Reduce el espacio vertical para las secciones de contenido estándar.
-  El valor original probablemente es muy alto (ej. 8rem o 10rem).
-  Prueba con valores entre 3rem y 5rem hasta que te guste.
+/*
+  Esta versión usa !important para tener máxima prioridad
+  y también ajusta los márgenes (margin) por si el espacio
+  estaba ahí y no en el padding.
 */
+
 .content-section {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 
-/*
-  Ajuste específico para la sección del formulario de contacto,
-  ya que suele necesitar un poco menos de espacio superior
-  para sentirse conectada con la sección anterior.
-*/
 #contact-section {
-  padding-top: 2rem;
+  padding-top: 2rem !important;
+  padding-bottom: 4rem !important; /* Mantenemos algo de espacio inferior */
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.hero-home {
+  padding-bottom: 5rem !important;
+  margin-bottom: 0 !important;
 }
 
 /*
-  Reduce el espacio inferior de la sección principal (hero),
-  que es el que causa el primer gran salto visible.
+  Ajuste adicional: A veces los títulos (h2) dentro de las
+  secciones tienen un margen superior que genera espacio extra.
+  Esta regla lo neutraliza.
 */
-.hero-home {
-  padding-bottom: 5rem;
+.content-section .section-block h2 {
+    margin-top: 0 !important;
 }
