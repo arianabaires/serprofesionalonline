@@ -551,3 +551,66 @@ input:hover ~ #custom-cursor, textarea:hover ~ #custom-cursor, label:hover ~ #cu
         top: 3px;
     }
 }
+/* --- Estilos para la sección "¿Para quién es este espacio?" --- */
+
+/* Contenedor de la grilla */
+.quien-grid {
+  display: grid;
+  /* Define 3 columnas de igual tamaño */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 2rem; /* Espacio entre los elementos */
+  margin-top: 2rem;
+}
+
+/* Cada elemento individual de la grilla */
+.quien-item {
+  text-align: left; /* Alinea el texto a la izquierda */
+  display: flex; /* Usamos flex para alinear icono y texto */
+  flex-direction: column; /* Ponemos el icono arriba y el texto abajo */
+  align-items: flex-start; /* Alineamos los items a la izquierda */
+}
+
+/* Estilo para los íconos */
+.quien-item i {
+  font-size: 2rem; /* Tamaño del ícono */
+  margin-bottom: 1rem; /* Espacio debajo del ícono */
+  color: #333; /* Color oscuro para el ícono, como en el resto de tu web */
+  background-color: #f8f5f2; /* Un fondo muy sutil si se quiere */
+  padding: 10px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 20px; /* Ajuste para centrar el icono verticalmente */
+}
+
+/* Estilo para el párrafo de texto */
+.quien-item p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0; /* Quitamos márgenes por defecto del párrafo */
+}
+
+
+/* --- Adaptación para celulares (Layout responsivo) --- */
+@media (max-width: 768px) {
+  .quien-grid {
+    /* En pantallas chicas, mostramos 2 columnas */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .quien-grid {
+    /* En pantallas muy chicas, mostramos 1 sola columna */
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .quien-item {
+    /* Centramos el contenido en la vista de una columna */
+    align-items: center;
+    text-align: center;
+  }
+}
