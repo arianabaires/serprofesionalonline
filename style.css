@@ -614,3 +614,32 @@ input:hover ~ #custom-cursor, textarea:hover ~ #custom-cursor, label:hover ~ #cu
     text-align: center;
   }
 }
+/* ================================================== */
+/* AJUSTE DE ESPACIOS VERTICALES (PADDING)     */
+/* ================================================== */
+
+/* Reduce el espacio vertical para las secciones de contenido estándar.
+  El valor original probablemente es muy alto (ej. 8rem o 10rem).
+  Prueba con valores entre 3rem y 5rem hasta que te guste.
+*/
+.content-section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/*
+  Ajuste específico para la sección del formulario de contacto,
+  ya que suele necesitar un poco menos de espacio superior
+  para sentirse conectada con la sección anterior.
+*/
+#contact-section {
+  padding-top: 2rem;
+}
+
+/*
+  Reduce el espacio inferior de la sección principal (hero),
+  que es el que causa el primer gran salto visible.
+*/
+.hero-home {
+  padding-bottom: 5rem;
+}
