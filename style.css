@@ -62,7 +62,7 @@ body {
 .header-global .logo a {
     font-family: 'Manrope', sans-serif;
     font-weight: 700;
-    font-size: 1.4em; /* Ligeramente más pequeño para delicadeza */
+    font-size: 1.6em; /* Más pequeño y delicado */
     color: #1E1E1E !important; /* FORZADO CON HEX */
     text-decoration: none;
     text-transform: lowercase; /* Nombre de la marca siempre en minúscula */
@@ -274,25 +274,6 @@ body {
 }
 
 .section-block {
-  .grid-2 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.benefit-item {
-    background-color: var(--color-bg-light);
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px var(--color-shadow);
-    text-align: center;
-}
-
-.benefit-item i {
-    color: var(--color-accent-terracotta);
-    margin-bottom: 10px;
-}
     margin-bottom: 40px;
     background-color: var(--color-bg-light);
     padding: 40px;
@@ -302,7 +283,6 @@ body {
     overflow: hidden;
     background-image: linear-gradient(45deg, var(--color-bg-light) 0%, var(--color-bg-neutral) 100%);
     background-size: cover;
-    /* mix-blend-mode: multiply; ¡REMOVIDO PARA EVITAR PROBLEMAS DE CLARIDAD! */
 }
 
 /* Textura de ruido sutil en los bloques */
@@ -326,11 +306,16 @@ body {
 
 
 /* Forzado de color oscuro para todo el contenido textual general */
-h1, h2, h3, h4, h5, h6,
-p, ul li, ol li,
-.contact-form label,
-.contact-form input[type="text"], .contact-form input[type="email"], .contact-form textarea {
-    color: #000000 !important; /* FORZADO A NEGRO ABSOLUTO #000000 con !important para máxima legibilidad!!! */
+h1, h2, h3, h4, h5, h6 {
+    color: #000000 !important; /* FORZADO A NEGRO ABSOLUTO #000000 con !important */
+    margin-top: 0;
+    font-weight: 700;
+}
+
+p, ul li, ol li, .blog-list article.blog-entry p,
+.blog-post p, .blog-post ol li, .blog-post em, .blog-cta p,
+.contact-form label, .contact-form input[type="text"], .contact-form input[type="email"], .contact-form textarea {
+    color: #000000 !important; /* FORZADO A NEGRO ABSOLUTO #000000 con !important */
 }
 
 /* Textos secundarios (claims y subclaims) que deben ser más claros */
@@ -340,7 +325,7 @@ p, ul li, ol li,
 
 /* Footer siempre visible y claro */
 .footer {
-    background-color: #1E1E1E !important; /* Fondo oscuro forzado con HEX */
+    background-color: #1E1E1E !important;
     color: #F7F3E9 !important; /* ¡Color de texto claro forzado con HEX para que se vea! */
     text-align: center;
     padding: 40px 20px;
@@ -364,33 +349,33 @@ p, ul li, ol li,
 
 /* Blog listado y posts - color de texto forzado */
 .blog-list article.blog-entry h3 {
-    color: #000000 !important; /* Forzado a oscuro */
+    color: #000000 !important;
 }
 .blog-list article.blog-entry h3 a {
-    color: #000000 !important; /* Forzado a oscuro */
+    color: #000000 !important;
     text-decoration: none;
 }
 .blog-list article.blog-entry h3 a:hover {
     color: var(--color-accent-terracotta);
 }
 .blog-list article.blog-entry p {
-    color: #000000 !important; /* Forzado a oscuro */
+    color: #000000 !important;
 }
 
 .blog-post h2 {
-    color: #000000 !important; /* Forzado a oscuro */
+    color: #000000 !important;
 }
 .blog-post h3, .blog-post h4 {
-    color: var(--color-medium-brown) !important; /* Mantener este marrón para subtítulos */
+    color: var(--color-medium-brown) !important;
 }
 .blog-post p {
-    color: #000000 !important; /* Forzado a oscuro en todos los párrafos de post */
+    color: #000000 !important;
 }
 .blog-post ol li {
-    color: #000000 !important; /* Forzado a oscuro en items de lista ordenados */
+    color: #000000 !important;
 }
-.blog-post em { /* Para texto en cursiva dentro de posts (ej. gráficos mentales) */
-    color: #000000 !important; /* Forzado a oscuro en em (ej. gráficos mentales) */
+.blog-post em {
+    color: #000000 !important;
 }
 
 
@@ -405,7 +390,7 @@ p, ul li, ol li,
 
 .blog-cta p {
     font-size: 1.1em;
-    color: #000000 !important; /* Color de texto oscuro forzado */
+    color: #000000 !important;
 }
 
 /* --- Formulario de Contacto (Nuevo Estilo) --- */
@@ -426,8 +411,8 @@ p, ul li, ol li,
     margin-bottom: 8px;
     font-family: 'Manrope', sans-serif;
     font-weight: 600;
-    color: #000000 !important; /* Labels en color oscuro forzado */
-    text-transform: lowercase; /* Labels en minúscula */
+    color: #000000 !important;
+    text-transform: lowercase;
 }
 
 .contact-form input[type="text"],
@@ -437,9 +422,9 @@ p, ul li, ol li,
     padding: 12px;
     border: 1px solid var(--color-light-grey);
     border-radius: 6px;
-    font-family: 'Lato', sans-serif; /* Fuente consistente para inputs */
+    font-family: 'Lato', sans-serif;
     font-size: 1.05em;
-    color: #000000 !important; /* Color de texto oscuro para inputs forzado */
+    color: #000000 !important;
     background-color: var(--color-very-light-grey);
     box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -485,13 +470,13 @@ p, ul li, ol li,
     z-index: 9999;
     width: 16px;
     height: 16px;
-    background-color: var(--color-accent-terracotta); /* Color correcto de la paleta */
+    background-color: var(--color-accent-terracotta);
     border-radius: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 0 0 15px var(--color-accent-terracotta), 0 0 5px var(--color-accent-terracotta);
     transition: transform 0.1s ease-out, width 0.2s ease, height 0.2s ease;
-    mix-blend-mode: difference; /* Efecto Dendra, si funciona bien */
-    filter: blur(2px); /* Suavizar el punto */
+    mix-blend-mode: difference;
+    filter: blur(2px);
 }
 
 /* Ocultar cursor nativo */
@@ -565,29 +550,4 @@ input:hover ~ #custom-cursor, textarea:hover ~ #custom-cursor, label:hover ~ #cu
         font-size: 1.2em;
         top: 3px;
     }
-}
-/* --- FIX TOTAL: máxima legibilidad en .section-block --- */
-
-/* 1. Reducir opacidad de la textura de fondo */
-.section-block::before {
-  opacity: 0.2 !important; /* en lugar de 0.6, conserva textura sin lavar el texto */
-}
-
-/* 2. Forzar color negro absoluto en todos los textos posibles dentro del bloque */
-.section-block p,
-.section-block h2,
-.section-block h3,
-.section-block li,
-.section-block span,
-.section-block strong,
-.section-block em {
-  color: #000000 !important;
-  font-weight: 500;
-  line-height: 1.6;
-}
-
-/* 3. Opcional: Reforzar color del título principal si se ve gris */
-.section-block h2 {
-  font-weight: 700;
-  font-size: 1.6em;
 }
