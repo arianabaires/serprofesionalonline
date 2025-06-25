@@ -270,8 +270,9 @@ body {
 
 /* --- Secciones de Contenido (General) --- */
 .content-section {
-    padding: 20px 25px; /* Reducido de 40px a 20px */
+    padding: 40px 25px;
 }
+
 .section-block {
   .grid-2 {
     display: grid;
