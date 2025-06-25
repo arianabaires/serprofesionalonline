@@ -1562,3 +1562,44 @@ body {
     padding: 1rem;
     font-size: 1.1rem;
 }
+/* ======================================================= */
+/* ESTILOS PARA EL BLOQUE "SOFT CTA" (IMPULSO INICIAL)  */
+/* ======================================================= */
+
+.soft-cta-block {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  margin: 2rem 0; /* Le da un poco de aire arriba y abajo */
+  border: 1px solid #EAE6E1; /* Borde muy sutil */
+  border-radius: 12px;
+  background-color: #fff; /* Fondo blanco para separarlo del fondo general */
+}
+
+.soft-cta-block h3 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.soft-cta-block p {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+/* Estilo para un botón secundario (solo borde) */
+.button.button-secondary {
+  background-color: transparent;
+  color: #d96c47;
+  border: 2px solid #d96c47;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.button.button-secondary:hover {
+  background-color: #d96c47;
+  color: #fff;
+}
