@@ -1282,3 +1282,51 @@ main, section, .container, .section-block, .hero-home, h1, h2, h3, p {
     /* Le devolvemos su padding original al "hero" para que se vea bien */
     padding: 5rem 2rem !important;
 }
+/* ======================================================= */
+/* ESTILO LISTAS EN PÁGINA IMPULSO INICIAL (VERSIÓN FINAL) */
+/* ======================================================= */
+
+/* Contenedor principal de las listas */
+.impulso-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Espacio entre cada tarjeta */
+  margin-top: 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+/* Cada tarjeta/item de la lista */
+.impulso-item {
+  display: flex;
+  flex-direction: row; /* Pone el ícono a la izquierda del texto */
+  align-items: center; /* Centra verticalmente el ícono con el texto */
+  gap: 1.5rem; /* Espacio entre el ícono y el texto */
+  background-color: #FFFFFF; /* Fondo blanco */
+  padding: 1.25rem;
+  border-radius: 12px;
+  border: 1px solid #EAE6E1;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.impulso-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+}
+
+/* El ícono de cada item */
+.impulso-item i {
+  font-size: 1.75rem;
+  color: #d96c47; /* Color terracota de la marca */
+  flex-shrink: 0;
+  width: 30px; /* Ancho fijo para alineación perfecta */
+  text-align: center;
+}
+
+/* El texto de cada item */
+.impulso-item span {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
