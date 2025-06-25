@@ -640,3 +640,645 @@ main, section, .container, .section-block, .hero-home, h1, h2, h3, p {
     /* Le devolvemos su padding original al "hero" para que se vea bien */
     padding: 5rem 2rem !important;
 }
+/* style.css */
+
+/* --- Paleta de Colores (Hex Codes extraídos de la imagen y optimizados) --- */
+:root {
+    --color-text-dark: #1E1E1E; /* Casi negro para textos principales */
+    --color-bg-light: #F7F3E9; /* Blanco/crema para fondos claros y principales */
+    --color-accent-terracotta: #DC7A5F; /* Terracota para acentos y botones principales */
+    --color-accent-red: #CD3B3B; /* Rojo para acentos más fuertes o estados hover */
+    --color-bg-neutral: #EAE3DB; /* Beige cálido para secciones, fondos */
+    --color-bg-subtle: #DDC8A4; /* Beige arena para fondos muy sutiles o elementos */
+    --color-text-secondary: #7A5C40; /* Marrón medio para claims o textos secundarios */
+    --color-text-light: #BFA7F0; /* Usado para los puntos separadores del menú, etc. */
+    --color-shadow: rgba(0, 0, 0, 0.08); /* Sombra suave para elementos */
+    --color-shadow-strong: rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+    --color-link-hover: #CD3B3B; /* Color al pasar el mouse sobre links */
+    /* Variables para RGB para uso en rgba() */
+    --color-accent-terracotta-rgb: 220, 122, 95;
+    --color-accent-red-rgb: 205, 59, 59;
+}
+
+/* --- Base --- */
+body {
+    font-family: 'Manrope', sans-serif;
+    color: #000000 !important; /* ¡¡¡FORZADO A NEGRO PURO #000000 con !important para asegurar LEGIBILIDAD en todo el body!!! */
+    line-height: 1.6;
+    background-color: var(--color-bg-light); /* Fondo general principal */
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased; /* Mejor renderizado de fuentes en WebKit */
+    -moz-osx-font-smoothing: grayscale; /* Mejor renderizado de fuentes en Firefox */
+    position: relative;
+    overflow-x: hidden; /* Evita scroll horizontal */
+    /* Textura de ruido sutil en el body */
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8ZmlsdGVyIGlkPSJub2lzZSI+CiAgPHZ1cmxpZW4gYmFzZUZyZXF1ZW5jeT0iLjIiIG51bU9jdGF2ZXM9IjIiIHN0aXRjaFRpbGVzPSJub3dyaXgiIHR5cGU9ImZyYWN0YWxOb2lzZSIvPgogPC9maWx0ZXI+CiA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRjNGM0U5Ii8+CiA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI25vaXNlKSIgb3BhY2l0eT0iLjA0Ii8+Cjwvc3ZnPg==');
+    background-repeat: repeat;
+    background-size: 60px 60px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+/* --- Header Global --- */
+.header-global {
+    background-color: var(--color-bg-light);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--color-bg-neutral);
+    box-shadow: 0 2px 8px var(--color-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-global .logo a {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 1.6em; /* Más pequeño y delicado */
+    color: #1E1E1E !important; /* FORZADO CON HEX */
+    text-decoration: none;
+    text-transform: lowercase; /* Nombre de la marca siempre en minúscula */
+    letter-spacing: -0.03em;
+    padding: 5px 0; /* Un poco más de padding alrededor del logo */
+}
+
+.header-global nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.header-global nav ul li {
+    margin-left: 25px;
+    position: relative;
+}
+
+.header-global nav ul li:not(:last-child)::after { /* Puntitos separadores */
+    content: '•';
+    position: absolute;
+    right: -15px;
+    color: var(--color-text-light); /* Color tenue para el punto */
+    font-size: 0.8em;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header-global nav ul li a {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1em;
+    font-weight: 500;
+    color: #1E1E1E !important; /* FORZADO CON HEX */
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+    text-transform: lowercase; /* Links del menú en minúscula */
+}
+
+.header-global nav ul li a:hover {
+    color: var(--color-accent-terracotta);
+}
+
+.header-global nav ul li a::after { /* Underline effect on hover */
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--color-accent-terracotta);
+    transition: width 0.3s ease;
+}
+
+.header-global nav ul li a:hover::after {
+    width: 100%;
+}
+
+.desktop-cta {
+    margin-left: 30px;
+}
+
+
+/* Hamburguer Menu (Mobile) */
+.hamburger-menu {
+    display: none;
+    font-size: 1.8em;
+    cursor: pointer;
+    color: #1E1E1E !important; /* FORZADO CON HEX */
+}
+
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg-light);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+    transition: transform 0.4s ease-in-out;
+    transform: translateX(100%);
+    overflow-y: auto;
+}
+
+.mobile-nav.is-active {
+    transform: translateX(0);
+    display: flex;
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.mobile-nav ul li {
+    margin: 25px 0;
+}
+
+.mobile-nav ul li a {
+    font-size: 1.8em;
+    color: #1E1E1E !important; /* FORZADO CON HEX */
+    text-decoration: none;
+    text-transform: lowercase;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+}
+
+.mobile-nav .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 2.2em;
+    cursor: pointer;
+    color: #1E1E1E !important; /* FORZADO CON HEX */
+}
+
+/* --- Hero Section (Home Page) --- */
+.hero-home {
+    background-color: var(--color-bg-light);
+    padding: 80px 25px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(135deg, var(--color-bg-light) 0%, var(--color-bg-neutral) 100%);
+}
+
+.hero-home .claim {
+    font-size: 1.1em;
+    font-family: 'Lato', sans-serif;
+    color: var(--color-text-secondary) !important; /* Este sí debe ser más claro por estética */
+    margin-bottom: 0.5em;
+}
+
+.hero-home h1 {
+    font-size: 3.8em;
+    margin-bottom: 0.4em;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    font-weight: 700;
+}
+
+.hero-home .subclaim {
+    font-size: 1.3em;
+    font-family: 'Lato', sans-serif;
+    color: var(--color-text-secondary) !important; /* Este sí debe ser más claro por estética */
+    max-width: 750px;
+    margin: 0 auto 40px auto;
+}
+
+/* Letras clave de fondo (SPO) */
+.hero-home::before, .hero-home::after {
+    content: 'SPO';
+    position: absolute;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 900;
+    font-size: 25em;
+    color: var(--color-bg-subtle);
+    opacity: 0.08;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+}
+
+.hero-home::before {
+    top: -100px;
+    left: -100px;
+    transform: rotate(-15deg);
+}
+
+.hero-home::after {
+    bottom: -100px;
+    right: -100px;
+    transform: rotate(15deg);
+}
+
+
+/* --- Botones --- */
+.button {
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: var(--color-accent-terracotta);
+    color: var(--color-off-white-cream);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    font-family: 'Manrope', sans-serif;
+    /* text-transform: lowercase; ¡REMOVIDO para que el HTML controle la capitalización de botones! */
+    box-shadow: 0 5px 15px var(--color-shadow);
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: var(--color-accent-red);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px var(--color-shadow-strong);
+}
+
+/* --- Secciones de Contenido (General) --- */
+.content-section {
+    padding: 40px 25px;
+}
+
+.section-block {
+    margin-bottom: 40px;
+    background-color: var(--color-bg-light);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px var(--color-shadow);
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(45deg, var(--color-bg-light) 0%, var(--color-bg-neutral) 100%);
+    background-size: cover;
+}
+
+/* Textura de ruido sutil en los bloques */
+.section-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8ZmlsdGVyIGlkPSJub2lzZSI+CiAgPHZ1cmxpZW4gYmFzZUZyZXF1ZW5jeT0iLjIiIG51bU9jdGF2ZXM9IjIiIHN0aXRjaFRpbGVzPSJub3dyaXgiIHR5cGU9ImZyYWN0YWxOb2lzZSIvPgogPC9maWx0ZXI+CiA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRkZGRkZGIi8+CiA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2hhc2hmaWx0ZXIpIiBvcGFjaXR5PSIuMDQiLz4KPC9zdmc+');
+    background-size: 60px 60px;
+    opacity: 0.2 !important; /* REDUCIDO PARA MAYOR CONTRASTE CON EL TEXTO */
+    pointer-events: none;
+    z-index: 1;
+}
+.section-block > *:not(::before) {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Forzado de color oscuro para todo el contenido textual general */
+h1, h2, h3, h4, h5, h6 {
+    color: #000000 !important; /* FORZADO A NEGRO ABSOLUTO #000000 con !important */
+    margin-top: 0;
+    font-weight: 700;
+}
+
+p, ul li, ol li, .blog-list article.blog-entry p,
+.blog-post p, .blog-post ol li, .blog-post em, .blog-cta p,
+.contact-form label, .contact-form input[type="text"], .contact-form input[type="email"], .contact-form textarea {
+    color: #000000 !important; /* FORZADO A NEGRO ABSOLUTO #000000 con !important */
+}
+
+/* Textos secundarios (claims y subclaims) que deben ser más claros */
+.hero-home .claim, .hero-home .subclaim, .blog-list article.blog-entry p {
+    color: var(--color-text-secondary) !important; /* Marrón medio para descripciones/claims */
+}
+
+/* Footer siempre visible y claro */
+.footer {
+    background-color: #1E1E1E !important;
+    color: #F7F3E9 !important; /* ¡Color de texto claro forzado con HEX para que se vea! */
+    text-align: center;
+    padding: 40px 20px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9em;
+}
+
+.footer p {
+    margin: 5px 0;
+    color: inherit !important; /* Hereda el color claro del footer */
+}
+
+.footer a {
+    color: inherit !important; /* Hereda el color claro del footer */
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: var(--color-accent-terracotta);
+}
+
+/* Blog listado y posts - color de texto forzado */
+.blog-list article.blog-entry h3 {
+    color: #000000 !important;
+}
+.blog-list article.blog-entry h3 a {
+    color: #000000 !important;
+    text-decoration: none;
+}
+.blog-list article.blog-entry h3 a:hover {
+    color: var(--color-accent-terracotta);
+}
+.blog-list article.blog-entry p {
+    color: #000000 !important;
+}
+
+.blog-post h2 {
+    color: #000000 !important;
+}
+.blog-post h3, .blog-post h4 {
+    color: var(--color-medium-brown) !important;
+}
+.blog-post p {
+    color: #000000 !important;
+}
+.blog-post ol li {
+    color: #000000 !important;
+}
+.blog-post em {
+    color: #000000 !important;
+}
+
+
+.blog-cta {
+    background-color: var(--color-light-beige-sand);
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 50px;
+    text-align: center;
+    box-shadow: 0 4px 10px var(--color-shadow);
+}
+
+.blog-cta p {
+    font-size: 1.1em;
+    color: #000000 !important;
+}
+
+/* --- Formulario de Contacto (Nuevo Estilo) --- */
+.contact-form {
+    margin-top: 30px;
+    text-align: left;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    color: #000000 !important;
+    text-transform: lowercase;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-light-grey);
+    border-radius: 6px;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.05em;
+    color: #000000 !important;
+    background-color: var(--color-very-light-grey);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: var(--color-accent-terracotta);
+    outline: none;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.08), 0 0 0 3px rgba(var(--color-accent-terracotta-rgb), 0.2);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.contact-form button.button {
+    width: auto;
+    margin-top: 10px;
+}
+
+
+/* --- Animaciones (Scroll Reveal) --- */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Custom Cursor --- */
+#custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    width: 16px;
+    height: 16px;
+    background-color: var(--color-accent-terracotta);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 15px var(--color-accent-terracotta), 0 0 5px var(--color-accent-terracotta);
+    transition: transform 0.1s ease-out, width 0.2s ease, height 0.2s ease;
+    mix-blend-mode: difference;
+    filter: blur(2px);
+}
+
+/* Ocultar cursor nativo */
+body {
+    cursor: none;
+}
+
+/* Cursor hover effects */
+a:hover ~ #custom-cursor, button:hover ~ #custom-cursor, .blog-entry:hover ~ #custom-cursor,
+input:hover ~ #custom-cursor, textarea:hover ~ #custom-cursor, label:hover ~ #custom-cursor {
+    width: 30px;
+    height: 30px;
+    box-shadow: 0 0 25px var(--color-accent-red), 0 0 10px var(--color-accent-red);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    .desktop-nav, .desktop-cta {
+        display: none;
+    }
+    .hamburger-menu {
+        display: block;
+    }
+    .hero-home h1 {
+        font-size: 2.8em;
+    }
+    .hero-home .subclaim {
+        font-size: 1.1em;
+    }
+    .hero-home::before, .hero-home::after {
+        display: none;
+    }
+    .section-block {
+        padding: 30px;
+    }
+    .blog-post h2 {
+        font-size: 2em;
+    }
+    /* Deshabilitar custom cursor en touch devices (o pantallas pequeñas) */
+    body {
+        cursor: default;
+    }
+    #custom-cursor {
+        display: none;
+    }
+    .mobile-nav.is-active {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.8em; }
+    h3 { font-size: 1.4em; }
+    p, ul li, ol li { font-size: 1em; }
+    .section-block {
+        padding: 20px;
+        margin-bottom: 40px;
+    }
+    .button {
+        padding: 12px 25px;
+        font-size: 0.9em;
+    }
+    .hero-home {
+        padding: 60px 15px;
+    }
+    .section-block ul li {
+        padding-left: 35px;
+    }
+    .section-block ul li i.fas {
+        font-size: 1.2em;
+        top: 3px;
+    }
+}
+/* --- Estilos para la sección "¿Para quién es este espacio?" --- */
+
+/* Contenedor de la grilla */
+.quien-grid {
+  display: grid;
+  /* Define 3 columnas de igual tamaño */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 2rem; /* Espacio entre los elementos */
+  margin-top: 2rem;
+}
+
+/* Cada elemento individual de la grilla */
+.quien-item {
+  text-align: left; /* Alinea el texto a la izquierda */
+  display: flex; /* Usamos flex para alinear icono y texto */
+  flex-direction: column; /* Ponemos el icono arriba y el texto abajo */
+  align-items: flex-start; /* Alineamos los items a la izquierda */
+}
+
+/* Estilo para los íconos */
+.quien-item i {
+  font-size: 2rem; /* Tamaño del ícono */
+  margin-bottom: 1rem; /* Espacio debajo del ícono */
+  color: #333; /* Color oscuro para el ícono, como en el resto de tu web */
+  background-color: #f8f5f2; /* Un fondo muy sutil si se quiere */
+  padding: 10px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 20px; /* Ajuste para centrar el icono verticalmente */
+}
+
+/* Estilo para el párrafo de texto */
+.quien-item p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0; /* Quitamos márgenes por defecto del párrafo */
+}
+
+
+/* --- Adaptación para celulares (Layout responsivo) --- */
+@media (max-width: 768px) {
+  .quien-grid {
+    /* En pantallas chicas, mostramos 2 columnas */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .quien-grid {
+    /* En pantallas muy chicas, mostramos 1 sola columna */
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .quien-item {
+    /* Centramos el contenido en la vista de una columna */
+    align-items: center;
+    text-align: center;
+  }
+}
+/* ================================================== */
+/* PRUEBA 3: DIAGNÓSTICO AGRESIVO DE ESPACIOS      */
+/* ¡OJO! La intención es que todo se junte DEMASIADO. */
+/* ================================================== */
+
+/* Reseteo general y agresivo para diagnosticar */
+main, section, .container, .section-block, .hero-home, h1, h2, h3, p {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* --- DESPUÉS DEL RESETEO, AÑADIMOS UN ESPACIO MÍNIMO Y CONTROLADO --- */
+/* Ahora que todo debería estar pegado, añadimos un espacio ÚNICO y controlado.
+   Esto se lo ponemos únicamente al bloque que está DENTRO de cada sección. */
+
+.section-block {
+    /* Un padding de 3rem arriba/abajo y 2rem a los lados */
+    padding: 3rem 2rem !important;
+}
+
+.hero-home .container {
+    /* Le devolvemos su padding original al "hero" para que se vea bien */
+    padding: 5rem 2rem !important;
+}
