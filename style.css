@@ -615,39 +615,28 @@ input:hover ~ #custom-cursor, textarea:hover ~ #custom-cursor, label:hover ~ #cu
   }
 }
 /* ================================================== */
-/* PRUEBA 2: AJUSTE FORZADO DE ESPACIOS VERTICALES   */
+/* PRUEBA 3: DIAGNÓSTICO AGRESIVO DE ESPACIOS      */
+/* ¡OJO! La intención es que todo se junte DEMASIADO. */
 /* ================================================== */
 
-/*
-  Esta versión usa !important para tener máxima prioridad
-  y también ajusta los márgenes (margin) por si el espacio
-  estaba ahí y no en el padding.
-*/
-
-.content-section {
-  padding-top: 4rem !important;
-  padding-bottom: 4rem !important;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-}
-
-#contact-section {
-  padding-top: 2rem !important;
-  padding-bottom: 4rem !important; /* Mantenemos algo de espacio inferior */
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-}
-
-.hero-home {
-  padding-bottom: 5rem !important;
-  margin-bottom: 0 !important;
-}
-
-/*
-  Ajuste adicional: A veces los títulos (h2) dentro de las
-  secciones tienen un margen superior que genera espacio extra.
-  Esta regla lo neutraliza.
-*/
-.content-section .section-block h2 {
+/* Reseteo general y agresivo para diagnosticar */
+main, section, .container, .section-block, .hero-home, h1, h2, h3, p {
     margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* --- DESPUÉS DEL RESETEO, AÑADIMOS UN ESPACIO MÍNIMO Y CONTROLADO --- */
+/* Ahora que todo debería estar pegado, añadimos un espacio ÚNICO y controlado.
+   Esto se lo ponemos únicamente al bloque que está DENTRO de cada sección. */
+
+.section-block {
+    /* Un padding de 3rem arriba/abajo y 2rem a los lados */
+    padding: 3rem 2rem !important;
+}
+
+.hero-home .container {
+    /* Le devolvemos su padding original al "hero" para que se vea bien */
+    padding: 5rem 2rem !important;
 }
