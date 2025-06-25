@@ -9,13 +9,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Manrope:wght@400;700&display=swap" rel="stylesheet"/>
+  <script src="https://kit.fontawesome.com/5dc58e4b4c.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="header-global">
+  <header class="header-global">
     <div class="container header-content">
-      <div class="logo">
-        <a href="index.html">impulso inicial</a>
-      </div>
+      <div class="logo"><a href="index.html">Impulso Inicial</a></div>
       <nav class="desktop-nav">
         <ul>
           <li><a href="index.html">inicio</a></li>
@@ -23,14 +22,12 @@
           <li><a href="impulso-inicial.html">consultoría</a></li>
         </ul>
       </nav>
-      <div class="desktop-cta">
-        <a class="button" href="mailto:contacto@impulsoinicial.com">contactanos</a>
-      </div>
+      <a href="mailto:contacto@impulsoinicial.com" class="button desktop-cta">contactanos</a>
       <div class="hamburger-menu">☰</div>
     </div>
-  </div>
+  </header>
 
-  <div class="mobile-nav">
+  <nav class="mobile-nav">
     <div class="close-btn">✕</div>
     <ul>
       <li><a href="index.html">inicio</a></li>
@@ -38,12 +35,14 @@
       <li><a href="impulso-inicial.html">consultoría</a></li>
       <li><a href="mailto:contacto@impulsoinicial.com">contactanos</a></li>
     </ul>
-  </div>
+  </nav>
 
   <section class="hero-home">
-    <p class="claim">Consultoría creativa en proyectos de impacto</p>
-    <h1 class="reveal-on-scroll">Conocé Impulso Inicial</h1>
-    <p class="subclaim reveal-on-scroll">Transformamos ideas en estrategias reales y activables para negocios, cultura y propósito.</p>
+    <div class="container">
+      <p class="claim">Consultoría creativa en proyectos de impacto</p>
+      <h1 class="reveal-on-scroll">Conocé Impulso Inicial</h1>
+      <p class="subclaim reveal-on-scroll">Transformamos ideas en estrategias reales y activables para negocios, cultura y propósito.</p>
+    </div>
   </section>
 
   <section class="content-section">
@@ -67,11 +66,13 @@
   </section>
 
   <footer class="footer">
-    <p>© 2025 Impulso Inicial · Todos los derechos reservados</p>
-    <p><a href="mailto:contacto@impulsoinicial.com">contacto@impulsoinicial.com</a></p>
+    <div class="container">
+      <p>© 2025 Impulso Inicial · Todos los derechos reservados</p>
+      <p><a href="mailto:contacto@impulsoinicial.com">contacto@impulsoinicial.com</a></p>
+    </div>
   </footer>
 
   <div id="custom-cursor"></div>
-  <script src="https://kit.fontawesome.com/5dc58e4b4c.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
 </body>
 </html>
