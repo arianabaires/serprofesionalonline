@@ -1348,20 +1348,24 @@ body {
   padding-top: 0; /* Quitamos el padding superior para que el hero pegue arriba */
 }
 
-/* --- 1. Sección Hero --- */
+/* --- 1. Sección Hero (Diseño Refinado) --- */
 .page-impulso-inicial .hero-impulso {
-  background-color: #d96c47; /* NUEVO: Fondo color terracota */
-  color: #F7F3E9;
-  padding: 5rem 1.5rem;
+  /* Quitamos el fondo de color */
+  background-color: transparent; 
+  padding: 5rem 1.5rem 4rem; /* Ajustamos un poco el padding inferior */
   text-align: center;
+  /* Añadimos una línea inferior como acento de diseño */
+  border-bottom: 1px solid #EAE6E1;
 }
 .page-impulso-inicial .hero-impulso h1 {
-  color: #fff;
+  /* El título ahora lleva el color de la marca */
+  color: #d96c47; 
   margin-bottom: 1rem;
 }
 .page-impulso-inicial .hero-impulso .subtitle {
   font-size: 1.25rem;
-  color: #F7F3E9;
+  /* El subtítulo vuelve a un color oscuro y legible */
+  color: #555; 
   max-width: 600px;
   margin: 0 auto;
 }
