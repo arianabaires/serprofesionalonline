@@ -2,71 +2,76 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>serprofesionalonline</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Impulso Inicial - Consultoría Creativa</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
-  <script defer src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="script.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Manrope:wght@400;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
-
-  <header class="header-global">
+  <div class="header-global">
     <div class="container header-content">
-      <div class="logo"><a href="index.html">serprofesionalonline</a></div>
+      <div class="logo">
+        <a href="index.html">impulso inicial</a>
+      </div>
       <nav class="desktop-nav">
         <ul>
           <li><a href="index.html">inicio</a></li>
-          <li><a href="impulso-inicial.html">impulso inicial</a></li>
-          <li><a href="blog.html">ideas</a></li>
-          <li><a href="#contacto">contacto</a></li>
+          <li><a href="blog.html">blog</a></li>
+          <li><a href="impulso-inicial.html">consultoría</a></li>
         </ul>
       </nav>
-      <a href="impulso-inicial.html" class="button desktop-cta">quiero empezar</a>
+      <div class="desktop-cta">
+        <a class="button" href="mailto:contacto@impulsoinicial.com">contactanos</a>
+      </div>
+      <div class="hamburger-menu">☰</div>
     </div>
-  </header>
+  </div>
+
+  <div class="mobile-nav">
+    <div class="close-btn">✕</div>
+    <ul>
+      <li><a href="index.html">inicio</a></li>
+      <li><a href="blog.html">blog</a></li>
+      <li><a href="impulso-inicial.html">consultoría</a></li>
+      <li><a href="mailto:contacto@impulsoinicial.com">contactanos</a></li>
+    </ul>
+  </div>
 
   <section class="hero-home">
-    <p class="claim">Presencia real para profesionales que hacen.</p>
-    <h1>Impulsá tu marca como profesional independiente</h1>
-    <p class="subclaim">Tu presencia digital no necesita ser perfecta. Solo tiene que ser real, clara y coherente con el valor que ofrecés.</p>
-    <a href="impulso-inicial.html" class="button">conocé el impulso inicial →</a>
+    <p class="claim">Consultoría creativa en proyectos de impacto</p>
+    <h1 class="reveal-on-scroll">Conocé Impulso Inicial</h1>
+    <p class="subclaim reveal-on-scroll">Transformamos ideas en estrategias reales y activables para negocios, cultura y propósito.</p>
   </section>
 
-  <section class="section-block">
-    <div class="container">
-      <h2>¿Qué hacemos en serprofesionalonline?</h2>
-      <p>Ayudamos a profesionales independientes y proyectos reales a ordenar y potenciar su comunicación digital. Nuestra filosofía es simple: no diseñamos marcas aspiracionales vacías, ni vendemos seguidores. Ofrecemos herramientas y estrategias concretas para que te encuentren, te entiendan y te contacten por el valor que realmente brindás.</p>
-    </div>
-  </section>
-
-  <section class="section-block">
-    <div class="container">
-      <h2>¿Para quién es este espacio?</h2>
-      <div class="grid-2">
-        <div class="benefit-item">
-          <i class="fas fa-user-tie fa-2x"></i>
-          <h3>Consultores y freelancers</h3>
-          <p>Profesionales que quieren ofrecer sus servicios con claridad y coherencia.</p>
-        </div>
-        <div class="benefit-item">
-          <i class="fas fa-hand-holding-usd fa-2x"></i>
-          <h3>Proyectos reales</h3>
-          <p>Emprendedores con propuestas de valor sólidas, que quieren ordenar su marca sin vender humo.</p>
-        </div>
-        <div class="benefit-item">
-          <i class="fas fa-bullhorn fa-2x"></i>
-          <h3>Marcas personales</h3>
-          <p>Personas que buscan una comunicación profesional, humana y fiel a lo que hacen.</p>
-        </div>
+  <section class="content-section">
+    <div class="container grid-2">
+      <div class="benefit-item reveal-on-scroll">
+        <i class="fas fa-bolt fa-2x"></i>
+        <h3>Estrategia</h3>
+        <p>Diseñamos rutas claras para marcas, equipos y productos. Combinamos creatividad, contexto y datos.</p>
+      </div>
+      <div class="benefit-item reveal-on-scroll">
+        <i class="fas fa-users fa-2x"></i>
+        <h3>Cultura</h3>
+        <p>Activamos valores, propósitos y dinámicas de equipo para que las organizaciones crezcan desde dentro.</p>
+      </div>
+      <div class="benefit-item reveal-on-scroll">
+        <i class="fas fa-lightbulb fa-2x"></i>
+        <h3>Innovación</h3>
+        <p>Acompañamos procesos de cambio, innovación abierta y diseño de nuevos productos y servicios.</p>
       </div>
     </div>
   </section>
 
-  <footer class="footer" id="contacto">
-    <p><strong>serprofesionalonline</strong><br>presencia real. sin vueltas.</p>
-    <p>blog | tuemail@serprofesionalonline.com | [tu número de whatsapp]</p>
-    <p>© 2025 serprofesionalonline. todos los derechos reservados.</p>
+  <footer class="footer">
+    <p>© 2025 Impulso Inicial · Todos los derechos reservados</p>
+    <p><a href="mailto:contacto@impulsoinicial.com">contacto@impulsoinicial.com</a></p>
   </footer>
 
+  <div id="custom-cursor"></div>
+  <script src="https://kit.fontawesome.com/5dc58e4b4c.js" crossorigin="anonymous"></script>
 </body>
 </html>
