@@ -1423,6 +1423,14 @@ body {
   padding: 1rem;
   border-radius: 8px;
   width: 100%;
+  text-align: left; /* Mantenemos el texto alineado a la izquierda dentro del paso */
+}
+
+/* En móvil, cuando los pasos se apilan, los centramos */
+@media (max-width: 991px) {
+    .page-impulso-inicial .step {
+        justify-content: center;
+    }
 }
 .page-impulso-inicial .step-number {
   background-color: #d96c47;
