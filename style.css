@@ -1330,6 +1330,12 @@ p, li, span, label, a {
 }
 
 /* Damos Manrope al texto de los ítems de las listas que creamos */
+/* ======================================= */
+/* RESTAURAR CURSOR PREDETERMINADO DEL NAVEGADOR  */
+/* ======================================= */
+body {
+    cursor: default !important;
+}
 .impulso-item span {
     font-family: 'Manrope', sans-serif;
 }
