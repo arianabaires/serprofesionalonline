@@ -1736,3 +1736,63 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+/* ======================================================= */
+/* SISTEMA DE DISEÑO RÍTMICO PARA LANDING IMPULSO (V5) */
+/* Unifica fondos, espaciados y títulos de sección.    */
+/* ======================================================= */
+
+/* --- Título Estándar para Todas las Secciones --- */
+.page-impulso-inicial .section-title {
+    text-align: center;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800; /* Más peso para más impacto */
+    font-size: clamp(1.8rem, 5vw, 2.2rem); /* Tamaño fluido */
+    color: #333;
+    margin-bottom: 0; /* Quitamos el margen para controlar el espacio con el padding de la sección */
+}
+
+
+/* --- Orquestación de Secciones --- */
+
+/* 1. Sección "Paso a paso" */
+.page-impulso-inicial .process-section {
+    background-color: transparent; /* Fondo principal (hueso) */
+    padding: 4rem 1.5rem;
+}
+.page-impulso-inicial .process-section .process-steps {
+    margin-top: 3rem; /* Espacio entre el título y los pasos */
+}
+
+/* 2. Sección "Opiniones Reales" */
+.page-impulso-inicial .testimonial-section-impulso {
+    background-color: #f8f5f2; /* Fondo secundario (gris claro) */
+    padding: 5rem 1.5rem;
+    border-top: 1px solid #EAE6E1;
+    border-bottom: 1px solid #EAE6E1;
+}
+
+/* 3. Sección "Valor del Impulso Inicial" (Precio) */
+.page-impulso-inicial .pricing-section {
+    background-color: transparent; /* Fondo principal (hueso) */
+    padding: 5rem 1.5rem;
+}
+/* No es necesario un título h3 para la card si ya lo pusimos en la sección */
+.page-impulso-inicial .pricing-card h3 {
+    display: none; /* Ocultamos el título dentro de la card para no repetir */
+}
+
+/* 4. Sección "Dudas Comunes" (FAQ) */
+.page-impulso-inicial .faq-section {
+    background-color: #f8f5f2; /* Fondo secundario (gris claro) */
+    padding: 5rem 1.5rem;
+    border-top: 1px solid #EAE6E1;
+}
+.page-impulso-inicial .faq-section .faq-grid {
+    margin-top: 3rem;
+}
+
+/* 5. Sección Final de Contacto */
+.page-impulso-inicial #contact-section {
+    background-color: transparent; /* Fondo principal (hueso) */
+    padding: 5rem 1.5rem;
+}
