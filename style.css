@@ -1796,3 +1796,49 @@ body {
     background-color: transparent; /* Fondo principal (hueso) */
     padding: 5rem 1.5rem;
 }
+/* ======================================================= */
+/* PULIDO FINAL DE DISEÑO Y COHESIÓN (V6)              */
+/* Unifica anchos, espaciado y mejora la tarjeta de precio */
+/* ======================================================= */
+
+/* --- 1. Definimos un ancho máximo para todos los bloques de contenido --- */
+.page-impulso-inicial .process-steps,
+.page-impulso-inicial .testimonial-grid,
+.page-impulso-inicial .faq-grid {
+    max-width: 900px; /* Ancho máximo consistente */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- 2. Ajustes a la tarjeta de precio para que se integre mejor --- */
+
+/* La sección que contiene la tarjeta ahora tendrá fondo y más aire */
+.page-impulso-inicial .pricing-section {
+    background-color: #f8f5f2; /* Fondo secundario gris claro */
+    padding: 6rem 1.5rem; /* MUCHO más aire vertical para que respire */
+    border-top: 1px solid #EAE6E1;
+}
+
+/* La tarjeta en sí: suavizamos el borde y mejoramos la sombra */
+.page-impulso-inicial .pricing-card {
+    border: 1px solid #ddd; /* Borde más suave */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07); /* Sombra más intencionada */
+}
+
+/* --- 3. Pequeños ajustes de ritmo en las otras secciones --- */
+
+/* Damos un fondo principal a los testimonios para alternar con el precio */
+.page-impulso-inicial .testimonial-section-impulso {
+    background-color: transparent;
+    padding-bottom: 3rem; /* Menos espacio abajo para conectar con el precio */
+}
+
+/* Devolvemos el fondo gris a las FAQ para seguir el ritmo */
+.page-impulso-inicial .faq-section {
+    background-color: #f8f5f2;
+}
+
+/* Aseguramos que el formulario de contacto final tenga buen espacio */
+.page-impulso-inicial #contact-section {
+    padding: 6rem 1.5rem;
+}
