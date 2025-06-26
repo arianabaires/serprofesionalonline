@@ -1672,3 +1672,67 @@ body {
     line-height: 1.7;
     color: #555;
 }
+/* ======================================================= */
+/* ESTILOS PARA LOS TESTIMONIOS (CORRECCIÓN)           */
+/* Este código da el formato de "tarjeta" a las opiniones */
+/* ======================================================= */
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Una columna en móviles */
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.testimonial-card {
+  background-color: #fff;
+  border: 1px solid #EAE6E1;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-card p {
+  font-family: 'Manrope', sans-serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 1.5rem; 
+  flex-grow: 1; 
+  position: relative;
+  padding-left: 2.5rem; /* Espacio para la comilla */
+}
+
+/* Comillas estilizadas para dar un toque de diseño */
+.testimonial-card p::before {
+  content: '“'; /* Comilla de apertura */
+  font-size: 5rem;
+  font-family: 'Georgia', serif; /* Usamos una fuente con más estilo para la comilla */
+  color: #EAE6E1; /* Un color muy sutil de fondo */
+  position: absolute;
+  left: -0.5rem;
+  top: -1rem;
+  z-index: 1;
+}
+
+.testimonial-card p {
+    position: relative;
+    z-index: 2; /* Nos aseguramos que el texto esté por encima de la comilla */
+}
+
+.testimonial-card strong {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  color: #555;
+  text-align: left; /* Alineamos el nombre a la izquierda junto con el texto */
+  padding-left: 2.5rem;
+}
+
+/* En pantallas más grandes, pasamos a 2 columnas */
+@media (min-width: 768px) {
+  .testimonial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
