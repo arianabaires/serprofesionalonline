@@ -1603,3 +1603,72 @@ body {
   background-color: #d96c47;
   color: #fff;
 }
+/* ======================================================= */
+/* ESTILOS NUEVAS SECCIONES LANDING IMPULSO (V4)     */
+/* ======================================================= */
+
+/* Título genérico para las nuevas secciones */
+.section-title {
+    text-align: center;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+/* --- Estilos para la Sección de "Filosofía / Cita" --- */
+.quote-section {
+    background-color: #f8f5f2;
+    padding: 4rem 1.5rem;
+    text-align: center;
+}
+.quote-section blockquote p {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 1.5rem auto;
+    color: #555;
+}
+.quote-section blockquote footer {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    color: #333;
+}
+
+/* --- Estilos para la Sección de Testimonios (reutiliza los de la home) --- */
+.testimonial-section-impulso {
+    padding: 4rem 1.5rem;
+}
+
+/* --- Estilos para la Sección de Preguntas Frecuentes (FAQ) --- */
+.faq-section {
+    padding: 2rem 1.5rem 4rem;
+    background-color: #f8f5f2;
+}
+.faq-grid {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.faq-item {
+    background-color: #fff;
+    border: 1px solid #EAE6E1;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+.faq-item h4 {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 0.75rem 0;
+}
+.faq-item p {
+    margin: 0;
+    line-height: 1.7;
+    color: #555;
+}
