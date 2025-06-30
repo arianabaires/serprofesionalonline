@@ -1842,3 +1842,84 @@ body {
 .page-impulso-inicial #contact-section {
     padding: 6rem 1.5rem;
 }
+/* ======================================================= */
+/* ESTILOS PARA EL NUEVO DISPLAY DE PRECIOS MULTIMONEDA  */
+/* ======================================================= */
+
+.multi-price-container {
+  display: flex;
+  justify-content: center; /* Centra los items horizontalmente */
+  align-items: center;   /* Centra los items verticalmente */
+  gap: 1.5rem; /* Espacio entre los precios */
+  margin: 1.5rem 0;
+  padding: 1rem 0;
+}
+
+.price-option {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* El precio principal (USD) - grande y protagonista */
+.price-option.price-primary {
+  padding: 0 1.5rem;
+  border-left: 1px solid #EAE6E1;
+  border-right: 1px solid #EAE6E1;
+}
+
+.price-option.price-primary .currency {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.price-option.price-primary .amount {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #333;
+  line-height: 1.1;
+}
+
+/* Los precios secundarios (ARS y UYU) - más sutiles */
+.price-option.price-secondary .currency {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #888;
+}
+
+.price-option.price-secondary .amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #555;
+  line-height: 1.2;
+}
+
+/* --- Adaptación para Celulares --- */
+@media (max-width: 600px) {
+  .multi-price-container {
+    flex-direction: column; /* Apilamos los precios verticalmente */
+    gap: 1rem;
+  }
+
+  /* Usamos 'order' para poner el precio principal (USD) arriba de todo */
+  .price-option.price-primary {
+    order: -1; /* El número más bajo va primero */
+    border: none;
+    padding: 0.5rem 0;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Ponemos los precios secundarios uno al lado del otro debajo del principal */
+  .price-option.price-secondary {
+    display: inline-block; /* Los ponemos en línea */
+    margin: 0 0.75rem; /* Con un espacio entre ellos */
+  }
+
+  /* Creamos un contenedor invisible para los precios secundarios */
+  .multi-price-container::before {
+    content: '';
+    display: block;
+    order: 0; /* Lo ponemos después del primario y antes de los secundarios */
+  }
+}
