@@ -2135,10 +2135,11 @@ main > .content-section:has(.testimonial-grid) {
     padding-left: 0; /* Reseteamos el padding que tenía antes para que se centre bien */
 }
 
-/* Y que la comilla gigante también se centre en este testimonio destacado (CORRECCIÓN FINAL) */
+/* Y que la comilla gigante también se centre en este testimonio destacado (VERSIÓN DEFINITIVA) */
 .testimonial-grid .testimonial-card:nth-child(3) p::before {
-  position: absolute !important; /* Forzamos la posición */
-  top: 1rem !important;        /* Forzamos el posicionamiento vertical */
+  content: '“'; /* ¡LA LÍNEA CLAVE QUE FALTABA! */
+  position: absolute !important;
+  top: 1rem !important;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
