@@ -1923,3 +1923,71 @@ body {
     order: 0; /* Lo ponemos después del primario y antes de los secundarios */
   }
 }
+/* ======================================================= */
+/* ESTILOS PARA LOS ARTÍCULOS DEL BLOG ("IDEAS")       */
+/* ======================================================= */
+
+/* Estilos generales para el contenido del post */
+.blog-post article {
+  max-width: 800px; /* Ancho máximo para buena legibilidad */
+  margin: 0 auto;
+}
+
+.blog-post article h2,
+.blog-post article h3,
+.blog-post article h4 {
+  font-family: 'Manrope', sans-serif;
+  color: #333;
+}
+
+.blog-post article p,
+.blog-post article li {
+  font-family: 'Lato', sans-serif;
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Estilos para las listas con íconos */
+.blog-post article ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 2rem 0;
+}
+
+.blog-post article ul li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.blog-post article ul li i {
+  margin-right: 1rem;
+  margin-top: 0.4rem;
+  color: #d96c47; /* Color de acento de la marca */
+}
+
+/* Estilo para la caja de Llamado a la Acción (CTA) al final del post */
+.blog-cta {
+  background-color: #f8f5f2;
+  border-top: 3px solid #d96c47;
+  padding: 2rem;
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.blog-cta p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.blog-cta .author-quote {
+  font-style: italic;
+  color: #555;
+  margin-top: 1rem;
+}
+
+.blog-cta .button {
+  margin-top: 1.5rem;
+  display: inline-block;
+}
