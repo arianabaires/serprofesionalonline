@@ -2046,3 +2046,17 @@ body {
         grid-template-columns: 1fr;
     }
 }
+/* Estilo para la cita de la fundadora en el CTA del blog */
+.blog-cta blockquote {
+    border-left: 3px solid #d96c47;
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: #555;
+}
+
+.blog-cta .author-quote {
+    font-style: normal;
+    font-weight: 700;
+    color: #333;
+}
