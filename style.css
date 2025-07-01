@@ -2060,3 +2060,55 @@ body {
     font-weight: 700;
     color: #333;
 }
+/* ======================================================= */
+/* SISTEMA DE DISEÑO RÍTMICO PARA LA PÁGINA DE INICIO (HOME) */
+/* ======================================================= */
+
+/* --- 1. Espaciado estándar para todas las secciones de contenido --- */
+.content-section {
+    padding: 5rem 1.5rem; /* Relleno vertical consistente */
+}
+
+/* --- 2. Alternancia de fondos de sección --- */
+
+/* La sección "¿Qué hacemos?" será la primera con fondo gris */
+main > .content-section:nth-of-type(2) {
+    background-color: #f8f5f2;
+    border-top: 1px solid #EAE6E1;
+}
+
+/* La sección "¿Para quién es?" (la 4ta sección) también tendrá fondo gris */
+main > .content-section:nth-of-type(4) {
+    background-color: #f8f5f2;
+    border-top: 1px solid #EAE6E1;
+}
+
+/* La sección de Contacto final también */
+#contact-section {
+    background-color: #f8f5f2;
+    border-top: 1px solid #EAE6E1;
+}
+
+/* --- 3. Rediseño del bloque "Soft CTA" para que sea una sección integrada --- */
+.soft-cta-block {
+    /* Quitamos el estilo de "tarjeta" porque ahora es una sección completa */
+    border: none;
+    background-color: transparent;
+    padding: 0; /* Quitamos el padding extra */
+    margin: 0;
+    box-shadow: none;
+}
+
+.soft-cta-block h3 {
+    font-size: 2rem; /* Hacemos el título un poco más grande */
+}
+
+.soft-cta-block p {
+    font-size: 1.1rem;
+}
+
+/* --- 4. Ajustes menores para la sección de Testimonios --- */
+/* Le damos un borde superior para separarla visualmente */
+main > .content-section:has(.testimonial-grid) {
+    border-top: 1px solid #EAE6E1;
+}
