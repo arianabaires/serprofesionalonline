@@ -2157,3 +2157,50 @@ main > .content-section:has(.testimonial-grid) {
     text-align: center;
     padding-left: 0; /* Reseteamos el padding para que se centre bien */
  }
+/* ======================================= */
+/* ESTILOS PARA EL NUEVO FOOTER            */
+/* ======================================= */
+.footer {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    background-color: #333;
+    color: #f8f5f2;
+}
+
+.footer-top strong {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+.footer-top p {
+    font-size: 1rem;
+    color: #ccc;
+    margin: 0.25rem 0 1.5rem 0;
+}
+
+.footer-nav {
+    margin-bottom: 1.5rem;
+}
+
+.footer-nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: 500;
+}
+.footer-nav a:hover {
+    text-decoration: underline;
+}
+
+.footer-contact {
+    margin-bottom: 2rem;
+}
+
+.footer-contact a {
+    color: #f8f5f2;
+    margin: 0 1rem;
+}
+
+.footer-copyright p {
+    font-size: 0.8rem;
+    color: #888;
+}
