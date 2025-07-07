@@ -2205,41 +2205,87 @@ main > .content-section:has(.testimonial-grid) {
     color: #888;
 }
 /* ======================================================= */
-/* ESTILOS MEJORADOS PARA PRECIOS (ESTILO "WORLDWIDE BRAND") */
+/* ESTILOS PRECIOS POR COLUMNAS (VERSIÓN FINAL)      */
 /* ======================================================= */
 
-/* Contenedor de los precios viejos (tachados) */
-.old-price-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
-  margin-bottom: 0.75rem; /* Menos espacio antes del precio nuevo */
-  opacity: 0.7; /* Le bajamos un poco la opacidad */
+/* El contenedor principal de las 3 columnas */
+.multi-price-container-vertical {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Hace que las 3 columnas tengan la misma altura */
+    margin: 2rem 0;
+    width: 100%;
 }
 
-.price-option-old {
-  color: #555; /* Un gris un poco más oscuro para mejor visibilidad */
+/* Cada columna de precio individual */
+.price-option {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem 1.5rem;
 }
 
-.price-option-old .currency {
-  font-size: 1rem;
-  font-weight: 500;
+/* La columna principal (USD) obtiene los separadores verticales */
+.price-option.price-primary {
+    border-left: 1px solid #EAE6E1;
+    border-right: 1px solid #EAE6E1;
 }
 
-/* Hacemos el precio tachado más grande */
-.price-option-old .amount {
-  font-size: 1.6rem; /* Aumentamos el tamaño */
-  font-weight: 500; /* Le damos un poco más de peso */
+/* Estilo para el precio viejo (tachado) */
+.old-price {
+    color: #888;
+    font-size: 1.2rem;
+    font-weight: 500;
+    height: 2.5rem; /* Le damos una altura fija para alinear todo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.old-price sup {
+    font-size: 0.8rem;
+    top: -0.7em;
 }
 
-/* Ajustamos el asterisco */
-.price-option-old .amount sup {
-  font-size: 0.9rem;
-  top: -1em;
+/* Estilo para el precio nuevo (el principal) */
+.new-price {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
 }
 
-/* El texto de la leyenda/disclaimer */
+/* Tamaños específicos para la columna principal vs. las secundarias */
+.price-option.price-primary .new-price {
+    font-size: 3.5rem;
+    color: #333;
+}
+.price-option.price-secondary .new-price {
+    font-size: 1.8rem;
+    color: #555;
+    font-weight: 700;
+}
+
+/* Adaptación para Celulares */
+@media (max-width: 600px) {
+    .multi-price-container-vertical {
+        flex-direction: column; /* Apilamos las columnas */
+        gap: 1.5rem;
+        border-top: 1px solid #EAE6E1;
+        border-bottom: 1px solid #EAE6E1;
+        padding: 2rem 0;
+    }
+    .price-option.price-primary {
+        /* En móvil, la columna principal tiene separadores arriba y abajo */
+        border-left: none;
+        border-right: none;
+        border-top: 1px solid #EAE6E1;
+        border-bottom: 1px solid #EAE6E1;
+        padding: 1.5rem;
+        /* Le damos más importancia visual */
+        order: -1;
+    }
+}
+
+/* El texto de la leyenda/disclaimer (sin cambios) */
 .disclaimer-text {
   font-style: italic;
   font-size: 0.85rem;
@@ -2247,7 +2293,6 @@ main > .content-section:has(.testimonial-grid) {
   margin-top: 1.5rem;
   padding: 0 1rem;
 }
-
 /* Nos aseguramos que el título de la sección de precios sea el correcto */
 #pricing-section .section-title {
     margin-bottom: 2rem;
