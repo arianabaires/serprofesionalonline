@@ -2205,36 +2205,38 @@ main > .content-section:has(.testimonial-grid) {
     color: #888;
 }
 /* ======================================================= */
-/* ESTILOS PARA PRECIOS TACHADOS Y LEYENDA (PRICING CARD) */
+/* ESTILOS MEJORADOS PARA PRECIOS (ESTILO "WORLDWIDE BRAND") */
 /* ======================================================= */
 
-/* Contenedor de los precios viejos */
+/* Contenedor de los precios viejos (tachados) */
 .old-price-container {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
-  margin-bottom: 0.5rem; /* Espacio antes del precio nuevo */
+  margin-bottom: 0.75rem; /* Menos espacio antes del precio nuevo */
+  opacity: 0.7; /* Le bajamos un poco la opacidad */
 }
 
 .price-option-old {
-  color: #888; /* Color gris para indicar que es un precio viejo */
+  color: #555; /* Un gris un poco más oscuro para mejor visibilidad */
 }
 
 .price-option-old .currency {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 500;
 }
 
+/* Hacemos el precio tachado más grande */
 .price-option-old .amount {
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-size: 1.6rem; /* Aumentamos el tamaño */
+  font-weight: 500; /* Le damos un poco más de peso */
 }
 
-/* Estilo para el asterisco */
+/* Ajustamos el asterisco */
 .price-option-old .amount sup {
-  font-size: 0.8rem;
-  top: -0.7em; /* Lo sube un poco */
+  font-size: 0.9rem;
+  top: -1em;
 }
 
 /* El texto de la leyenda/disclaimer */
@@ -2244,4 +2246,9 @@ main > .content-section:has(.testimonial-grid) {
   color: #777;
   margin-top: 1.5rem;
   padding: 0 1rem;
+}
+
+/* Nos aseguramos que el título de la sección de precios sea el correcto */
+#pricing-section .section-title {
+    margin-bottom: 2rem;
 }
