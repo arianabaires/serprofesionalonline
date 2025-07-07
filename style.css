@@ -2204,3 +2204,44 @@ main > .content-section:has(.testimonial-grid) {
     font-size: 0.8rem;
     color: #888;
 }
+/* ======================================================= */
+/* ESTILOS PARA PRECIOS TACHADOS Y LEYENDA (PRICING CARD) */
+/* ======================================================= */
+
+/* Contenedor de los precios viejos */
+.old-price-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 0.5rem; /* Espacio antes del precio nuevo */
+}
+
+.price-option-old {
+  color: #888; /* Color gris para indicar que es un precio viejo */
+}
+
+.price-option-old .currency {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.price-option-old .amount {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* Estilo para el asterisco */
+.price-option-old .amount sup {
+  font-size: 0.8rem;
+  top: -0.7em; /* Lo sube un poco */
+}
+
+/* El texto de la leyenda/disclaimer */
+.disclaimer-text {
+  font-style: italic;
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 1.5rem;
+  padding: 0 1rem;
+}
