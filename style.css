@@ -2204,3 +2204,20 @@ main > .content-section:has(.testimonial-grid) {
     font-size: 0.8rem;
     color: #888;
 }
+/* --- ESTILOS FINALES Y AISLADOS PARA PRECIOS DE ANCLAJE --- */
+.old-price-inline {
+    display: block;
+    color: #888;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+.old-price-inline sup {
+    font-size: 1rem;
+}
+.price-option .new-price {
+    font-size: 3rem;
+}
+.price-option.price-primary .new-price {
+    font-size: 3.8rem;
+}
