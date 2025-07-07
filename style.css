@@ -1,9 +1,8 @@
-/* style.css DEFINITIVO Y CONSOLIDADO */
+/* style.css FINAL, CONSOLIDADO Y CORRECTO */
 
 /* ------------------------- */
 /* 1. CONFIGURACIÓN GENERAL Y VARIABLES */
 /* ------------------------- */
-
 :root {
     --color-text-dark: #333333;
     --color-text-secondary: #555555;
@@ -13,7 +12,6 @@
     --color-accent-terracotta: #d96c47;
     --color-shadow: rgba(0, 0, 0, 0.06);
 }
-
 body {
     font-family: 'Lato', sans-serif;
     color: var(--color-text-secondary);
@@ -24,14 +22,12 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
 .container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 25px;
 }
-
-h1, h2, h3, h4, h5, h6 {
+h1,h2,h3,h4,h5,h6 {
     margin-top: 0;
     margin-bottom: 1rem;
     font-family: 'Manrope', sans-serif;
@@ -39,6 +35,10 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-text-dark);
     line-height: 1.3;
 }
+h1 { font-size: clamp(2.5rem, 7vw, 4rem); }
+h2 { font-size: clamp(2rem, 6vw, 3rem); }
+h3 { font-size: clamp(1.5rem, 5vw, 2.2rem); }
+h4 { font-size: 1.2rem; }
 
 /* ------------------------- */
 /* 2. HEADER Y NAVEGACIÓN    */
@@ -83,28 +83,25 @@ h1, h2, h3, h4, h5, h6 {
 .link-text:hover { text-decoration: underline; }
 
 /* ------------------------- */
-/* 4. SECCIONES Y LAYOUT     */
+/* 4. LAYOUT Y SECCIONES     */
 /* ------------------------- */
 main > section { padding: 5rem 1.5rem; }
 .page-impulso-inicial main > section:not(:first-child):not(.value-prop-block):not(.faq-section) { border-top: 1px solid var(--color-border); }
 .page-impulso-inicial .value-prop-block, .page-impulso-inicial .faq-section { background-color: var(--color-bg-soft); }
+.page-impulso-inicial .hero-impulso, .page-impulso-inicial .process-section, .page-impulso-inicial .testimonial-section-impulso, .page-impulso-inicial .pricing-section, .page-impulso-inicial #contact-section { background-color: transparent; }
+.section-title { text-align: center; margin-bottom: 3rem; }
 .hero-home { text-align: center; }
-.hero-home h1 { font-size: clamp(2.5rem, 7vw, 4rem); }
 .soft-cta-block { text-align: center; padding: 3rem 1rem; }
+.soft-cta-block h3 { font-size: 2rem; }
+.soft-cta-block p { font-size: 1.1rem; max-width: 600px; margin: 1rem auto 2rem auto; }
 .quien-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem; }
 .quien-item { display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; }
 .quien-item i { font-size: 2rem; color: var(--color-accent-terracotta); }
-
-/* ------------------------- */
-/* 5. PÁGINA IMPULSO INICIAL */
-/* ------------------------- */
-.page-impulso-inicial main > section { padding: 5rem 1.5rem; }
-.page-impulso-inicial .hero-impulso { text-align: center; padding-bottom: 4rem; }
 .page-impulso-inicial .hero-impulso h1 { color: var(--color-accent-terracotta); }
 .page-impulso-inicial .two-columns-section { display: grid; gap: 3rem; align-items: center; }
 @media (min-width: 768px) { .page-impulso-inicial .two-columns-section { grid-template-columns: 1fr 1fr; } }
 .page-impulso-inicial .column-image img { width: 100%; border-radius: 12px; }
-.page-impulso-inicial .quote-section { text-align: center; }
+.page-impulso-inicial .quote-section { background-color: var(--color-bg-soft); text-align: center; }
 .page-impulso-inicial .quote-section blockquote p { font-size: 1.5rem; font-style: italic; max-width: 800px; margin: 0 auto 1.5rem auto; }
 .page-impulso-inicial .quote-section blockquote footer { font-weight: 700; }
 .page-impulso-inicial .value-prop-grid { display: grid; gap: 3rem; }
@@ -113,7 +110,9 @@ main > section { padding: 5rem 1.5rem; }
 .page-impulso-inicial .impulso-item { display: flex; align-items: center; gap: 1rem; background-color: #fff; border: 1px solid var(--color-border); border-radius: 8px; padding: 1.25rem; }
 .page-impulso-inicial .impulso-item i { color: var(--color-accent-terracotta); font-size: 1.5rem; width: 25px; text-align: center; }
 .page-impulso-inicial .process-section { text-align: center; }
-.page-impulso-inicial .process-steps { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1rem; margin-top: 3rem; }
+.page-impulso-inicial .process-steps { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1rem; margin-top: 2rem; }
+.page-impulso-inicial .step { background-color: #fff; border: 1px solid var(--color-border); padding: 1rem; border-radius: 8px; text-align: center; }
+.page-impulso-inicial .step-number { background-color: var(--color-accent-terracotta); color: white; font-weight: 700; border-radius: 50%; width: 40px; height: 40px; display: grid; place-items: center; margin: 0 auto 0.5rem auto; }
 .page-impulso-inicial .step-arrow { display: none; }
 @media (min-width: 992px) { .page-impulso-inicial .step-arrow { display: block; font-size: 1.5rem; color: #ccc;} }
 .page-impulso-inicial .faq-grid { max-width: 800px; margin: 3rem auto 0 auto; display: flex; flex-direction: column; gap: 1rem; }
@@ -121,36 +120,36 @@ main > section { padding: 5rem 1.5rem; }
 .page-impulso-inicial .faq-item h4 { margin-bottom: 0.75rem; }
 
 /* ------------------------- */
-/* 6. COMPONENTES REUTILIZABLES */
+/* 5. COMPONENTES REUTILIZABLES */
 /* ------------------------- */
 .testimonial-grid { display: grid; gap: 2rem; max-width: 900px; margin: 3rem auto 0 auto; }
 @media (min-width: 768px) { .testimonial-grid { grid-template-columns: repeat(2, 1fr); } }
 .testimonial-card { background-color: #fff; border-radius: 12px; padding: 2.5rem; box-shadow: 0 10px 30px var(--color-shadow); display: flex; flex-direction: column; }
 .testimonial-card p { font-style: italic; margin-bottom: 1.5rem; position: relative; }
-.testimonial-card p::before { content: '“'; position: absolute; top: -1rem; left: 0rem; font-size: 6rem; color: #f0ebe4; z-index: 1; font-family: 'Georgia', serif; }
+.testimonial-card p::before { content: '“'; position: absolute; top: -1rem; left: -0.5rem; font-size: 6rem; color: #f0ebe4; z-index: 1; font-family: 'Georgia', serif; }
 .testimonial-card p { position: relative; z-index: 2; padding-left: 1rem; }
 .testimonial-card strong { font-weight: 700; padding-left: 1rem; }
-
-/* Formulario de Contacto */
+.testimonial-grid .testimonial-card:nth-child(3) { grid-column: 1 / -1; background-color: var(--color-bg-soft); }
+.testimonial-grid .testimonial-card:nth-child(3) p { text-align: left; }
+.testimonial-grid .testimonial-card:nth-child(3) p::before { top: -0.5rem; left: 0; }
+.testimonial-grid .testimonial-card:nth-child(3) strong { padding-left: 1rem; }
 .contact-form { margin-top: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; text-align: left; }
 .form-group { margin-bottom: 1.5rem; }
 .contact-form label { display: block; margin-bottom: 0.5rem; font-weight: 700; }
-.contact-form input, .contact-form textarea { width: 100%; padding: 14px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; background-color: #fff; box-sizing: border-box; }
+.contact-form input[type="text"], .contact-form input[type="email"], .contact-form textarea { width: 100%; padding: 14px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; background-color: #fff; box-sizing: border-box; }
 .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--color-accent-terracotta); box-shadow: 0 0 0 3px rgba(217, 108, 71, 0.2); }
 
-/* ------------------------- */
-/* 7. TARJETA DE PRECIOS     */
-/* ------------------------- */
-#pricing-section .section-title { text-align: center; margin-bottom: 2rem; }
+/* --- 6. TARJETA DE PRECIOS FINAL --- */
 .pricing-card { border: 1px solid var(--color-border); box-shadow: 0 10px 30px var(--color-shadow); border-radius: 16px; padding: 2.5rem; background-color: #fff; max-width: 800px; margin: 0 auto; text-align: center; }
-.multi-price-container-vertical { display: flex; justify-content: center; align-items: top; margin: 2rem 0; }
-.price-option { text-align: center; padding: 1rem; flex: 1; }
+.multi-price-container-vertical { display: flex; justify-content: center; align-items: flex-start; margin: 2rem 0; }
+.price-option { text-align: center; padding: 1rem 1.5rem; flex: 1; }
 .price-option + .price-option { border-left: 1px solid #f0ebe4; }
 .old-price { color: #888; font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem; }
 .old-price s { text-decoration-color: var(--color-accent-terracotta); }
 .old-price sup { font-size: 1rem; top: -0.8em; }
-.new-price { font-family: 'Manrope', sans-serif; font-weight: 800; color: var(--color-text-dark); line-height: 1; font-size: 3rem; }
-.new-price .currency-symbol { font-size: 1.2rem; font-weight: 500; color: var(--color-text-secondary); margin-right: 0.25rem; }
+.new-price { font-family: 'Manrope', sans-serif; font-weight: 800; color: var(--color-text-dark); line-height: 1; font-size: 3.5rem; }
+.new-price .amount { font-size: inherit; }
+.new-price .currency-symbol { font-size: 1.5rem; font-weight: 500; color: var(--color-text-secondary); margin-right: 0.25rem; }
 .includes { margin-bottom: 2rem; }
 .cta-button { width: 100%; max-width: 400px; padding: 1rem; font-size: 1.2rem; }
 .disclaimer-text { font-style: italic; font-size: 0.9rem; color: #777; margin-top: 1.5rem; }
@@ -159,9 +158,7 @@ main > section { padding: 5rem 1.5rem; }
     .price-option + .price-option { border-left: none; border-top: 1px solid #f0ebe4; padding-top: 1.5rem; }
 }
 
-/* ------------------------- */
-/* 8. FOOTER                 */
-/* ------------------------- */
+/* --- 7. FOOTER --- */
 .footer { text-align: center; padding: 3rem 1.5rem; background-color: var(--color-text-dark); color: var(--color-bg-light); }
 .footer-top strong { font-size: 1.2rem; }
 .footer-top p { color: #ccc; margin: 0.25rem 0 1.5rem 0; }
