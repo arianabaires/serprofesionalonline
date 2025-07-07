@@ -1,4 +1,4 @@
-/* style.css DEFINITIVO, CONSOLIDADO Y CORREGIDO */
+/* style.css DEFINITIVO Y CONSOLIDADO v2 */
 
 /* ------------------------- */
 /* 1. CONFIGURACIÓN GENERAL Y VARIABLES */
@@ -12,7 +12,6 @@
     --color-accent-terracotta: #d96c47;
     --color-shadow: rgba(0, 0, 0, 0.06);
 }
-
 body {
     font-family: 'Lato', sans-serif;
     color: var(--color-text-secondary);
@@ -23,13 +22,11 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
 .container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 25px;
 }
-
 h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
     margin-bottom: 1.5rem;
@@ -38,7 +35,6 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-text-dark);
     line-height: 1.3;
 }
-
 h1 { font-size: clamp(2.5rem, 7vw, 3.8rem); }
 h2 { font-size: clamp(2rem, 6vw, 3rem); }
 h3 { font-size: clamp(1.8rem, 5vw, 2.5rem); }
@@ -68,7 +64,6 @@ h4 { font-size: 1.2rem; }
 .desktop-nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 30px; }
 .desktop-nav ul li a { font-family: 'Manrope', sans-serif; font-weight: 500; color: var(--color-text-dark); text-decoration: none; text-transform: lowercase; }
 .desktop-nav ul li a:hover { color: var(--color-accent-terracotta); }
-
 .mobile-nav { display: none; position: fixed; top: 0; right: 0; width: 100%; max-width: 320px; height: 100%; background-color: var(--color-bg-light); box-shadow: -5px 0 15px rgba(0,0,0,0.1); flex-direction: column; align-items: center; justify-content: center; z-index: 1001; transform: translateX(100%); transition: transform 0.4s ease-in-out; }
 .mobile-nav.is-active { display: flex; transform: translateX(0); }
 .mobile-nav ul { list-style: none; padding: 0; text-align: center; }
@@ -91,41 +86,38 @@ h4 { font-size: 1.2rem; }
 /* ------------------------- */
 main > section { padding: 5rem 1.5rem; }
 .section-title { text-align: center; margin-bottom: 3rem; }
-.page-impulso-inicial main > section:nth-of-type(even), .page-impulso-inicial .quote-section, .page-impulso-inicial .pricing-section, .page-impulso-inicial .faq-section { background-color: var(--color-bg-soft); }
+.page-impulso-inicial .value-prop-block, .page-impulso-inicial .faq-section, .page-impulso-inicial .quote-section { background-color: var(--color-bg-soft); }
+.page-impulso-inicial .process-section, .page-impulso-inicial .testimonial-section-impulso, .page-impulso-inicial .pricing-section, .page-impulso-inicial #contact-section { background-color: transparent; }
 
 /* ------------------------- */
-/* 5. COMPONENTES ESPECÍFICOS */
+/* 5. PÁGINA IMPULSO INICIAL */
 /* ------------------------- */
-
-/* --- Hero (Ambas Páginas) --- */
-.hero-home { text-align: center; }
-.page-impulso-inicial .hero-impulso { text-align: center; padding: 5rem 1.5rem; border-bottom: 1px solid var(--color-border); }
+.page-impulso-inicial .hero-impulso { text-align: center; padding-top: 5rem; padding-bottom: 5rem; }
 .page-impulso-inicial .hero-impulso h1 { color: var(--color-accent-terracotta); }
+.page-impulso-inicial .two-columns-section { display: grid; gap: 3rem; align-items: center; }
+@media (min-width: 768px) { .page-impulso-inicial .two-columns-section { grid-template-columns: 1fr 1fr; } }
+.page-impulso-inicial .column-image img { width: 100%; border-radius: 12px; }
+.page-impulso-inicial .quote-section blockquote p { font-size: 1.5rem; font-style: italic; max-width: 800px; margin: 0 auto 1.5rem auto; }
+.page-impulso-inicial .quote-section blockquote footer { font-weight: 700; }
+.page-impulso-inicial .value-prop-grid { display: grid; gap: 3rem; }
+@media (min-width: 768px) { .page-impulso-inicial .value-prop-grid { grid-template-columns: 1fr 1fr; } }
+.page-impulso-inicial .value-prop-column { display: flex; flex-direction: column; height: 100%; } /* <-- CORRECCIÓN DE ALINEACIÓN */
+.page-impulso-inicial .impulso-list { list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem; flex-grow: 1; } /* <-- CORRECCIÓN DE ALINEACIÓN */
+.page-impulso-inicial .impulso-item { display: flex; align-items: center; gap: 1rem; background-color: #fff; border: 1px solid var(--color-border); border-radius: 8px; padding: 1.25rem; }
+.page-impulso-inicial .impulso-item i { color: var(--color-accent-terracotta); font-size: 1.5rem; width: 25px; text-align: center; flex-shrink: 0; }
+.page-impulso-inicial .process-section { text-align: center; }
+.page-impulso-inicial .process-steps { display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch; gap: 1rem; margin-top: 2rem; }
+.page-impulso-inicial .step { background-color: #fff; border: 1px solid var(--color-border); padding: 1.5rem; border-radius: 8px; text-align: center; width: 200px; }
+.page-impulso-inicial .step-number { background-color: var(--color-accent-terracotta); color: white; font-weight: 700; border-radius: 50%; width: 40px; height: 40px; display: grid; place-items: center; margin: 0 auto 1rem auto; }
+.page-impulso-inicial .step-arrow { display: none; }
+@media (min-width: 992px) { .page-impulso-inicial .step-arrow { display: block; font-size: 1.5rem; color: #ccc; align-self: center;} }
+.page-impulso-inicial .faq-grid { max-width: 800px; margin: 3rem auto 0 auto; display: flex; flex-direction: column; gap: 1rem; }
+.page-impulso-inicial .faq-item { background-color: #fff; border: 1px solid var(--color-border); border-radius: 8px; padding: 1.5rem; }
+.page-impulso-inicial .faq-item h4 { margin-bottom: 0.75rem; }
 
-/* --- Dos Columnas (Impulso Inicial) --- */
-.two-columns-section { display: grid; gap: 3rem; align-items: center; }
-@media (min-width: 768px) { .two-columns-section { grid-template-columns: 1fr 1fr; } }
-.column-image img { width: 100%; border-radius: 12px; }
-
-/* --- Cita de Fundadora (Impulso Inicial) --- */
-.quote-section blockquote p { font-size: 1.5rem; font-style: italic; max-width: 800px; margin: 0 auto 1.5rem auto; }
-.quote-section blockquote footer { font-weight: 700; }
-
-/* --- Lista de Ítems (Impulso Inicial) --- */
-.value-prop-grid { display: grid; gap: 3rem; }
-@media (min-width: 768px) { .value-prop-grid { grid-template-columns: 1fr 1fr; } }
-.impulso-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem; padding-left: 0; list-style: none; }
-.impulso-item { display: flex; align-items: center; gap: 1rem; background-color: #fff; border: 1px solid var(--color-border); border-radius: 8px; padding: 1.25rem; }
-.impulso-item i { color: var(--color-accent-terracotta); font-size: 1.5rem; width: 25px; text-align: center; flex-shrink: 0; }
-
-/* --- Diagrama "Paso a paso" --- */
-.process-steps { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1rem; margin-top: 2rem; }
-.step { background-color: #fff; border: 1px solid var(--color-border); padding: 1rem 1.5rem; border-radius: 8px; text-align: center; width: 200px; }
-.step-number { background-color: var(--color-accent-terracotta); color: white; font-weight: 700; border-radius: 50%; width: 40px; height: 40px; display: grid; place-items: center; margin: 0 auto 1rem auto; }
-.step-arrow { display: none; font-size: 1.5rem; color: #ccc; }
-@media (min-width: 992px) { .step-arrow { display: block; } }
-
-/* --- Testimonios --- */
+/* ------------------------- */
+/* 6. COMPONENTES REUTILIZABLES */
+/* ------------------------- */
 .testimonial-grid { display: grid; gap: 2rem; max-width: 900px; margin: 3rem auto 0 auto; }
 @media (min-width: 768px) { .testimonial-grid { grid-template-columns: repeat(2, 1fr); } }
 .testimonial-card { background-color: #fff; border-radius: 12px; padding: 2.5rem; box-shadow: 0 10px 30px var(--color-shadow); display: flex; flex-direction: column; }
@@ -135,48 +127,65 @@ main > section { padding: 5rem 1.5rem; }
 .testimonial-card strong { font-weight: 700; padding-left: 3.5rem; }
 .testimonial-grid .testimonial-card:nth-child(3) { grid-column: 1 / -1; background-color: var(--color-bg-soft); }
 
-/* --- Tarjeta de Precios --- */
-.pricing-card { border: 1px solid var(--color-border); box-shadow: 0 10px 30px var(--color-shadow); border-radius: 16px; padding: 2.5rem; background-color: #fff; max-width: 800px; margin: 3rem auto 0 auto; text-align: center; }
-.multi-price-container-vertical { display: flex; justify-content: center; align-items: top; margin: 2rem 0; }
-.price-option { text-align: center; padding: 1rem; flex: 1; }
-.price-option + .price-option { border-left: 1px solid #f0ebe4; }
-.old-price { color: #888; font-size: 1.5rem; font-weight: 500; margin-bottom: 0.5rem; }
-.old-price s { text-decoration-color: var(--color-accent-terracotta); }
-.old-price sup { font-size: 1rem; top: -0.8em; }
-.new-price { font-family: 'Manrope', sans-serif; font-weight: 800; color: var(--color-text-dark); line-height: 1; font-size: 3.5rem; }
-.new-price .amount { font-size: inherit; }
-.new-price .currency-symbol { font-size: 1.5rem; font-weight: 500; color: var(--color-text-secondary); margin-right: 0.25rem; }
-.includes { margin: 1.5rem 0; }
-.cta-button { width: 100%; max-width: 400px; padding: 1rem; font-size: 1.2rem; }
-.disclaimer-text { font-style: italic; font-size: 0.9rem; color: #777; margin-top: 1.5rem; }
-@media (max-width: 768px) {
-    .multi-price-container-vertical { flex-direction: column; gap: 1.5rem; }
-    .price-option + .price-option { border-left: none; border-top: 1px solid #f0ebe4; padding-top: 1.5rem; }
-}
-
-/* --- FAQ --- */
-.faq-grid { max-width: 800px; margin: 3rem auto 0 auto; display: flex; flex-direction: column; gap: 1rem; }
-.faq-item { background-color: #fff; border: 1px solid var(--color-border); border-radius: 8px; padding: 1.5rem; }
-.faq-item h4 { margin-bottom: 0.75rem; }
-
 /* --- Formulario de Contacto --- */
 .contact-form { margin-top: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; text-align: left; }
 .form-group { margin-bottom: 1.5rem; }
 .contact-form label { display: block; margin-bottom: 0.5rem; font-weight: 700; }
-.contact-form input, .contact-form textarea { width: 100%; padding: 14px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; background-color: #fff; box-sizing: border-box; }
+.contact-form input[type="text"], .contact-form input[type="email"], .contact-form textarea { width: 100%; padding: 14px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; background-color: #fff; box-sizing: border-box; }
 .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--color-accent-terracotta); box-shadow: 0 0 0 3px rgba(217, 108, 71, 0.2); }
 
-/* --- Footer --- */
-.footer { text-align: center; padding: 3rem 1.5rem; background-color: var(--color-text-dark); color: var(--color-bg-light); }
-.footer-top strong { font-size: 1.2rem; }
-.footer-top p { color: #ccc; margin: 0.25rem 0 1.5rem 0; }
-.footer-nav { margin-bottom: 1.5rem; }
-.footer-nav a { color: #fff; text-decoration: none; margin: 0 1rem; }
-.footer-nav a:hover { text-decoration: underline; }
-.footer-contact { margin-bottom: 2rem; }
-.footer-contact a { color: var(--color-bg-light); margin: 0 1rem; }
-.footer-copyright p { font-size: 0.8rem; color: #888; }
-
-/* --- Animaciones --- */
-.reveal-on-scroll { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
-.reveal-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
+/* ------------------------- */
+/* 7. TARJETA DE PRECIOS - FINAL */
+/* ------------------------- */
+.pricing-card {
+    border: 1px solid var(--color-border);
+    box-shadow: 0 10px 30px var(--color-shadow);
+    border-radius: 16px;
+    padding: 2.5rem;
+    background-color: #fff;
+    max-width: 800px;
+    margin: 3rem auto 0 auto;
+    text-align: center;
+}
+.multi-price-container-inline {
+    display: flex;
+    justify-content: center;
+    align-items: baseline; /* Alinea por la base del texto */
+    gap: 2rem;
+    margin: 2rem 0;
+}
+.price-option-inline {
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+}
+.price-old-inline {
+    font-size: 1.5rem;
+    color: #999;
+    font-weight: 400;
+    text-decoration: line-through;
+    text-decoration-color: var(--color-accent-terracotta);
+    text-decoration-thickness: 2px;
+}
+.price-new-inline {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-text-dark);
+}
+.includes sup {
+    font-size: 0.9rem;
+    color: var(--color-accent-terracotta);
+}
+.disclaimer-text {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 2rem;
+}
+@media (max-width: 768px) {
+    .multi-price-container-inline {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+}
