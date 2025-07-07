@@ -2205,16 +2205,17 @@ main > .content-section:has(.testimonial-grid) {
     color: #888;
 }
 /* ======================================================= */
-/* ESTILOS PRECIOS POR COLUMNAS (VERSIÓN FINAL)      */
+/* ESTILOS MODERNIZADOS PARA TARJETA DE PRECIOS (V7)   */
 /* ======================================================= */
 
 /* El contenedor principal de las 3 columnas */
 .multi-price-container-vertical {
     display: flex;
     justify-content: center;
-    align-items: stretch; /* Hace que las 3 columnas tengan la misma altura */
-    margin: 2rem 0;
+    align-items: stretch;
+    margin: 2rem auto;
     width: 100%;
+    max-width: 800px; /* Le damos un ancho máximo para que no se estire demasiado */
 }
 
 /* Cada columna de precio individual */
@@ -2223,24 +2224,55 @@ main > .content-section:has(.testimonial-grid) {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    padding: 1rem 1.5rem;
+    padding: 2rem 1.5rem;
+    position: relative; /* Necesario para el badge */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* La columna principal (USD) obtiene los separadores verticales */
+/* La columna principal (USD) se destaca */
 .price-option.price-primary {
-    border-left: 1px solid #EAE6E1;
-    border-right: 1px solid #EAE6E1;
+    background-color: #fff;
+    border: 1px solid #d96c47; /* Borde del color de marca */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    transform: scale(1.05); /* La hacemos ligeramente más grande por defecto */
+    z-index: 10;
+}
+
+/* Efecto al pasar el mouse sobre la tarjeta principal */
+.price-option.price-primary:hover {
+    transform: scale(1.08);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Badge "Recomendado" para la tarjeta principal */
+.price-option.price-primary::before {
+    content: 'RECOMENDADO';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #d96c47;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    font-family: 'Manrope', sans-serif;
 }
 
 /* Estilo para el precio viejo (tachado) */
 .old-price {
-    color: #888;
-    font-size: 1.2rem;
-    font-weight: 500;
-    height: 2.5rem; /* Le damos una altura fija para alinear todo */
+    color: #999; /* Un gris más claro */
+    font-size: 1.1rem;
+    font-weight: 400; /* Más liviano */
+    height: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.old-price s {
+    text-decoration-color: #d96c47; /* La línea que tacha es del color de la marca */
 }
 .old-price sup {
     font-size: 0.8rem;
@@ -2251,49 +2283,48 @@ main > .content-section:has(.testimonial-grid) {
 .new-price {
     font-family: 'Manrope', sans-serif;
     font-weight: 800;
+    line-height: 1; /* Más compacto */
+}
+
+/* Distinción entre la moneda y el número */
+.new-price .currency-symbol {
+    font-size: 1.5rem;
+    font-weight: 500;
+    vertical-align: top;
+    margin-right: 0.25rem;
 }
 
 /* Tamaños específicos para la columna principal vs. las secundarias */
 .price-option.price-primary .new-price {
-    font-size: 3.5rem;
+    font-size: 4rem;
     color: #333;
 }
 .price-option.price-secondary .new-price {
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: #555;
     font-weight: 700;
 }
 
 /* Adaptación para Celulares */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .multi-price-container-vertical {
-        flex-direction: column; /* Apilamos las columnas */
-        gap: 1.5rem;
-        border-top: 1px solid #EAE6E1;
-        border-bottom: 1px solid #EAE6E1;
-        padding: 2rem 0;
+        flex-direction: column;
+        gap: 2rem;
     }
     .price-option.price-primary {
-        /* En móvil, la columna principal tiene separadores arriba y abajo */
-        border-left: none;
-        border-right: none;
-        border-top: 1px solid #EAE6E1;
-        border-bottom: 1px solid #EAE6E1;
-        padding: 1.5rem;
-        /* Le damos más importancia visual */
-        order: -1;
+        transform: scale(1); /* Reseteamos la escala en móvil */
+        order: -1; /* Mantenemos el orden con USD arriba */
+    }
+     .price-option.price-primary:hover {
+        transform: scale(1.02); /* Un hover más sutil en móvil */
     }
 }
 
-/* El texto de la leyenda/disclaimer (sin cambios) */
+/* El texto de la leyenda/disclaimer */
 .disclaimer-text {
   font-style: italic;
   font-size: 0.85rem;
   color: #777;
   margin-top: 1.5rem;
   padding: 0 1rem;
-}
-/* Nos aseguramos que el título de la sección de precios sea el correcto */
-#pricing-section .section-title {
-    margin-bottom: 2rem;
 }
