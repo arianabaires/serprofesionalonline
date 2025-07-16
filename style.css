@@ -298,3 +298,20 @@ main > section { padding: 4rem 1.5rem; }
   margin-bottom: 2rem;
   font-size: 1.1rem;
 }
+/* --- Ajustes de alineación para la página Link-in-Bio --- */
+.page-link-in-bio .accordion {
+    text-align: center; /* Centra el texto del botón */
+    padding-right: 50px; /* Añade espacio a la derecha para que el texto no se monte sobre el "+" */
+}
+
+/* Ajuste general para el layout de la página link-in-bio */
+.page-link-in-bio {
+    display: flex;
+    flex-direction: column; /* Cambiado para acomodar header y footer */
+    justify-content: space-between; /* Empuja el footer hacia abajo */
+    min-height: 100vh;
+}
+.page-link-in-bio .link-in-bio-container {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
