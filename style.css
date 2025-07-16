@@ -2286,3 +2286,9 @@ main > .content-section:has(.testimonial-grid) {
 .panel-content ol { padding-left: 20px; }
 .panel-content li { margin-bottom: 0.75rem; }
 .lib-footer { text-align: center; margin-top: 3rem; font-size: 0.9rem; color: #999; }
+/* --- AJUSTE FINAL: Centrar texto en botones de Link-in-Bio --- */
+
+/* Le decimos a los botones que son links directos que centren su texto */
+.page-link-in-bio .lib-button {
+    text-align: center;
+}
