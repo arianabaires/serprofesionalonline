@@ -587,3 +587,14 @@ main > section { padding: 4rem 1.5rem; }
     .step-box { flex-direction: column; text-align: center; align-items: center; }
     .step-content { text-align: center; }
 }
+/* --- ESTILOS ADICIONALES PARA LA NUEVA THANK YOU PAGE --- */
+.email-instructions {
+    background-color: var(--color-bg-soft);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 2rem 0;
+    border: 1px solid var(--color-border);
+}
+.email-instructions p {
+    margin: 0.5rem 0;
+}
