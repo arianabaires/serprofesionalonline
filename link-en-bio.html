@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto - Serprofesionalonline</title>
+    <title>Contacto y Pagos - Serprofesionalonline</title>
     <meta name="robots" content="noindex, nofollow">
-    <link rel="stylesheet" href="style.css?v=104">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+    <link rel="stylesheet" href="style.css?v=105"> <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
@@ -23,7 +23,6 @@
 
     <main class="leb-container">
         <div class="leb-logo">SPO</div>
-        
         <h1 class="leb-title">SerProfesionalOnline</h1>
 
         <div class="leb-socials">
@@ -34,8 +33,44 @@
         </div>
 
         <div class="leb-buttons">
+            
+            <button class="accordion">Reservá tu Impulso Inicial (ARS)</button>
+            <div class="panel">
+                <div class="panel-content">
+                    <p>Seguí estos pasos para pagar con pesos argentinos:</p>
+                    <ol>
+                        <li><strong>Reservá tu lugar:</strong> Usá el siguiente link de Mercado Pago para abonar. <a href="https://mpago.la/2U9AWuK" target="_blank">Pagar ARS 85.000</a></li>
+                        <li><strong>Respondé el diagnóstico:</strong> Dentro de las 48hs hábiles recibirás el formulario inicial.</li>
+                        <li><strong>Agendá la sesión:</strong> Una vez que lo respondas, concretamos la fecha de nuestra reunión de 30 minutos.</li>
+                        <li><strong>Recibís tu Impulso Inicial:</strong> Pasos concretos para ordenar-te.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <button class="accordion">Reservá tu Impulso Inicial (UYU)</button>
+            <div class="panel">
+                <div class="panel-content">
+                    <p>Seguí estos pasos para pagar con pesos uruguayos:</p>
+                    <ol>
+                        <li><strong>Reservá tu lugar:</strong> Usá el siguiente link de Mercado Pago para abonar: efectivo, crédito o débito. <a href="https://mpago.la/2DWVqAH" target="_blank">Pagar UYU 3.000</a></li>
+                        <li><strong>Respondé el diagnóstico:</strong> Dentro de las 48hs hábiles recibirás el formulario inicial.</li>
+                        <li><strong>Agendá la sesión:</strong> Una vez que lo respondas, concretamos la fecha de nuestra reunión de 30 minutos.</li>
+                        <li><strong>Recibís tu Impulso Inicial:</strong> Pasos concretos para ordenar-te.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <a href="impulso-inicial.html" class="leb-button">Conocé a fondo el Impulso Inicial</a>
+            
+            <a href="https://wa.me/59898712064?text=Hola%2C%20ya%20tengo%20el%20Impulso%20Inicial%20y%20quiero%20m%C3%A1s%21%20Necesito%20ayuda%20con..." target="_blank" class="leb-button">Ya tengo el Impulso. Quiero más.</a>
+
+            <a href="blog/blog.html" class="leb-button">Explorá nuestras Ideas y Estrategias</a>
+            
+            <hr class="leb-separator">
+
             <a href="index.html" class="leb-button">Visitar nuestro Sitio Web</a>
             <a href="https://wa.me/59898712064?text=Hola%2C%20llegu%C3%A9%20por%20link%20en%20bio%20y%20antes%20de%20pagar%20quiero...." target="_blank" class="leb-button">Consultar por WhatsApp</a>
+
         </div>
     </main>
 
@@ -51,5 +86,21 @@
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const accordions = document.querySelectorAll('.accordion');
+            accordions.forEach(button => {
+                button.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const panel = this.nextElementSibling;
+                    if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
+                    } else {
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                    } 
+                });
+            });
+        });
+    </script>
 </body>
 </html>
