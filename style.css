@@ -397,3 +397,78 @@ main > section { padding: 4rem 1.5rem; }
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
+/* --- ESTILOS PARA LA PÁGINA LINK EN BIO (Versión Combinada) --- */
+.page-link-en-bio-v2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    background-color: var(--color-bg-light);
+}
+.leb-container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+.leb-logo {
+    width: 120px; height: 120px; border-radius: 50%;
+    background-color: var(--color-accent-terracotta); color: #fff;
+    display: grid; place-items: center; margin: 0 auto 1.5rem auto;
+    font-family: 'Manrope', sans-serif; font-size: 2.5rem; font-weight: 800;
+}
+.leb-title {
+    font-family: 'Manrope', sans-serif; font-size: 1.8rem;
+    font-weight: 700; color: var(--color-text-dark);
+}
+.leb-socials {
+    display: flex; justify-content: center; gap: 1.5rem;
+    margin: 1.5rem 0 2.5rem 0;
+}
+.leb-socials a {
+    color: var(--color-text-secondary); font-size: 1.8rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+.leb-socials a:hover {
+    color: var(--color-accent-terracotta); transform: translateY(-3px);
+}
+.leb-buttons {
+    display: flex; flex-direction: column; gap: 1rem; width: 100%;
+}
+.leb-button, .accordion {
+    display: block; width: 100%; padding: 18px 20px;
+    background-color: #fff; color: var(--color-text-dark);
+    text-decoration: none; border-radius: 12px;
+    font-weight: 700; font-size: 1.1rem; font-family: 'Manrope', sans-serif;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); cursor: pointer;
+    position: relative; text-align: center;
+}
+.leb-button:hover, .accordion:hover {
+    transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+.accordion { padding-right: 50px; }
+.accordion::after {
+    content: '+'; font-size: 1.5rem; color: var(--color-accent-terracotta);
+    position: absolute; right: 20px; top: 50%;
+    transform: translateY(-50%); transition: transform 0.3s ease;
+}
+.accordion.active::after { transform: translateY(-50%) rotate(45deg); }
+.panel {
+    background-color: var(--color-bg-soft); border: 1px solid var(--color-border);
+    border-top: none; border-radius: 0 0 12px 12px;
+    margin-top: -10px; box-shadow: 0 10px 15px -5px rgba(0,0,0,0.05);
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    padding-left: 1.5rem; padding-right: 1.5rem;
+}
+.panel-content { padding: 1.5rem 1rem; text-align: left; }
+.panel-content ol { padding-left: 20px; }
+.panel-content li { margin-bottom: 0.75rem; }
+.leb-separator {
+    border: none;
+    height: 1px;
+    background-color: var(--color-border);
+    margin: 1rem 0;
+}
