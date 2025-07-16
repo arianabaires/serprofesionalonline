@@ -598,3 +598,74 @@ main > section { padding: 4rem 1.5rem; }
 .email-instructions p {
     margin: 0.5rem 0;
 }
+/* --- ESTILOS PARA LA PÁGINA DE REGISTRO PRE-PAGO --- */
+.page-registro {
+    background-color: var(--color-bg-light);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.form-container {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+}
+
+.form-card {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    max-width: 550px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid var(--color-border);
+}
+
+.form-card h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-card p {
+    color: var(--color-text-secondary);
+    margin-bottom: 2rem;
+}
+
+.form-card .form-group {
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.form-card label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    font-family: 'Manrope', sans-serif;
+}
+
+.form-card input[type="text"],
+.form-card input[type="email"] {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Asegura que el padding no desborde el ancho */
+}
+.form-card input[type="text"]:focus,
+.form-card input[type="email"]:focus {
+    outline: none;
+    border-color: var(--color-accent-terracotta);
+    box-shadow: 0 0 0 3px rgba(217, 108, 71, 0.2);
+}
+
+.form-card .button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
