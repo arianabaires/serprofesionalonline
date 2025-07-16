@@ -2221,3 +2221,117 @@ main > .content-section:has(.testimonial-grid) {
 .price-option.price-primary .new-price {
     font-size: 3.8rem;
 }
+/* --- ESTILOS PARA LA NUEVA PÁGINA "LINK IN BIO" --- */
+
+.page-link-in-bio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--color-bg-light);
+}
+
+.link-in-bio-container {
+    width: 100%;
+    max-width: 680px;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.lib-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.lib-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.lib-header p {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+}
+
+.lib-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Estilo para los botones (los que son links y los desplegables) */
+.lib-button, .accordion {
+    width: 100%;
+    padding: 18px 20px;
+    background-color: #fff;
+    color: var(--color-text-dark);
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    font-family: 'Manrope', sans-serif;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid var(--color-border);
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.lib-button:hover, .accordion:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* Estilo específico para los desplegables */
+.accordion {
+    text-align: left;
+    position: relative;
+}
+
+/* Flecha para indicar que es desplegable */
+.accordion::after {
+    content: '+';
+    font-size: 1.5rem;
+    color: var(--color-accent-terracotta);
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+.accordion.active::after {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+/* El panel que se despliega */
+.panel {
+    background-color: #fff;
+    border-radius: 0 0 12px 12px;
+    margin-top: -10px; /* Se pega al botón de arriba */
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    border: 1px solid var(--color-border);
+    border-top: none;
+}
+
+.panel-content {
+    padding: 10px 25px 20px 25px;
+}
+
+.panel-content ol {
+    padding-left: 20px;
+}
+.panel-content li {
+    margin-bottom: 0.5rem;
+}
+
+.lib-footer {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    color: #999;
+}
