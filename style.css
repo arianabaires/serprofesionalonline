@@ -274,3 +274,27 @@ main > section { padding: 4rem 1.5rem; }
 .footer-contact { margin-bottom: 2rem; }
 .footer-contact a { color: var(--color-bg-light); margin: 0 1rem; }
 .footer-copyright p { font-size: 0.8rem; color: #888; }
+/* --- Estilo Destacado para el Bloque CTA en la Home --- */
+.soft-cta-block {
+  background-color: var(--color-bg-neutral); /* Un fondo de color beige cálido para destacarlo */
+  border: none; /* Quitamos el borde para un look más moderno */
+  border-radius: 16px; /* Bordes un poco más redondeados */
+  padding: 3rem 2rem; /* Más espacio interior para que respire */
+  text-align: center; /* Asegura que todo el contenido esté centrado */
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.07); /* Una sombra más pronunciada para darle profundidad */
+  margin: 4rem auto; /* Más margen vertical para separarlo del resto */
+  max-width: 800px; /* Un ancho máximo para que no se estire demasiado en pantallas grandes */
+}
+
+.soft-cta-block h3 {
+  font-size: 2rem; /* Título un poco más grande */
+  margin-bottom: 1rem;
+}
+
+.soft-cta-block p {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
