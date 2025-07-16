@@ -61,5 +61,97 @@
     </div>
 
     <script src="script.js"></script>
+    <style>
+    /* Estilos para centrar y diseñar la página */
+    body.page-link-in-bio {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 2rem 0;
+        background-color: var(--color-bg-light);
+        text-align: center;
+    }
+    .link-in-bio-container {
+        width: 100%;
+        max-width: 680px;
+        padding: 1rem;
+        box-sizing: border-box;
+    }
+    .lib-header { margin-bottom: 2.5rem; }
+    .lib-header h1 { font-size: 2.2rem; }
+    .lib-header p { font-size: 1.1rem; color: var(--color-text-secondary); }
+    .lib-buttons { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+    .lib-button, .accordion {
+        width: 100%;
+        padding: 18px 20px;
+        background-color: #fff;
+        color: var(--color-text-dark);
+        text-decoration: none;
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        font-family: 'Manrope', sans-serif;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        border: 1px solid var(--color-border);
+        cursor: pointer;
+        display: block;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+    .lib-button:hover, .accordion:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+    .accordion { text-align: left; position: relative; }
+    .accordion::after {
+        content: '+';
+        font-size: 1.5rem;
+        color: var(--color-accent-terracotta);
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: transform 0.3s ease;
+    }
+    .accordion.active::after { transform: translateY(-50%) rotate(45deg); }
+    .panel {
+        background-color: var(--color-bg-soft);
+        border: 1px solid var(--color-border);
+        border-top: none;
+        border-radius: 0 0 12px 12px;
+        margin-top: -10px;
+        box-shadow: 0 10px 15px -5px rgba(0,0,0,0.05);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    .panel-content { padding: 1.5rem 1rem; text-align: left; }
+    .panel-content ol { padding-left: 20px; }
+    .panel-content li { margin-bottom: 0.75rem; }
+    .lib-footer { text-align: center; margin-top: 3rem; font-size: 0.9rem; color: #999; }
+</style>
+
+<script>
+/* Funcionalidad para el acordeón/desplegable */
+document.addEventListener('DOMContentLoaded', () => {
+    const accordions = document.querySelectorAll('.accordion');
+    accordions.forEach(button => {
+        button.addEventListener('click', function() {
+            this.classList.toggle('active');
+            const panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+                panel.style.paddingTop = "0";
+                panel.style.paddingBottom = "0";
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+                panel.style.paddingTop = "1.5rem";
+                panel.style.paddingBottom = "1.5rem";
+            } 
+        });
+    });
+});
+</script>
+</body>
+</html>
 </body>
 </html>
