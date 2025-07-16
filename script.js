@@ -39,5 +39,31 @@ document.addEventListener('DOMContentLoaded', () => {
             mobileNav.classList.remove('is-active');
             document.body.style.overflow = '';
         });
+        /* --- FUNCIONALIDAD PARA ACORDEÓN / DESPLEGABLES --- */
+
+// Seleccionamos todos los botones con la clase "accordion"
+const accordions = document.querySelectorAll('.accordion');
+
+// Recorremos cada botón
+accordions.forEach(accordion => {
+    // Le añadimos un evento de "click"
+    accordion.addEventListener('click', function() {
+        // Al hacer clic, le añadimos o quitamos la clase "active"
+        this.classList.toggle('active');
+        
+        // Seleccionamos el panel que está justo después del botón
+        const panel = this.nextElementSibling;
+        
+        // Si el panel ya tiene una altura máxima, la quitamos (lo cerramos)
+        if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+            panel.style.padding = "0 25px";
+        } else {
+            // Si no, le damos la altura necesaria para que se vea (lo abrimos)
+            panel.style.maxHeight = panel.scrollHeight + "px";
+            panel.style.padding = "10px 25px 20px 25px";
+        } 
+    });
+});
     });
 });
