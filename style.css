@@ -1,0 +1,2304 @@
+/* style.css */
+
+/* --- Paleta de Colores (Hex Codes extraídos de la imagen y optimizados) --- */
+:root {
+    --color-text-dark: #1E1E1E; /* Casi negro para textos principales */
+    --color-bg-light: #F7F3E9; /* Blanco/crema para fondos claros y principales */
+    --color-accent-terracotta: #DC7A5F; /* Terracota para acentos y botones principales */
+    --color-accent-red: #CD3B3B; /* Rojo para acentos más fuertes o estados hover */
+    --color-bg-neutral: #EAE3DB; /* Beige cálido para secciones, fondos */
+    --color-bg-subtle: #DDC8A4; /* Beige arena para fondos muy sutiles o elementos */
+    --color-text-secondary: #7A5C40; /* Marrón medio para claims o textos secundarios */
+    --color-text-light: #BFA7F0; /* Usado para los puntos separadores del menú, etc. */
+    --color-shadow: rgba(0, 0, 0, 0.08); /* Sombra suave para elementos */
+    --color-shadow-strong: rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+    --color-link-hover: #CD3B3B; /* Color al pasar el mouse sobre links */
+    /* Variables para RGB para uso en rgba() */
+    --color-accent-terracotta-rgb: 220, 122, 95;
+    --color-accent-red-rgb: 205, 59, 59;
+}
+
+/* --- Base --- */
+body {
+    font-family: 'Manrope', sans-serif;
+    color: #000000 !important; /* ¡¡¡FORZADO A NEGRO PURO #000000 con !important para asegurar LEGIBILIDAD en todo el body!!! */
+    line-height: 1.6;
+    background-color: var(--color-bg-light); /* Fondo general principal */
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased; /* Mejor renderizado de fuentes en WebKit */
+    -moz-osx-font-smoothing: grayscale; /* Mejor renderizado de fuentes en Firefox */
+    position: relative;
+    overflow-x: hidden; /* Evita scroll horizontal */
+    /* Textura de ruido sutil en el body */
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8ZmlsdGVyIGlkPSJub2lzZSI+CiAgPHZ1cmxpZW4gYmFzZUZyZXF1ZW5jeT0iLjIiIG51bU9jdGF2ZXM9IjIiIHN0aXRjaFRpbGVzPSJub3dyaXgiIHR5cGU9ImZyYWN0YWxOb2lzZSIvPgogPC9maWx0ZXI+CiA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRjNGM0U5Ii8+CiA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI25vaXNlKSIgb3BhY2l0eT0iLjA0Ii8+Cjwvc3ZnPg==');
+    background-repeat: repeat;
+    background-size: 60px 60px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+/* --- Header Global --- */
+.header-global {
+    background-color: var(--color-bg-light);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--color-bg-neutral);
+    box-shadow: 0 2px 8px var(--color-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-global .logo a {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 1.6em; /* Más pequeño y delicado */
+    color: #1E1E1E !important; /* FORZADO CON HEX */
+    text-decoration: none;
+    text-transform: lowercase; /* Nombre de la marca siempre en minúscula */
+    letter-spacing: -0.03em;
+    padding: 5px 0; /* Un poco más de padding alrededor del logo */
+}
+
+.header-global nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.header-global nav ul li {
+    margin-left: 25px;
+    position: relative;
+}
+
+.header-global nav ul li:not(:last-child)::after { /* Puntitos separadores */
+    content: '•';
+    position: absolute;
+    right: -15px;
+    color: var(--color-text-light); /* Color tenue para el punto */
+    font-size: 0.8em;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header-global nav ul li a {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1em;
+    font-weight: 500;
+    color: #1E1E1E !important; /* FORZADO CON HEX */
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+    text-transform: lowercase; /* Links del menú en minúscula */
+}
+
+.header-global nav ul li a:hover {
+    color: var(--color-accent-terracotta);
+}
+
+.header-global nav ul li a::after { /* Underline effect on hover */
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--color-accent-terracotta);
+    transition: width 0.3s ease;
+}
+
+.header-global nav ul li a:hover::after {
+    width: 100%;
+}
+
+.desktop-cta {
+    margin-left: 30px;
+}
+
+
+/* Hamburguer Menu (Mobile) */
+.hamburger-menu {
+    display: none;
+    font-size: 1.8em;
+    cursor: pointer;
+    color: #1E1E1E !important; /* FORZADO CON HEX */
+}
+
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg-light);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+    transition: transform 0.4s ease-in-out;
+    transform: translateX(100%);
+    overflow-y: auto;
+}
+
+.mobile-nav.is-active {
+    transform: translateX(0);
+    display: flex;
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.mobile-nav ul li {
+    margin: 25px 0;
+}
+
+.mobile-nav ul li a {
+    font-size: 1.8em;
+    color: #1E1E1E !important; /* FORZADO CON HEX */
+    text-decoration: none;
+    text-transform: lowercase;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+}
+
+.mobile-nav .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 2.2em;
+    cursor: pointer;
+    color: #1E1E1E !important; /* FORZADO CON HEX */
+}
+
+/* --- Hero Section (Home Page) --- */
+.hero-home {
+    background-color: var(--color-bg-light);
+    padding: 80px 25px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(135deg, var(--color-bg-light) 0%, var(--color-bg-neutral) 100%);
+}
+
+.hero-home .claim {
+    font-size: 1.1em;
+    font-family: 'Lato', sans-serif;
+    color: var(--color-text-secondary) !important; /* Este sí debe ser más claro por estética */
+    margin-bottom: 0.5em;
+}
+
+.hero-home h1 {
+    font-size: 3.8em;
+    margin-bottom: 0.4em;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    font-weight: 700;
+}
+
+.hero-home .subclaim {
+    font-size: 1.3em;
+    font-family: 'Lato', sans-serif;
+    color: var(--color-text-secondary) !important; /* Este sí debe ser más claro por estética */
+    max-width: 750px;
+    margin: 0 auto 40px auto;
+}
+
+/* Letras clave de fondo (SPO) */
+.hero-home::before, .hero-home::after {
+    content: 'SPO';
+    position: absolute;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 900;
+    font-size: 25em;
+    color: var(--color-bg-subtle);
+    opacity: 0.08;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+}
+
+.hero-home::before {
+    top: -100px;
+    left: -100px;
+    transform: rotate(-15deg);
+}
+
+.hero-home::after {
+    bottom: -100px;
+    right: -100px;
+    transform: rotate(15deg);
+}
+
+
+/* --- Botones --- */
+.button {
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: var(--color-accent-terracotta);
+    color: var(--color-off-white-cream);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    font-family: 'Manrope', sans-serif;
+    /* text-transform: lowercase; ¡REMOVIDO para que el HTML controle la capitalización de botones! */
+    box-shadow: 0 5px 15px var(--color-shadow);
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: var(--color-accent-red);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px var(--color-shadow-strong);
+}
+
+/* --- Secciones de Contenido (General) --- */
+.content-section {
+    padding: 40px 25px;
+}
+
+.section-block {
+    margin-bottom: 40px;
+    background-color: var(--color-bg-light);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px var(--color-shadow);
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(45deg, var(--color-bg-light) 0%, var(--color-bg-neutral) 100%);
+    background-size: cover;
+}
+
+/* Textura de ruido sutil en los bloques */
+.section-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8ZmlsdGVyIGlkPSJub2lzZSI+CiAgPHZ1cmxpZW4gYmFzZUZyZXF1ZW5jeT0iLjIiIG51bU9jdGF2ZXM9IjIiIHN0aXRjaFRpbGVzPSJub3dyaXgiIHR5cGU9ImZyYWN0YWxOb2lzZSIvPgogPC9maWx0ZXI+CiA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRkZGRkZGIi8+CiA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2hhc2hmaWx0ZXIpIiBvcGFjaXR5PSIuMDQiLz4KPC9zdmc+');
+    background-size: 60px 60px;
+    opacity: 0.2 !important; /* REDUCIDO PARA MAYOR CONTRASTE CON EL TEXTO */
+    pointer-events: none;
+    z-index: 1;
+}
+.section-block > *:not(::before) {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Forzado de color oscuro para todo el contenido textual general */
+h1, h2, h3, h4, h5, h6 {
+    color: #000000 !important; /* FORZADO A NEGRO ABSOLUTO #000000 con !important */
+    margin-top: 0;
+    font-weight: 700;
+}
+
+p, ul li, ol li, .blog-list article.blog-entry p,
+.blog-post p, .blog-post ol li, .blog-post em, .blog-cta p,
+.contact-form label, .contact-form input[type="text"], .contact-form input[type="email"], .contact-form textarea {
+    color: #000000 !important; /* FORZADO A NEGRO ABSOLUTO #000000 con !important */
+}
+
+/* Textos secundarios (claims y subclaims) que deben ser más claros */
+.hero-home .claim, .hero-home .subclaim, .blog-list article.blog-entry p {
+    color: var(--color-text-secondary) !important; /* Marrón medio para descripciones/claims */
+}
+
+/* Footer siempre visible y claro */
+.footer {
+    background-color: #1E1E1E !important;
+    color: #F7F3E9 !important; /* ¡Color de texto claro forzado con HEX para que se vea! */
+    text-align: center;
+    padding: 40px 20px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9em;
+}
+
+.footer p {
+    margin: 5px 0;
+    color: inherit !important; /* Hereda el color claro del footer */
+}
+
+.footer a {
+    color: inherit !important; /* Hereda el color claro del footer */
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: var(--color-accent-terracotta);
+}
+
+/* Blog listado y posts - color de texto forzado */
+.blog-list article.blog-entry h3 {
+    color: #000000 !important;
+}
+.blog-list article.blog-entry h3 a {
+    color: #000000 !important;
+    text-decoration: none;
+}
+.blog-list article.blog-entry h3 a:hover {
+    color: var(--color-accent-terracotta);
+}
+.blog-list article.blog-entry p {
+    color: #000000 !important;
+}
+
+.blog-post h2 {
+    color: #000000 !important;
+}
+.blog-post h3, .blog-post h4 {
+    color: var(--color-medium-brown) !important;
+}
+.blog-post p {
+    color: #000000 !important;
+}
+.blog-post ol li {
+    color: #000000 !important;
+}
+.blog-post em {
+    color: #000000 !important;
+}
+
+
+.blog-cta {
+    background-color: var(--color-light-beige-sand);
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 50px;
+    text-align: center;
+    box-shadow: 0 4px 10px var(--color-shadow);
+}
+
+.blog-cta p {
+    font-size: 1.1em;
+    color: #000000 !important;
+}
+
+/* --- Formulario de Contacto (Nuevo Estilo) --- */
+.contact-form {
+    margin-top: 30px;
+    text-align: left;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    color: #000000 !important;
+    text-transform: lowercase;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-light-grey);
+    border-radius: 6px;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.05em;
+    color: #000000 !important;
+    background-color: var(--color-very-light-grey);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: var(--color-accent-terracotta);
+    outline: none;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.08), 0 0 0 3px rgba(var(--color-accent-terracotta-rgb), 0.2);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.contact-form button.button {
+    width: auto;
+    margin-top: 10px;
+}
+
+
+/* --- Animaciones (Scroll Reveal) --- */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    .desktop-nav, .desktop-cta {
+        display: none;
+    }
+    .hamburger-menu {
+        display: block;
+    }
+    .hero-home h1 {
+        font-size: 2.8em;
+    }
+    .hero-home .subclaim {
+        font-size: 1.1em;
+    }
+    .hero-home::before, .hero-home::after {
+        display: none;
+    }
+    .section-block {
+        padding: 30px;
+    }
+    .blog-post h2 {
+        font-size: 2em;
+    }
+    /* Deshabilitar custom cursor en touch devices (o pantallas pequeñas) */
+    body {
+        cursor: default;
+    }
+    #custom-cursor {
+        display: none;
+    }
+    .mobile-nav.is-active {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.8em; }
+    h3 { font-size: 1.4em; }
+    p, ul li, ol li { font-size: 1em; }
+    .section-block {
+        padding: 20px;
+        margin-bottom: 40px;
+    }
+    .button {
+        padding: 12px 25px;
+        font-size: 0.9em;
+    }
+    .hero-home {
+        padding: 60px 15px;
+    }
+    .section-block ul li {
+        padding-left: 35px;
+    }
+    .section-block ul li i.fas {
+        font-size: 1.2em;
+        top: 3px;
+    }
+}
+/* --- Estilos para la sección "¿Para quién es este espacio?" --- */
+
+/* Contenedor de la grilla */
+.quien-grid {
+  display: grid;
+  /* Define 3 columnas de igual tamaño */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 2rem; /* Espacio entre los elementos */
+  margin-top: 2rem;
+}
+
+/* Cada elemento individual de la grilla */
+.quien-item {
+  text-align: left; /* Alinea el texto a la izquierda */
+  display: flex; /* Usamos flex para alinear icono y texto */
+  flex-direction: column; /* Ponemos el icono arriba y el texto abajo */
+  align-items: flex-start; /* Alineamos los items a la izquierda */
+}
+
+/* Estilo para los íconos */
+.quien-item i {
+  font-size: 2rem; /* Tamaño del ícono */
+  margin-bottom: 1rem; /* Espacio debajo del ícono */
+  color: #333; /* Color oscuro para el ícono, como en el resto de tu web */
+  background-color: #f8f5f2; /* Un fondo muy sutil si se quiere */
+  padding: 10px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 20px; /* Ajuste para centrar el icono verticalmente */
+}
+
+/* Estilo para el párrafo de texto */
+.quien-item p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0; /* Quitamos márgenes por defecto del párrafo */
+}
+
+
+/* --- Adaptación para celulares (Layout responsivo) --- */
+@media (max-width: 768px) {
+  .quien-grid {
+    /* En pantallas chicas, mostramos 2 columnas */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .quien-grid {
+    /* En pantallas muy chicas, mostramos 1 sola columna */
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .quien-item {
+    /* Centramos el contenido en la vista de una columna */
+    align-items: center;
+    text-align: center;
+  }
+}
+/* ================================================== */
+/* PRUEBA 3: DIAGNÓSTICO AGRESIVO DE ESPACIOS      */
+/* ¡OJO! La intención es que todo se junte DEMASIADO. */
+/* ================================================== */
+
+/* Reseteo general y agresivo para diagnosticar */
+main, section, .container, .section-block, .hero-home, h1, h2, h3, p {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* --- DESPUÉS DEL RESETEO, AÑADIMOS UN ESPACIO MÍNIMO Y CONTROLADO --- */
+/* Ahora que todo debería estar pegado, añadimos un espacio ÚNICO y controlado.
+   Esto se lo ponemos únicamente al bloque que está DENTRO de cada sección. */
+
+.section-block {
+    /* Un padding de 3rem arriba/abajo y 2rem a los lados */
+    padding: 3rem 2rem !important;
+}
+
+.hero-home .container {
+    /* Le devolvemos su padding original al "hero" para que se vea bien */
+    padding: 5rem 2rem !important;
+}
+/* style.css */
+
+/* --- Paleta de Colores (Hex Codes extraídos de la imagen y optimizados) --- */
+:root {
+    --color-text-dark: #1E1E1E; /* Casi negro para textos principales */
+    --color-bg-light: #F7F3E9; /* Blanco/crema para fondos claros y principales */
+    --color-accent-terracotta: #DC7A5F; /* Terracota para acentos y botones principales */
+    --color-accent-red: #CD3B3B; /* Rojo para acentos más fuertes o estados hover */
+    --color-bg-neutral: #EAE3DB; /* Beige cálido para secciones, fondos */
+    --color-bg-subtle: #DDC8A4; /* Beige arena para fondos muy sutiles o elementos */
+    --color-text-secondary: #7A5C40; /* Marrón medio para claims o textos secundarios */
+    --color-text-light: #BFA7F0; /* Usado para los puntos separadores del menú, etc. */
+    --color-shadow: rgba(0, 0, 0, 0.08); /* Sombra suave para elementos */
+    --color-shadow-strong: rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+    --color-link-hover: #CD3B3B; /* Color al pasar el mouse sobre links */
+    /* Variables para RGB para uso en rgba() */
+    --color-accent-terracotta-rgb: 220, 122, 95;
+    --color-accent-red-rgb: 205, 59, 59;
+}
+
+/* --- Base --- */
+body {
+    font-family: 'Manrope', sans-serif;
+    color: #000000 !important; /* ¡¡¡FORZADO A NEGRO PURO #000000 con !important para asegurar LEGIBILIDAD en todo el body!!! */
+    line-height: 1.6;
+    background-color: var(--color-bg-light); /* Fondo general principal */
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased; /* Mejor renderizado de fuentes en WebKit */
+    -moz-osx-font-smoothing: grayscale; /* Mejor renderizado de fuentes en Firefox */
+    position: relative;
+    overflow-x: hidden; /* Evita scroll horizontal */
+    /* Textura de ruido sutil en el body */
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8ZmlsdGVyIGlkPSJub2lzZSI+CiAgPHZ1cmxpZW4gYmFzZUZyZXF1ZW5jeT0iLjIiIG51bU9jdGF2ZXM9IjIiIHN0aXRjaFRpbGVzPSJub3dyaXgiIHR5cGU9ImZyYWN0YWxOb2lzZSIvPgogPC9maWx0ZXI+CiA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRjNGM0U5Ii8+CiA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI25vaXNlKSIgb3BhY2l0eT0iLjA0Ii8+Cjwvc3ZnPg==');
+    background-repeat: repeat;
+    background-size: 60px 60px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+/* --- Header Global --- */
+.header-global {
+    background-color: var(--color-bg-light);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--color-bg-neutral);
+    box-shadow: 0 2px 8px var(--color-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-global .logo a {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 1.6em; /* Más pequeño y delicado */
+    color: #1E1E1E !important; /* FORZADO CON HEX */
+    text-decoration: none;
+    text-transform: lowercase; /* Nombre de la marca siempre en minúscula */
+    letter-spacing: -0.03em;
+    padding: 5px 0; /* Un poco más de padding alrededor del logo */
+}
+
+.header-global nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.header-global nav ul li {
+    margin-left: 25px;
+    position: relative;
+}
+
+.header-global nav ul li:not(:last-child)::after { /* Puntitos separadores */
+    content: '•';
+    position: absolute;
+    right: -15px;
+    color: var(--color-text-light); /* Color tenue para el punto */
+    font-size: 0.8em;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header-global nav ul li a {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1em;
+    font-weight: 500;
+    color: #1E1E1E !important; /* FORZADO CON HEX */
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+    text-transform: lowercase; /* Links del menú en minúscula */
+}
+
+.header-global nav ul li a:hover {
+    color: var(--color-accent-terracotta);
+}
+
+.header-global nav ul li a::after { /* Underline effect on hover */
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--color-accent-terracotta);
+    transition: width 0.3s ease;
+}
+
+.header-global nav ul li a:hover::after {
+    width: 100%;
+}
+
+.desktop-cta {
+    margin-left: 30px;
+}
+
+
+/* Hamburguer Menu (Mobile) */
+.hamburger-menu {
+    display: none;
+    font-size: 1.8em;
+    cursor: pointer;
+    color: #1E1E1E !important; /* FORZADO CON HEX */
+}
+
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg-light);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+    transition: transform 0.4s ease-in-out;
+    transform: translateX(100%);
+    overflow-y: auto;
+}
+
+.mobile-nav.is-active {
+    transform: translateX(0);
+    display: flex;
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.mobile-nav ul li {
+    margin: 25px 0;
+}
+
+.mobile-nav ul li a {
+    font-size: 1.8em;
+    color: #1E1E1E !important; /* FORZADO CON HEX */
+    text-decoration: none;
+    text-transform: lowercase;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+}
+
+.mobile-nav .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 2.2em;
+    cursor: pointer;
+    color: #1E1E1E !important; /* FORZADO CON HEX */
+}
+
+/* --- Hero Section (Home Page) --- */
+.hero-home {
+    background-color: var(--color-bg-light);
+    padding: 80px 25px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(135deg, var(--color-bg-light) 0%, var(--color-bg-neutral) 100%);
+}
+
+.hero-home .claim {
+    font-size: 1.1em;
+    font-family: 'Lato', sans-serif;
+    color: var(--color-text-secondary) !important; /* Este sí debe ser más claro por estética */
+    margin-bottom: 0.5em;
+}
+
+.hero-home h1 {
+    font-size: 3.8em;
+    margin-bottom: 0.4em;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    font-weight: 700;
+}
+
+.hero-home .subclaim {
+    font-size: 1.3em;
+    font-family: 'Lato', sans-serif;
+    color: var(--color-text-secondary) !important; /* Este sí debe ser más claro por estética */
+    max-width: 750px;
+    margin: 0 auto 40px auto;
+}
+
+/* Letras clave de fondo (SPO) */
+.hero-home::before, .hero-home::after {
+    content: 'SPO';
+    position: absolute;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 900;
+    font-size: 25em;
+    color: var(--color-bg-subtle);
+    opacity: 0.08;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+}
+
+.hero-home::before {
+    top: -100px;
+    left: -100px;
+    transform: rotate(-15deg);
+}
+
+.hero-home::after {
+    bottom: -100px;
+    right: -100px;
+    transform: rotate(15deg);
+}
+
+
+/* --- Botones --- */
+.button {
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: var(--color-accent-terracotta);
+    color: var(--color-off-white-cream);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    font-family: 'Manrope', sans-serif;
+    /* text-transform: lowercase; ¡REMOVIDO para que el HTML controle la capitalización de botones! */
+    box-shadow: 0 5px 15px var(--color-shadow);
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: var(--color-accent-red);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px var(--color-shadow-strong);
+}
+
+/* --- Secciones de Contenido (General) --- */
+.content-section {
+    padding: 40px 25px;
+}
+
+.section-block {
+    margin-bottom: 40px;
+    background-color: var(--color-bg-light);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px var(--color-shadow);
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(45deg, var(--color-bg-light) 0%, var(--color-bg-neutral) 100%);
+    background-size: cover;
+}
+
+/* Textura de ruido sutil en los bloques */
+.section-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8ZmlsdGVyIGlkPSJub2lzZSI+CiAgPHZ1cmxpZW4gYmFzZUZyZXF1ZW5jeT0iLjIiIG51bU9jdGF2ZXM9IjIiIHN0aXRjaFRpbGVzPSJub3dyaXgiIHR5cGU9ImZyYWN0YWxOb2lzZSIvPgogPC9maWx0ZXI+CiA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjRkZGRkZGIi8+CiA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2hhc2hmaWx0ZXIpIiBvcGFjaXR5PSIuMDQiLz4KPC9zdmc+');
+    background-size: 60px 60px;
+    opacity: 0.2 !important; /* REDUCIDO PARA MAYOR CONTRASTE CON EL TEXTO */
+    pointer-events: none;
+    z-index: 1;
+}
+.section-block > *:not(::before) {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Forzado de color oscuro para todo el contenido textual general */
+h1, h2, h3, h4, h5, h6 {
+    color: #000000 !important; /* FORZADO A NEGRO ABSOLUTO #000000 con !important */
+    margin-top: 0;
+    font-weight: 700;
+}
+
+p, ul li, ol li, .blog-list article.blog-entry p,
+.blog-post p, .blog-post ol li, .blog-post em, .blog-cta p,
+.contact-form label, .contact-form input[type="text"], .contact-form input[type="email"], .contact-form textarea {
+    color: #000000 !important; /* FORZADO A NEGRO ABSOLUTO #000000 con !important */
+}
+
+/* Textos secundarios (claims y subclaims) que deben ser más claros */
+.hero-home .claim, .hero-home .subclaim, .blog-list article.blog-entry p {
+    color: var(--color-text-secondary) !important; /* Marrón medio para descripciones/claims */
+}
+
+/* Footer siempre visible y claro */
+.footer {
+    background-color: #1E1E1E !important;
+    color: #F7F3E9 !important; /* ¡Color de texto claro forzado con HEX para que se vea! */
+    text-align: center;
+    padding: 40px 20px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9em;
+}
+
+.footer p {
+    margin: 5px 0;
+    color: inherit !important; /* Hereda el color claro del footer */
+}
+
+.footer a {
+    color: inherit !important; /* Hereda el color claro del footer */
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: var(--color-accent-terracotta);
+}
+
+/* Blog listado y posts - color de texto forzado */
+.blog-list article.blog-entry h3 {
+    color: #000000 !important;
+}
+.blog-list article.blog-entry h3 a {
+    color: #000000 !important;
+    text-decoration: none;
+}
+.blog-list article.blog-entry h3 a:hover {
+    color: var(--color-accent-terracotta);
+}
+.blog-list article.blog-entry p {
+    color: #000000 !important;
+}
+
+.blog-post h2 {
+    color: #000000 !important;
+}
+.blog-post h3, .blog-post h4 {
+    color: var(--color-medium-brown) !important;
+}
+.blog-post p {
+    color: #000000 !important;
+}
+.blog-post ol li {
+    color: #000000 !important;
+}
+.blog-post em {
+    color: #000000 !important;
+}
+
+
+.blog-cta {
+    background-color: var(--color-light-beige-sand);
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 50px;
+    text-align: center;
+    box-shadow: 0 4px 10px var(--color-shadow);
+}
+
+.blog-cta p {
+    font-size: 1.1em;
+    color: #000000 !important;
+}
+
+/* --- Formulario de Contacto (Nuevo Estilo) --- */
+.contact-form {
+    margin-top: 30px;
+    text-align: left;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    color: #000000 !important;
+    text-transform: lowercase;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-light-grey);
+    border-radius: 6px;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.05em;
+    color: #000000 !important;
+    background-color: var(--color-very-light-grey);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: var(--color-accent-terracotta);
+    outline: none;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.08), 0 0 0 3px rgba(var(--color-accent-terracotta-rgb), 0.2);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.contact-form button.button {
+    width: auto;
+    margin-top: 10px;
+}
+
+
+/* --- Animaciones (Scroll Reveal) --- */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Custom Cursor --- */
+#custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    width: 16px;
+    height: 16px;
+    background-color: var(--color-accent-terracotta);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 15px var(--color-accent-terracotta), 0 0 5px var(--color-accent-terracotta);
+    transition: transform 0.1s ease-out, width 0.2s ease, height 0.2s ease;
+    mix-blend-mode: difference;
+    filter: blur(2px);
+}
+
+/* Ocultar cursor nativo */
+body {
+    cursor: none;
+}
+
+/* Cursor hover effects */
+a:hover ~ #custom-cursor, button:hover ~ #custom-cursor, .blog-entry:hover ~ #custom-cursor,
+input:hover ~ #custom-cursor, textarea:hover ~ #custom-cursor, label:hover ~ #custom-cursor {
+    width: 30px;
+    height: 30px;
+    box-shadow: 0 0 25px var(--color-accent-red), 0 0 10px var(--color-accent-red);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    .desktop-nav, .desktop-cta {
+        display: none;
+    }
+    .hamburger-menu {
+        display: block;
+    }
+    .hero-home h1 {
+        font-size: 2.8em;
+    }
+    .hero-home .subclaim {
+        font-size: 1.1em;
+    }
+    .hero-home::before, .hero-home::after {
+        display: none;
+    }
+    .section-block {
+        padding: 30px;
+    }
+    .blog-post h2 {
+        font-size: 2em;
+    }
+    /* Deshabilitar custom cursor en touch devices (o pantallas pequeñas) */
+    body {
+        cursor: default;
+    }
+    #custom-cursor {
+        display: none;
+    }
+    .mobile-nav.is-active {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.8em; }
+    h3 { font-size: 1.4em; }
+    p, ul li, ol li { font-size: 1em; }
+    .section-block {
+        padding: 20px;
+        margin-bottom: 40px;
+    }
+    .button {
+        padding: 12px 25px;
+        font-size: 0.9em;
+    }
+    .hero-home {
+        padding: 60px 15px;
+    }
+    .section-block ul li {
+        padding-left: 35px;
+    }
+    .section-block ul li i.fas {
+        font-size: 1.2em;
+        top: 3px;
+    }
+}
+/* --- Estilos para la sección "¿Para quién es este espacio?" --- */
+
+/* Contenedor de la grilla */
+.quien-grid {
+  display: grid;
+  /* Define 3 columnas de igual tamaño */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 2rem; /* Espacio entre los elementos */
+  margin-top: 2rem;
+}
+
+/* Cada elemento individual de la grilla */
+.quien-item {
+  text-align: left; /* Alinea el texto a la izquierda */
+  display: flex; /* Usamos flex para alinear icono y texto */
+  flex-direction: column; /* Ponemos el icono arriba y el texto abajo */
+  align-items: flex-start; /* Alineamos los items a la izquierda */
+}
+
+/* Estilo para los íconos */
+.quien-item i {
+  font-size: 2rem; /* Tamaño del ícono */
+  margin-bottom: 1rem; /* Espacio debajo del ícono */
+  color: #333; /* Color oscuro para el ícono, como en el resto de tu web */
+  background-color: #f8f5f2; /* Un fondo muy sutil si se quiere */
+  padding: 10px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 20px; /* Ajuste para centrar el icono verticalmente */
+}
+
+/* Estilo para el párrafo de texto */
+.quien-item p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0; /* Quitamos márgenes por defecto del párrafo */
+}
+
+
+/* --- Adaptación para celulares (Layout responsivo) --- */
+@media (max-width: 768px) {
+  .quien-grid {
+    /* En pantallas chicas, mostramos 2 columnas */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .quien-grid {
+    /* En pantallas muy chicas, mostramos 1 sola columna */
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .quien-item {
+    /* Centramos el contenido en la vista de una columna */
+    align-items: center;
+    text-align: center;
+  }
+}
+/* ================================================== */
+/* PRUEBA 3: DIAGNÓSTICO AGRESIVO DE ESPACIOS      */
+/* ¡OJO! La intención es que todo se junte DEMASIADO. */
+/* ================================================== */
+
+/* Reseteo general y agresivo para diagnosticar */
+main, section, .container, .section-block, .hero-home, h1, h2, h3, p {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* --- DESPUÉS DEL RESETEO, AÑADIMOS UN ESPACIO MÍNIMO Y CONTROLADO --- */
+/* Ahora que todo debería estar pegado, añadimos un espacio ÚNICO y controlado.
+   Esto se lo ponemos únicamente al bloque que está DENTRO de cada sección. */
+
+.section-block {
+    /* Un padding de 3rem arriba/abajo y 2rem a los lados */
+    padding: 3rem 2rem !important;
+}
+
+.hero-home .container {
+    /* Le devolvemos su padding original al "hero" para que se vea bien */
+    padding: 5rem 2rem !important;
+}
+/* ======================================================= */
+/* ESTILO LISTAS EN PÁGINA IMPULSO INICIAL (VERSIÓN FINAL) */
+/* ======================================================= */
+
+/* Contenedor principal de las listas */
+.impulso-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Espacio entre cada tarjeta */
+  margin-top: 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+/* Cada tarjeta/item de la lista */
+.impulso-item {
+  display: flex;
+  flex-direction: row; /* Pone el ícono a la izquierda del texto */
+  align-items: center; /* Centra verticalmente el ícono con el texto */
+  gap: 1.5rem; /* Espacio entre el ícono y el texto */
+  background-color: #FFFFFF; /* Fondo blanco */
+  padding: 1.25rem;
+  border-radius: 12px;
+  border: 1px solid #EAE6E1;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.impulso-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+}
+
+/* El ícono de cada item */
+.impulso-item i {
+  font-size: 1.75rem;
+  color: #d96c47; /* Color terracota de la marca */
+  flex-shrink: 0;
+  width: 30px; /* Ancho fijo para alineación perfecta */
+  text-align: center;
+}
+
+/* El texto de cada item */
+.impulso-item span {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+/* ======================================================= */
+/* ALINEACIÓN TIPOGRÁFICA CON GUÍA DE MARCA SPO       */
+/* ======================================================= */
+
+/* Títulos Principales (H1) */
+h1 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800; /* 'Black' es 800 o 900, 800 es más común */
+  font-size: clamp(2rem, 5vw, 2.8rem); /* Tamaño fluido y responsivo */
+}
+
+/* Subtítulos (H2) */
+h2 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700; /* 'Bold' es 700 */
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
+}
+
+/* Subtítulos Secundarios (H3) */
+h3 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500; /* 'Medium' es 500 */
+  font-size: clamp(1.5rem, 3.5vw, 1.8rem);
+}
+
+/* Cuerpo de Texto/Párrafos */
+p, li, span, label, a {
+  font-family: 'Lato', sans-serif; /* Usamos Lato como definiste para el cuerpo */
+  font-weight: 400; /* 'Regular' es 400 */
+}
+
+/* Damos Manrope al texto de los ítems de las listas que creamos */
+/* ======================================= */
+/* RESTAURAR CURSOR PREDETERMINADO DEL NAVEGADOR  */
+/* ======================================= */
+body {
+    cursor: default !important;
+}
+.impulso-item span {
+    font-family: 'Manrope', sans-serif;
+}
+/* ======================================================= */
+/* ESTILOS LANDING PAGE "IMPULSO INICIAL" (V3)       */
+/* ======================================================= */
+
+/* --- Estilos Generales de la Página --- */
+.page-impulso-inicial main {
+  padding-top: 0; /* Quitamos el padding superior para que el hero pegue arriba */
+}
+
+/* --- 1. Sección Hero (Diseño Refinado) --- */
+.page-impulso-inicial .hero-impulso {
+  /* Quitamos el fondo de color */
+  background-color: transparent; 
+  padding: 5rem 1.5rem 4rem; /* Ajustamos un poco el padding inferior */
+  text-align: center;
+  /* Añadimos una línea inferior como acento de diseño */
+  border-bottom: 1px solid #EAE6E1;
+}
+.page-impulso-inicial .hero-impulso h1 {
+  /* El título ahora lleva el color de la marca */
+  color: #d96c47; 
+  margin-bottom: 1rem;
+}
+.page-impulso-inicial .hero-impulso .subtitle {
+  font-size: 1.25rem;
+  /* El subtítulo vuelve a un color oscuro y legible */
+  color: #555; 
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- 2. Layout de 2 Columnas --- */
+.page-impulso-inicial .two-columns-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 4rem 1.5rem;
+}
+.page-impulso-inicial .column-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+@media (min-width: 768px) {
+  .page-impulso-inicial .two-columns-section {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+/* --- 3. Bloque de Valor (Para quién + Qué te llevás) --- */
+.page-impulso-inicial .value-prop-block {
+  background-color: #f8f5f2; /* Color de fondo sutil */
+  padding: 4rem 1.5rem;
+}
+.page-impulso-inicial .value-prop-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+@media (min-width: 768px) {
+  .page-impulso-inicial .value-prop-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* --- 4. Diagrama de Proceso --- */
+.page-impulso-inicial .process-section {
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+.page-impulso-inicial .process-steps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.page-impulso-inicial .step {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #f8f5f2;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 100%;
+  text-align: left; /* Mantenemos el texto alineado a la izquierda dentro del paso */
+}
+
+/* En móvil, cuando los pasos se apilan, los centramos */
+@media (max-width: 991px) {
+    .page-impulso-inicial .step {
+        justify-content: center;
+    }
+}
+.page-impulso-inicial .step-number {
+  background-color: #d96c47;
+  color: white;
+  font-weight: 700;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.page-impulso-inicial .step-arrow {
+  font-size: 1.5rem;
+  color: #ccc;
+  transform: rotate(90deg); /* Flecha hacia abajo en móvil */
+}
+/* Ocultar la última flecha */
+.page-impulso-inicial .step:last-of-type + .step-arrow {
+  display: none;
+}
+@media (min-width: 992px) {
+  .page-impulso-inicial .process-steps {
+    flex-direction: row; /* Horizontal en desktop */
+    justify-content: center;
+    gap: 0;
+  }
+  .page-impulso-inicial .step { width: auto; }
+  .page-impulso-inicial .step-arrow {
+    transform: rotate(0deg); /* Flecha recta en desktop */
+    padding: 0 1rem;
+  }
+}
+
+/* --- 5. Tarjeta de Precio --- */
+.page-impulso-inicial .pricing-section {
+  padding: 2rem 1.5rem 4rem;
+}
+.page-impulso-inicial .pricing-card {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2.5rem;
+  border: 2px solid #d96c47;
+  border-radius: 12px;
+  background-color: #fff;
+}
+.page-impulso-inicial .pricing-card .price {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #333;
+  margin: 1rem 0;
+}
+.page-impulso-inicial .pricing-card .price span {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #555;
+}
+.page-impulso-inicial .pricing-card .includes {
+  margin-bottom: 2rem;
+}
+.page-impulso-inicial .pricing-card .cta-button {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+/* ======================================================= */
+/* REDISEÑO COMPLETO DEL FORMULARIO DE CONTACTO       */
+/* ======================================================= */
+
+/* 1. Solución al "espacio fantasma" y estructura general */
+.contact-form {
+  margin-top: 2rem !important; /* Anulamos cualquier margen superior excesivo */
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 1.5rem; /* Espacio consistente ENTRE cada campo del formulario */
+}
+
+
+/* 2. Solución a la "invisibilidad": Estilo de los campos de texto */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  /* Hacemos visibles las cajas de texto */
+  background-color: #FFFFFF; /* Fondo blanco bien visible */
+  border: 1px solid #cccccc; /* Borde gris claro para definir el campo */
+  border-radius: 8px; /* Bordes redondeados, más moderno */
+  
+  /* Hacemos el texto interior cómodo para escribir y leer */
+  padding: 14px;
+  font-size: 1rem;
+  font-family: 'Lato', sans-serif;
+  color: #333;
+  
+  /* Hacemos que ocupe todo el ancho disponible */
+  width: 100%;
+  
+  /* Transición suave para el efecto de foco */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 3. Efecto de Foco: Resaltar el campo cuando el usuario hace clic */
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+  outline: none; /* Quitamos el borde por defecto del navegador */
+  border-color: #d96c47; /* El borde cambia al color de tu marca */
+  box-shadow: 0 0 0 3px rgba(217, 108, 71, 0.2); /* Un "resplandor" sutil */
+}
+
+
+/* 4. Estilo de las etiquetas (ej. "tu nombre:") */
+.contact-form label {
+  display: block; /* La etiqueta ocupa su propia línea */
+  margin-bottom: 0.5rem; /* Espacio entre la etiqueta y la caja de texto */
+  font-weight: 700; /* Texto en negrita para que se lea bien */
+  color: #333;
+}
+
+/* 5. Estilo del botón de envío para que sea fácil de presionar */
+.contact-form .button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+/* ======================================================= */
+/* ESTILOS PARA EL BLOQUE "SOFT CTA" (IMPULSO INICIAL)  */
+/* ======================================================= */
+
+.soft-cta-block {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  margin: 2rem 0; /* Le da un poco de aire arriba y abajo */
+  border: 1px solid #EAE6E1; /* Borde muy sutil */
+  border-radius: 12px;
+  background-color: #fff; /* Fondo blanco para separarlo del fondo general */
+}
+
+.soft-cta-block h3 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.soft-cta-block p {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+/* Estilo para un botón secundario (solo borde) */
+.button.button-secondary {
+  background-color: transparent;
+  color: #d96c47;
+  border: 2px solid #d96c47;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.button.button-secondary:hover {
+  background-color: #d96c47;
+  color: #fff;
+}
+/* ======================================================= */
+/* ESTILOS NUEVAS SECCIONES LANDING IMPULSO (V4)     */
+/* ======================================================= */
+
+/* Título genérico para las nuevas secciones */
+.section-title {
+    text-align: center;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+/* --- Estilos para la Sección de "Filosofía / Cita" --- */
+.quote-section {
+    background-color: #f8f5f2;
+    padding: 4rem 1.5rem;
+    text-align: center;
+}
+.quote-section blockquote p {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 1.5rem auto;
+    color: #555;
+}
+.quote-section blockquote footer {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    color: #333;
+}
+
+/* --- Estilos para la Sección de Testimonios (reutiliza los de la home) --- */
+.testimonial-section-impulso {
+    padding: 4rem 1.5rem;
+}
+
+/* --- Estilos para la Sección de Preguntas Frecuentes (FAQ) --- */
+.faq-section {
+    padding: 2rem 1.5rem 4rem;
+    background-color: #f8f5f2;
+}
+.faq-grid {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.faq-item {
+    background-color: #fff;
+    border: 1px solid #EAE6E1;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+.faq-item h4 {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 0.75rem 0;
+}
+.faq-item p {
+    margin: 0;
+    line-height: 1.7;
+    color: #555;
+}
+/* ======================================================= */
+/* ESTILOS PARA LOS TESTIMONIOS (CORRECCIÓN)           */
+/* Este código da el formato de "tarjeta" a las opiniones */
+/* ======================================================= */
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Una columna en móviles */
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.testimonial-card {
+  background-color: #fff;
+  border: 1px solid #EAE6E1;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-card p {
+  font-family: 'Manrope', sans-serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 1.5rem; 
+  flex-grow: 1; 
+  position: relative;
+  padding-left: 2.5rem; /* Espacio para la comilla */
+}
+
+/* Comillas estilizadas para dar un toque de diseño */
+.testimonial-card p::before {
+  content: '“'; /* Comilla de apertura */
+  font-size: 5rem;
+  font-family: 'Georgia', serif; /* Usamos una fuente con más estilo para la comilla */
+  color: #EAE6E1; /* Un color muy sutil de fondo */
+  position: absolute;
+  left: -0.5rem;
+  top: -1rem;
+  z-index: 1;
+}
+
+.testimonial-card p {
+    position: relative;
+    z-index: 2; /* Nos aseguramos que el texto esté por encima de la comilla */
+}
+
+.testimonial-card strong {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  color: #555;
+  text-align: left; /* Alineamos el nombre a la izquierda junto con el texto */
+  padding-left: 2.5rem;
+}
+
+/* En pantallas más grandes, pasamos a 2 columnas */
+@media (min-width: 768px) {
+  .testimonial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* ======================================================= */
+/* SISTEMA DE DISEÑO RÍTMICO PARA LANDING IMPULSO (V5) */
+/* Unifica fondos, espaciados y títulos de sección.    */
+/* ======================================================= */
+
+/* --- Título Estándar para Todas las Secciones --- */
+.page-impulso-inicial .section-title {
+    text-align: center;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800; /* Más peso para más impacto */
+    font-size: clamp(1.8rem, 5vw, 2.2rem); /* Tamaño fluido */
+    color: #333;
+    margin-bottom: 0; /* Quitamos el margen para controlar el espacio con el padding de la sección */
+}
+
+
+/* --- Orquestación de Secciones --- */
+
+/* 1. Sección "Paso a paso" */
+.page-impulso-inicial .process-section {
+    background-color: transparent; /* Fondo principal (hueso) */
+    padding: 4rem 1.5rem;
+}
+.page-impulso-inicial .process-section .process-steps {
+    margin-top: 3rem; /* Espacio entre el título y los pasos */
+}
+
+/* 2. Sección "Opiniones Reales" */
+.page-impulso-inicial .testimonial-section-impulso {
+    background-color: #f8f5f2; /* Fondo secundario (gris claro) */
+    padding: 5rem 1.5rem;
+    border-top: 1px solid #EAE6E1;
+    border-bottom: 1px solid #EAE6E1;
+}
+
+/* 3. Sección "Valor del Impulso Inicial" (Precio) */
+.page-impulso-inicial .pricing-section {
+    background-color: transparent; /* Fondo principal (hueso) */
+    padding: 5rem 1.5rem;
+}
+/* No es necesario un título h3 para la card si ya lo pusimos en la sección */
+.page-impulso-inicial .pricing-card h3 {
+    display: none; /* Ocultamos el título dentro de la card para no repetir */
+}
+
+/* 4. Sección "Dudas Comunes" (FAQ) */
+.page-impulso-inicial .faq-section {
+    background-color: #f8f5f2; /* Fondo secundario (gris claro) */
+    padding: 5rem 1.5rem;
+    border-top: 1px solid #EAE6E1;
+}
+.page-impulso-inicial .faq-section .faq-grid {
+    margin-top: 3rem;
+}
+
+/* 5. Sección Final de Contacto */
+.page-impulso-inicial #contact-section {
+    background-color: transparent; /* Fondo principal (hueso) */
+    padding: 5rem 1.5rem;
+}
+/* ======================================================= */
+/* PULIDO FINAL DE DISEÑO Y COHESIÓN (V6)              */
+/* Unifica anchos, espaciado y mejora la tarjeta de precio */
+/* ======================================================= */
+
+/* --- 1. Definimos un ancho máximo para todos los bloques de contenido --- */
+.page-impulso-inicial .process-steps,
+.page-impulso-inicial .testimonial-grid,
+.page-impulso-inicial .faq-grid {
+    max-width: 900px; /* Ancho máximo consistente */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- 2. Ajustes a la tarjeta de precio para que se integre mejor --- */
+
+/* La sección que contiene la tarjeta ahora tendrá fondo y más aire */
+.page-impulso-inicial .pricing-section {
+    background-color: #f8f5f2; /* Fondo secundario gris claro */
+    padding: 6rem 1.5rem; /* MUCHO más aire vertical para que respire */
+    border-top: 1px solid #EAE6E1;
+}
+
+/* La tarjeta en sí: suavizamos el borde y mejoramos la sombra */
+.page-impulso-inicial .pricing-card {
+    border: 1px solid #ddd; /* Borde más suave */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07); /* Sombra más intencionada */
+}
+
+/* --- 3. Pequeños ajustes de ritmo en las otras secciones --- */
+
+/* Damos un fondo principal a los testimonios para alternar con el precio */
+.page-impulso-inicial .testimonial-section-impulso {
+    background-color: transparent;
+    padding-bottom: 3rem; /* Menos espacio abajo para conectar con el precio */
+}
+
+/* Devolvemos el fondo gris a las FAQ para seguir el ritmo */
+.page-impulso-inicial .faq-section {
+    background-color: #f8f5f2;
+}
+
+/* Aseguramos que el formulario de contacto final tenga buen espacio */
+.page-impulso-inicial #contact-section {
+    padding: 6rem 1.5rem;
+}
+/* ======================================================= */
+/* ESTILOS PARA EL NUEVO DISPLAY DE PRECIOS MULTIMONEDA  */
+/* ======================================================= */
+
+.multi-price-container {
+  display: flex;
+  justify-content: center; /* Centra los items horizontalmente */
+  align-items: center;   /* Centra los items verticalmente */
+  gap: 1.5rem; /* Espacio entre los precios */
+  margin: 1.5rem 0;
+  padding: 1rem 0;
+}
+
+.price-option {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* El precio principal (USD) - grande y protagonista */
+.price-option.price-primary {
+  padding: 0 1.5rem;
+  border-left: 1px solid #EAE6E1;
+  border-right: 1px solid #EAE6E1;
+}
+
+.price-option.price-primary .currency {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.price-option.price-primary .amount {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #333;
+  line-height: 1.1;
+}
+
+/* Los precios secundarios (ARS y UYU) - más sutiles */
+.price-option.price-secondary .currency {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #888;
+}
+
+.price-option.price-secondary .amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #555;
+  line-height: 1.2;
+}
+
+/* --- Adaptación para Celulares --- */
+@media (max-width: 600px) {
+  .multi-price-container {
+    flex-direction: column; /* Apilamos los precios verticalmente */
+    gap: 1rem;
+  }
+
+  /* Usamos 'order' para poner el precio principal (USD) arriba de todo */
+  .price-option.price-primary {
+    order: -1; /* El número más bajo va primero */
+    border: none;
+    padding: 0.5rem 0;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Ponemos los precios secundarios uno al lado del otro debajo del principal */
+  .price-option.price-secondary {
+    display: inline-block; /* Los ponemos en línea */
+    margin: 0 0.75rem; /* Con un espacio entre ellos */
+  }
+
+  /* Creamos un contenedor invisible para los precios secundarios */
+  .multi-price-container::before {
+    content: '';
+    display: block;
+    order: 0; /* Lo ponemos después del primario y antes de los secundarios */
+  }
+}
+/* ======================================================= */
+/* ESTILOS PARA LOS ARTÍCULOS DEL BLOG ("IDEAS")       */
+/* ======================================================= */
+
+/* Estilos generales para el contenido del post */
+.blog-post article {
+  max-width: 800px; /* Ancho máximo para buena legibilidad */
+  margin: 0 auto;
+}
+
+.blog-post article h2,
+.blog-post article h3,
+.blog-post article h4 {
+  font-family: 'Manrope', sans-serif;
+  color: #333;
+}
+
+.blog-post article p,
+.blog-post article li {
+  font-family: 'Lato', sans-serif;
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Estilos para las listas con íconos */
+.blog-post article ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 2rem 0;
+}
+
+.blog-post article ul li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.blog-post article ul li i {
+  margin-right: 1rem;
+  margin-top: 0.4rem;
+  color: #d96c47; /* Color de acento de la marca */
+}
+
+/* Estilo para la caja de Llamado a la Acción (CTA) al final del post */
+.blog-cta {
+  background-color: #f8f5f2;
+  border-top: 3px solid #d96c47;
+  padding: 2rem;
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.blog-cta p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.blog-cta .author-quote {
+  font-style: italic;
+  color: #555;
+  margin-top: 1rem;
+}
+
+.blog-cta .button {
+  margin-top: 1.5rem;
+  display: inline-block;
+}
+/* ======================================================= */
+/* ESTILOS PARA LA PÁGINA PRINCIPAL DEL BLOG (blog.html) */
+/* ======================================================= */
+
+.blog-grid {
+    display: grid;
+    /* En desktop se verán 2 columnas */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem; /* Espacio entre las tarjetas */
+    padding: 3rem 0;
+}
+
+/* Estilo de cada tarjeta de post */
+.blog-entry-card {
+    background-color: #fff;
+    border: 1px solid #EAE6E1;
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.blog-entry-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+.blog-entry-card h3 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 1rem 0;
+    flex-grow: 1; /* Hace que el título ocupe el espacio para alinear los "leer más" */
+}
+
+.blog-entry-card p {
+    color: #555;
+    line-height: 1.7;
+    margin: 0 0 1.5rem 0;
+}
+
+.blog-entry-card .link-text {
+    font-weight: 700;
+}
+
+/* Adaptación para Celulares */
+@media (max-width: 768px) {
+    .blog-grid {
+        /* En móvil, se verá 1 sola columna */
+        grid-template-columns: 1fr;
+    }
+}
+/* Estilo para la cita de la fundadora en el CTA del blog */
+.blog-cta blockquote {
+    border-left: 3px solid #d96c47;
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: #555;
+}
+
+.blog-cta .author-quote {
+    font-style: normal;
+    font-weight: 700;
+    color: #333;
+}
+/* ======================================================= */
+/* SISTEMA DE DISEÑO RÍTMICO PARA LA PÁGINA DE INICIO (HOME) */
+/* ======================================================= */
+
+/* --- 1. Espaciado estándar para todas las secciones de contenido --- */
+.content-section {
+    padding: 5rem 1.5rem; /* Relleno vertical consistente */
+}
+
+/* --- 2. Alternancia de fondos de sección --- */
+
+/* La sección "¿Qué hacemos?" será la primera con fondo gris */
+main > .content-section:nth-of-type(2) {
+    background-color: #f8f5f2;
+    border-top: 1px solid #EAE6E1;
+}
+
+/* La sección "¿Para quién es?" (la 4ta sección) también tendrá fondo gris */
+main > .content-section:nth-of-type(4) {
+    background-color: #f8f5f2;
+    border-top: 1px solid #EAE6E1;
+}
+
+/* La sección de Contacto final también */
+#contact-section {
+    background-color: #f8f5f2;
+    border-top: 1px solid #EAE6E1;
+}
+
+/* --- 3. Rediseño del bloque "Soft CTA" para que sea una sección integrada --- */
+.soft-cta-block {
+    /* Quitamos el estilo de "tarjeta" porque ahora es una sección completa */
+    border: none;
+    background-color: transparent;
+    padding: 0; /* Quitamos el padding extra */
+    margin: 0;
+    box-shadow: none;
+}
+
+.soft-cta-block h3 {
+    font-size: 2rem; /* Hacemos el título un poco más grande */
+}
+
+.soft-cta-block p {
+    font-size: 1.1rem;
+}
+
+/* --- 4. Ajustes menores para la sección de Testimonios --- */
+/* Le damos un borde superior para separarla visualmente */
+main > .content-section:has(.testimonial-grid) {
+    border-top: 1px solid #EAE6E1;
+}
+/* ======================================================= */
+/* ESTILO PARA DESTACAR EL TERCER TESTIMONIO           */
+/* ======================================================= */
+
+/* Seleccionamos específicamente el TERCER hijo de la grilla de testimonios */
+.testimonial-grid .testimonial-card:nth-child(3) {
+  /* Le decimos que ocupe todas las columnas disponibles (de la 1 a la -1) */
+  grid-column: 1 / -1;
+  
+  /* Le damos un fondo sutil para diferenciarlo aún más */
+  background-color: #f8f5f2;
+  
+  /* Opcional: centramos el texto para un look más de "cita destacada" */
+  text-align: center;
+}
+
+/* Hacemos que la atribución (el nombre) también se centre */
+.testimonial-grid .testimonial-card:nth-child(3) strong {
+    text-align: center;
+    width: 100%;
+    padding-left: 0; /* Reseteamos el padding que tenía antes para que se centre bien */
+}
+
+/* Y que la comilla gigante también se centre en este testimonio destacado (VERSIÓN DEFINITIVA) */
+.testimonial-grid .testimonial-card:nth-child(3) p::before {
+  content: '“'; /* ¡LA LÍNEA CLAVE QUE FALTABA! */
+  position: absolute !important;
+  top: 1rem !important;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* También ajustamos el párrafo para que el texto no se monte sobre la comilla */
+.testimonial-grid .testimonial-card:nth-child(3) p {
+    padding-top: 1rem; /* Añadimos un poco de espacio superior */
+    position: relative;
+    z-index: 2;
+}
+
+ /* Y que el párrafo del testimonio destacado también se centre */
+ .testimonial-grid .testimonial-card:nth-child(3) p {
+    text-align: center;
+    padding-left: 0; /* Reseteamos el padding para que se centre bien */
+ }
+/* ======================================= */
+/* ESTILOS PARA EL NUEVO FOOTER            */
+/* ======================================= */
+.footer {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    background-color: #333;
+    color: #f8f5f2;
+}
+
+.footer-top strong {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+.footer-top p {
+    font-size: 1rem;
+    color: #ccc;
+    margin: 0.25rem 0 1.5rem 0;
+}
+
+.footer-nav {
+    margin-bottom: 1.5rem;
+}
+
+.footer-nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: 500;
+}
+.footer-nav a:hover {
+    text-decoration: underline;
+}
+
+.footer-contact {
+    margin-bottom: 2rem;
+}
+
+.footer-contact a {
+    color: #f8f5f2;
+    margin: 0 1rem;
+}
+
+.footer-copyright p {
+    font-size: 0.8rem;
+    color: #888;
+}
+/* --- ESTILOS FINALES Y AISLADOS PARA PRECIOS DE ANCLAJE --- */
+.old-price-inline {
+    display: block;
+    color: #888;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+.old-price-inline sup {
+    font-size: 1rem;
+}
+.price-option .new-price {
+    font-size: 3rem;
+}
+.price-option.price-primary .new-price {
+    font-size: 3.8rem;
+}
+/* --- ESTILOS PARA PÁGINA "LINK IN BIO" --- */
+.page-link-in-bio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem 0;
+}
+.link-in-bio-container {
+    width: 100%;
+    max-width: 680px;
+    padding: 1rem;
+    box-sizing: border-box;
+    text-align: center; /* Centramos todo el contenido del contenedor */
+}
+.lib-header { margin-bottom: 2.5rem; }
+.lib-header h1 { font-size: 2.2rem; }
+.lib-header p { font-size: 1.1rem; color: var(--color-text-secondary); }
+.lib-buttons { display: flex; flex-direction: column; gap: 1rem; }
+.lib-button, .accordion {
+    width: 100%;
+    padding: 18px 20px;
+    background-color: #fff;
+    color: var(--color-text-dark);
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    font-family: 'Manrope', sans-serif;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid var(--color-border);
+    cursor: pointer;
+    display: block;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.lib-button:hover, .accordion:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+.accordion { text-align: left; position: relative; }
+.accordion::after {
+    content: '+';
+    font-size: 1.5rem;
+    color: var(--color-accent-terracotta);
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+.accordion.active::after { transform: translateY(-50%) rotate(45deg); }
+.panel {
+    background-color: #fff;
+    border: 1px solid var(--color-border);
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    margin-top: -10px;
+    box-shadow: 0 10px 15px -5px rgba(0,0,0,0.05);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding-top 0.3s ease-out, padding-bottom 0.3s ease-out;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+.panel-content { padding: 1.5rem 0; text-align: left; }
+.panel-content ol { padding-left: 20px; }
+.panel-content li { margin-bottom: 0.75rem; }
+.lib-footer { text-align: center; margin-top: 3rem; font-size: 0.9rem; color: #999; }
+/* --- AJUSTE FINAL: Centrar texto en botones de Link-in-Bio --- */
+
+/* Le decimos a los botones que son links directos que centren su texto */
+.page-link-in-bio .lib-button {
+    text-align: center;
+}
+/* ======================================================= */
+/* CORRECCIÓN DEFINITIVA DE ALINEACIÓN PARA TODOS LOS BOTONES */
+/* ======================================================= */
+
+.page-link-in-bio .lib-button,
+.page-link-in-bio .accordion {
+    text-align: center !important; /* Forzamos el centrado para TODOS los botones */
+    padding-left: 20px; /* Aseguramos un padding consistente */
+    padding-right: 20px;
+}
