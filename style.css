@@ -132,7 +132,8 @@ h1, h2, h3, h4 { font-family: 'Manrope', sans-serif; color: var(--color-text-dar
     border-left: 1px solid #f0ebe4;
 }
 .price-option-final.price-main-final .amount-final {
-    font-size: 4.5rem; /* Hacemos el USD más grande */
+    font-size: 4.5rem;
+    color: var(--color-text-dark);
 }
 .currency-final {
     font-size: 1.2rem;
