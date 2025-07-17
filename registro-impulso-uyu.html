@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro para Impulso Inicial - Serprofesionalonline</title>
     <meta name="robots" content="noindex, nofollow">
-    <link rel="stylesheet" href="style.css?v=108">
+    <link rel="stylesheet" href="style.css?v=109">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
 </head>
@@ -20,10 +20,18 @@
     <main class="form-container">
         <div class="form-card">
             <h1>Estás a un paso de comenzar</h1>
-            <p>Por favor, completá tus datos para generar tu reserva. Luego serás redirigido a Mercado Pago para completar el pago.</p>
+            <p>Completá tus datos y te guiaremos al pago. Aquí te explicamos cómo sigue el proceso:</p>
             
+            <div class="proximos-pasos">
+                <h4>Próximos Pasos Después de Pagar:</h4>
+                <ol>
+                    <li><strong>Recibirás un email:</strong> Te enviaremos el link a tu formulario de diagnóstico.</li>
+                    <li><strong>Completarás el diagnóstico:</strong> Tus respuestas son la clave de nuestra sesión.</li>
+                    <li><strong>Agendarás la sesión:</strong> Una vez recibido el diagnóstico, te enviaremos el link a nuestra agenda.</li>
+                    <li><strong>¡Listo!</strong> Tendremos nuestra sesión de Impulso Inicial para darte total claridad.</li>
+                </ol>
+            </div>
             <form id="registro-form">
-                
                 <div class="form-group">
                     <label for="name">Tu nombre completo:</label>
                     <input type="text" name="nombre" id="name" required>
@@ -49,42 +57,31 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // --- CONFIGURACIÓN ---
             const formEndpoint = 'https://formspree.io/f/xqalkjrq';
             const mercadoPagoUrl = 'https://mpago.la/2DWVqAH'; // ¡IMPORTANTE! Reemplaza esto
-            // --------------------
 
             const form = document.getElementById('registro-form');
             const submitButton = document.getElementById('submit-btn');
 
             submitButton.addEventListener('click', function (e) {
                 e.preventDefault();
-
-                // Validación simple
                 if (!form.checkValidity()) {
                     form.reportValidity();
                     return;
                 }
-
                 const formData = new FormData(form);
                 submitButton.textContent = 'Procesando...';
                 submitButton.disabled = true;
-
                 fetch(formEndpoint, {
                     method: 'POST',
                     body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
+                    headers: { 'Accept': 'application/json' }
                 })
                 .finally(() => {
-                    // Redirigir al usuario a Mercado Pago SIN importar si el envío fue exitoso o no.
-                    // Esto asegura que el flujo de pago no se interrumpa.
                     window.location.href = mercadoPagoUrl;
                 });
             });
         });
     </script>
-
 </body>
 </html>
