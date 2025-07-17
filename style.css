@@ -704,3 +704,56 @@ main > section { padding: 4rem 1.5rem; }
 .proximos-pasos li:last-child {
     margin-bottom: 0;
 }
+/* --- ESTILOS PARA PÁGINA "LINK IN BIO" INTEGRADA (V3) --- */
+.page-link-in-bio-v3 {
+    background-color: var(--color-bg-light);
+}
+
+.lib-v3-container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+/* Reutilizamos los estilos de botones que ya tenías */
+.page-link-in-bio-v3 .lib-buttons {
+    display: flex; flex-direction: column; gap: 1rem;
+}
+.page-link-in-bio-v3 .lib-button, .page-link-in-bio-v3 .accordion {
+    width: 100%; padding: 18px 20px; background-color: #fff;
+    color: var(--color-text-dark); text-decoration: none; border-radius: 12px;
+    font-weight: 700; font-size: 1.1rem; font-family: 'Manrope', sans-serif;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; border: 1px solid var(--color-border);
+    cursor: pointer; display: block; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    position: relative; text-align: center;
+}
+.page-link-in-bio-v3 .lib-button:hover, .page-link-in-bio-v3 .accordion:hover {
+    transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+.page-link-in-bio-v3 .accordion { padding-right: 50px; }
+.page-link-in-bio-v3 .accordion::after {
+    content: '+'; font-size: 1.5rem; color: var(--color-accent-terracotta);
+    position: absolute; right: 20px; top: 50%;
+    transform: translateY(-50%); transition: transform 0.3s ease;
+}
+.page-link-in-bio-v3 .accordion.active::after { transform: translateY(-50%) rotate(45deg); }
+
+.page-link-in-bio-v3 .panel {
+    background-color: var(--color-bg-soft); border: 1px solid var(--color-border);
+    border-top: none; border-radius: 0 0 12px 12px; margin-top: -10px;
+    box-shadow: 0 10px 15px -5px rgba(0,0,0,0.05); max-height: 0;
+    overflow: hidden; transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    padding: 0 1.5rem;
+}
+.page-link-in-bio-v3 .panel-content {
+    text-align: center;
+}
+.page-link-in-bio-v3 .panel-content p {
+    margin-bottom: 1.5rem;
+    color: var(--color-text-secondary);
+}
+.page-link-in-bio-v3 .panel-button {
+    width: auto;
+    display: inline-block;
+}
