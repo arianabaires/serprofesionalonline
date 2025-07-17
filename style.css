@@ -815,3 +815,52 @@ main > section { padding: 4rem 1.5rem; }
     border-top: 4px solid var(--color-bg-neutral); /* Añade un borde grueso pero sutil arriba */
     padding-top: 3rem;
 }
+/* --- MEJORAS DE ESTILO PARA SECCIONES DEL INDEX --- */
+
+/* 1. Separación de Secciones y Contraste */
+/* Le damos un fondo suave a la sección de "Para quién es" para separarla */
+main > .content-section:has(.quien-grid) {
+    background-color: var(--color-bg-soft);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* También le damos fondo a la sección del formulario de contacto */
+#contact-section .section-block {
+    background-color: #fff;
+}
+
+
+/* 2. Estilo "Tarjeta" para los Ítems de "Para Quién Es" */
+.quien-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.quien-item {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quien-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+}
+
+/* Ajustamos el ícono dentro de la nueva tarjeta */
+.quien-item i {
+    background-color: var(--color-bg-soft); /* Un fondo sutil para el círculo del ícono */
+    line-height: 40px; /* Asegura que el ícono esté centrado verticalmente */
+}
+
+/* 3. Transición Suave al Footer (Refuerzo del estilo) */
+/* Esta regla se asegura de que el footer siempre tenga un espacio y borde superior */
+.footer {
+    margin-top: 0; /* Reseteamos por si acaso */
+    border-top: 4px solid var(--color-bg-neutral);
+    padding-top: 3rem;
+}
