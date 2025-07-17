@@ -863,85 +863,91 @@ main > .content-section:has(.quien-grid) {
     border-top: 4px solid var(--color-bg-neutral);
     padding-top: 3rem;
 }
-/* --- AJUSTES DE DISEÑO PARA INDEX Y FOOTER (V.2 - ALINEADO A MANUAL DE MARCA) --- */
+/* --- CORRECCIÓN Y MEJORA DE ESTILOS PARA INDEX.HTML --- */
 
-/* 1. Separación de Secciones con Color de Marca y Textura Sutil */
-/* Usamos el color de fondo secundario oficial (#f8f5f2) para crear contraste */
+/* 1. Fondo de sección "Para quién es" con color oficial de marca */
+/* Usamos el Gris Claro #f8f5f2 del manual para crear una separación visual elegante */
 main > .content-section:has(.quien-grid) {
-    background-color: #f8f5f2; /* Color correcto del manual */
+    background-color: #f8f5f2; 
     border-top: 1px solid #EAE6E1;
     border-bottom: 1px solid #EAE6E1;
     padding-top: 4rem;
     padding-bottom: 4rem;
-    /* Añadimos una textura de ruido muy sutil para dar profundidad */
-    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGZpbHRlciBpZD0ibm9pc2UiPjxmMllSMEJvbGVuY2UgdHlwZT0iZnJhY3RhbE5vaXNlIiBiYXNlRnJlcXVlbmN5PSIwLjciIG51bU9jdGF2ZXM9IjQiIHN0aXRjaFRpbGVzPSJzdGl0Y2giLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjb2lzZSkiLz48L3N2Zz4=');
-    background-size: 100px 100px;
-    background-repeat: repeat;
 }
 
-/* 2. Suavizado de la Tarjeta del Formulario de Contacto */
-#contact-section .section-block {
-    background-color: #FFFFFF; /* Fondo blanco de tarjeta, según manual */
-    /* Le añadimos la misma textura sutil para que no sea un blanco plano */
-    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGZpbHRlciBpZD0ibm9pc2UiPjxmMllSMEJvbGVuY2UgdHlwZT0iZnJhY3RhbE5vaXNlIiBiYXNlRnJlcXVlbmN5PSIwLjciIG51bU9jdGF2ZXM9IjQiIHN0aXRjaFRpbGVzPSJzdGl0Y2giLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjb2lzZSkiLz48L3N2Zz4=');
-    background-size: 100px 100px;
-    background-repeat: repeat;
+/* 2. Estilo de "Tarjeta" para cada ítem, asegurando contraste y alineación */
+.quien-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.quien-item {
+    background-color: #FFFFFF; /* Fondo blanco puro para las tarjetas, como indica el manual */
+    padding: 2rem;
+    border-radius: 16px;
     border: 1px solid #EAE6E1;
-    padding: 3rem;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.03); /* Sombra más sutil */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
 }
 
-/* 3. Estilo para el link "escríbenos directamente" */
+.quien-item i {
+    background-color: #f8f5f2; /* Círculo del ícono en gris claro para unificar */
+    line-height: 40px;
+    margin-bottom: 1.5rem; /* Más espacio entre el ícono y el texto */
+}
+
+/* 3. Estilos para la sección del Formulario de Contacto */
+#contact-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    background-color: transparent; /* Mantenemos el fondo principal "Hueso" */
+}
+
+#contact-section .section-block {
+    background-color: #FFFFFF; /* Tarjeta del formulario en blanco */
+    border: 1px solid #EAE6E1;
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
+
 .contact-links-extra a {
-    color: var(--color-accent-terracotta);
+    color: #d96c47; /* Color terracota del manual */
     font-weight: 700;
     text-decoration: none;
 }
 .contact-links-extra a:visited {
-    color: var(--color-accent-terracotta);
-}
-.contact-links-extra a:hover {
-    text-decoration: underline;
+    color: #d96c47;
 }
 
-/* 4. Rediseño del Footer para Máximo Contraste y Elegancia */
+/* 4. Estilos para el Footer (Versión Final) */
 .footer {
-    background-color: #333333; /* Color de texto principal, para máximo contraste */
-    color: #F7F3E9; /* Color de fondo principal, para el texto */
+    background-color: #333333; /* Gris Oscuro del manual para el fondo */
+    color: #F7F3E9; /* Texto en color Hueso para alto contraste */
     padding-top: 4rem;
     padding-bottom: 3rem;
     margin-top: 0;
-    border-top: none;
+    border-top: none; /* Quitamos el borde superior, ya no es necesario */
 }
-
+/* Se asegura que todo el texto dentro del footer sea claro */
+.footer p, .footer a, .footer strong, .footer i {
+    color: inherit; 
+}
 .footer .footer-top strong {
-    color: #FFFFFF; /* Texto del logo en blanco puro */
-    font-size: 1.5rem;
+    color: #FFFFFF;
 }
-
 .footer .footer-top p {
-    color: #f8f5f2; /* El gris claro de la paleta para el subtítulo */
+    color: #F7F3E9;
     opacity: 0.8;
 }
-
-.footer-socials {
-    display: flex;
-    justify-content: center;
-    gap: 1.8rem;
-    margin: 2rem 0;
-}
-
-.footer-socials a {
-    color: #F7F3E9; /* Iconos en el color de fondo principal */
-    font-size: 1.8rem;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
 .footer-socials a:hover {
     color: #d96c47; /* Acento terracota al pasar el mouse */
     transform: translateY(-3px);
 }
-
 .footer-copyright p {
-    color: #555555; /* Gris medio del manual para el copyright */
-    font-size: 0.9rem;
+    color: #555555; /* Gris Medio del manual */
 }
