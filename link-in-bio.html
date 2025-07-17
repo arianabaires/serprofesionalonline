@@ -5,131 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comenzá tu Impulso - Serprofesionalonline</title>
     <meta name="robots" content="noindex, nofollow">
-    <link rel="stylesheet" href="style.css?v=103"> <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css?v=110">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
     <link rel="manifest" href="site.webmanifest" />
-
-    <style>
-        :root {
-            --color-text-dark: #333333;
-            --color-text-secondary: #555555;
-            --color-bg-light: #F7F3E9;
-            --color-bg-soft: #f8f5f2;
-            --color-border: #EAE6E1;
-            --color-accent-terracotta: #d96c47;
-        }
-        .page-link-in-bio {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 100vh;
-            background-color: var(--color-bg-light);
-        }
-        .link-in-bio-container {
-            width: 100%;
-            max-width: 680px;
-            margin: 0 auto;
-            padding: 4rem 1rem;
-            box-sizing: border-box;
-            text-align: center;
-        }
-        .lib-header { margin-bottom: 2.5rem; }
-        .lib-header h1 { font-size: 2.2rem; }
-        .lib-header p { font-size: 1.1rem; color: var(--color-text-secondary); }
-        .lib-buttons { display: flex; flex-direction: column; gap: 1rem; }
-        .lib-button, .accordion {
-            width: 100%;
-            padding: 18px 20px;
-            background-color: #fff;
-            color: var(--color-text-dark);
-            text-decoration: none;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            font-family: 'Manrope', sans-serif;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            border: 1px solid var(--color-border);
-            cursor: pointer;
-            display: block;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            position: relative;
-        }
-        .lib-button:hover, .accordion:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
-        .accordion {
-             text-align: center; /* CORRECCIÓN: Texto centrado */
-             padding-right: 50px; /* Espacio para el icono "+" */
-        }
-        .accordion::after {
-            content: '+';
-            font-size: 1.5rem;
-            color: var(--color-accent-terracotta);
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            transition: transform 0.3s ease;
-        }
-        .accordion.active::after { transform: translateY(-50%) rotate(45deg); }
-        .panel {
-            background-color: var(--color-bg-soft);
-            border: 1px solid var(--color-border);
-            border-top: none;
-            border-radius: 0 0 12px 12px;
-            margin-top: -10px;
-            box-shadow: 0 10px 15px -5px rgba(0,0,0,0.05);
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
-        }
-        .panel-content { padding: 1.5rem 1rem; text-align: left; }
-        .panel-content ol { padding-left: 20px; }
-        .panel-content li { margin-bottom: 0.75rem; }
-    </style>
 </head>
-<body class="page-link-in-bio">
-
-    <header class="header-global">
+<body class="page-link-in-bio-v3"> <header class="header-global">
         <div class="container header-content">
             <div class="logo"><a href="index.html">serprofesionalonline</a></div>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">inicio</a></li>
+                    <li><a href="impulso-inicial.html">impulso inicial</a></li>
+                    <li><a href="blog/blog.html">ideas</a></li>
+                    <li><a href="index.html#contact-section">contacto</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger-menu"><i class="fas fa-bars"></i></div>
         </div>
     </header>
 
-    <main class="link-in-bio-container">
+    <main class="lib-v3-container">
         <div class="lib-header">
-            <h1>Empezá tu transformación digital.</h1>
+            <h1>Empezá tu transformación digital</h1>
             <p>Elegí el siguiente paso para ordenar tu presencia online.</p>
         </div>
 
         <div class="lib-buttons">
-            <button class="accordion">1. Agendá tu Impulso Inicial (ARS)</button>
+            
+            <button class="accordion">1. Reservá tu Impulso Inicial (ARS)</button>
             <div class="panel">
                 <div class="panel-content">
-                    <p>Seguí estos pasos para pagar con pesos argentinos:</p>
-                    <ol>
-                        <li><strong>Reservá tu lugar:</strong> Usá el siguiente link de Mercado Pago para abonar. <a href="https://mpago.la/2U9AWuK" target="_blank">Pagar ARS 85.000</a></li>
-                        <li><strong>Respondé el diagnóstico:</strong> Dentro de las 48hs hábiles recibirás el formulario inicial.</li>
-                        <li><strong>Agendá la sesión:</strong> Una vez que lo respondas, concretamos la fecha de nuestra reunión de 30 minutos.</li>
-                        <li><strong>Recibís tu Impulso Inicial:</strong> Pasos concretos para ordenar-te.</li>
-                    </ol>
+                    <p>Al hacer clic en el botón de abajo, primero completarás un breve formulario con tu nombre y email, y luego serás redirigido a Mercado Pago para abonar.</p>
+                    <a href="registro-impulso-ars.html" class="button panel-button">Comenzar Reserva (ARS)</a>
                 </div>
             </div>
 
-            <button class="accordion">2. Agendá tu Impulso Inicial (UYU)</button>
+            <button class="accordion">2. Reservá tu Impulso Inicial (UYU)</button>
             <div class="panel">
                 <div class="panel-content">
-                    <p>Seguí estos pasos para pagar con pesos uruguayos:</p>
-                    <ol>
-                        <li><strong>Reservá tu lugar:</strong> Usá el siguiente link de Mercado Pago para abonar: efectivo, crédito o débito. <a href="https://mpago.la/2DWVqAH" target="_blank">Pagar UYU 3.000</a></li>
-                        <li><strong>Respondé el diagnóstico:</strong> Dentro de las 48hs hábiles recibirás el formulario inicial.</li>
-                        <li><strong>Agendá la sesión:</strong> Una vez que lo respondas, concretamos la fecha de nuestra reunión de 30 minutos.</li>
-                        <li><strong>Recibís tu Impulso Inicial:</strong> Pasos concretos para ordenar-te.</li>
-                    </ol>
+                    <p>Al hacer clic en el botón de abajo, primero completarás un breve formulario con tu nombre y email, y luego serás redirigido a Mercado Pago para abonar.</p>
+                    <a href="registro-impulso-uyu.html" class="button panel-button">Comenzar Reserva (UYU)</a>
                 </div>
             </div>
 
@@ -138,6 +55,10 @@
             <a href="https://wa.me/59898712064?text=Hola%2C%20ya%20tengo%20el%20Impulso%20Inicial%20y%20quiero%20m%C3%A1s%21%20Necesito%20ayuda%20con..." target="_blank" class="lib-button">4. Ya tengo el Impulso. Quiero más.</a>
 
             <a href="blog/blog.html" class="lib-button">5. Explorá nuestras Ideas y Estrategias</a>
+            
+            <hr class="leb-separator">
+            
+            <a href="https://wa.me/59898712064?text=Hola%2C%20llegu%C3%A9%20por%20link%20en%20bio%20y%20antes%20de%20pagar%20quiero...." target="_blank" class="lib-button">Consultar por WhatsApp</a>
 
         </div>
     </main>
@@ -147,15 +68,6 @@
             <div class="footer-top">
                 <strong>serprofesionalonline</strong>
                 <p>presencia real. sin vueltas.</p>
-            </div>
-            <nav class="footer-nav">
-                <a href="index.html">inicio</a>
-                <a href="impulso-inicial.html">impulso inicial</a>
-                <a href="blog/blog.html">ideas</a>
-            </nav>
-            <div class="footer-contact">
-                <a href="mailto:serprofesionalonline@gmail.com">serprofesionalonline@gmail.com</a>
-                <a href="https://wa.me/59898712064?text=Hola%20serprofesionalonline%2C%20tengo%20una%20consulta" target="_blank" rel="noopener noreferrer">WhatsApp</a>
             </div>
             <div class="footer-copyright">
                 <p>© 2025 serprofesionalonline. todos los derechos reservados.</p>
@@ -172,11 +84,21 @@
                     const panel = this.nextElementSibling;
                     if (panel.style.maxHeight) {
                         panel.style.maxHeight = null;
+                        panel.style.paddingTop = "0";
+                        panel.style.paddingBottom = "0";
                     } else {
-                        panel.style.maxHeight = panel.scrollHeight + "px";
+                        panel.style.maxHeight = panel.scrollHeight + 40 + "px"; // 40px extra for padding
+                        panel.style.paddingTop = "20px";
+                        panel.style.paddingBottom = "20px";
                     } 
                 });
             });
+
+            const hamburger = document.querySelector('.hamburger-menu');
+            const mobileNav = document.querySelector('.mobile-nav');
+            if(hamburger && mobileNav) {
+                // Lógica del menú hamburguesa si la necesitas
+            }
         });
     </script>
 </body>
