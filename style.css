@@ -864,3 +864,64 @@ main > .content-section:has(.quien-grid) {
     border-top: 4px solid var(--color-bg-neutral);
     padding-top: 3rem;
 }
+/* --- MEJORAS FINALES DE ESTILO PARA INDEX Y FOOTER --- */
+
+/* 1. Más espacio entre la sección de iconos y el formulario */
+main > .content-section:has(.quien-grid) {
+    padding-bottom: 4rem; /* Aumentamos el espacio inferior */
+}
+
+/* 2. Arreglo del link azul "escríbenos directamente" */
+.contact-links-extra {
+    text-align: center;
+    margin-top: 2rem;
+}
+.contact-links-extra a {
+    color: var(--color-accent-terracotta);
+    font-weight: 700;
+    text-decoration: none;
+}
+.contact-links-extra a:visited {
+    color: var(--color-accent-terracotta); /* Mismo color para links visitados */
+}
+.contact-links-extra a:hover {
+    text-decoration: underline;
+}
+
+/* 3. Estilos para el nuevo Footer elegante */
+.footer {
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+    border-top: 1px solid var(--color-border);
+    margin-top: 4rem; /* Asegura separación con la última sección */
+    background-color: var(--color-bg-soft); /* Un fondo suave en lugar de negro */
+    color: var(--color-text-secondary); /* Texto más suave que negro puro */
+}
+
+.footer .footer-top strong {
+    font-size: 1.5rem;
+    color: var(--color-text-dark);
+}
+
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 1.8rem;
+    margin: 2rem 0;
+}
+
+.footer-socials a {
+    color: var(--color-text-secondary);
+    font-size: 1.8rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-socials a:hover {
+    color: var(--color-accent-terracotta);
+    transform: translateY(-3px);
+}
+
+.footer-copyright p {
+    color: #a0a0a0; /* Un gris más claro y sutil */
+    font-size: 0.9rem;
+}
