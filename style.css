@@ -951,3 +951,60 @@ main > .content-section:has(.quien-grid) {
 .footer-copyright p {
     color: #555555; /* Gris Medio del manual */
 }
+/* --- ESTILOS PARA EL FOOTER (V.3 - REFINADO) --- */
+
+.footer {
+    background-color: #333333;
+    color: #F7F3E9;
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+    margin-top: 0;
+    border-top: none; /* Quitamos el borde sólido */
+    position: relative; /* Necesario para el efecto de "esfumado" */
+}
+
+/* Efecto de "esfumado" o sombra superior */
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px; /* Altura de la sombra */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.08), transparent); /* El degradado que crea el efecto */
+}
+
+.footer .footer-top strong {
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    font-family: 'Manrope', sans-serif; /* Aseguramos la tipografía correcta */
+    font-weight: 700;
+}
+
+.footer .footer-top p {
+    color: #F7F3E9;
+    opacity: 0.8;
+}
+
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem; /* AUMENTAMOS EL "AIRE" ENTRE ICONOS */
+    margin: 2rem 0;
+}
+
+.footer-socials a {
+    color: #F7F3E9;
+    font-size: 1.8rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-socials a:hover {
+    color: #d96c47;
+    transform: translateY(-3px);
+}
+
+.footer-copyright p {
+    color: #555555;
+    font-size: 0.9rem;
+}
