@@ -1013,3 +1013,13 @@ main > .content-section:has(.quien-grid) {
     color: #555555;
     font-size: 0.9rem;
 }
+/* --- PENDIENTE: CORRECCIÓN DEL BOTÓN DEL HEADER --- */
+.header-global .desktop-cta {
+    text-transform: none; /* Permite controlar mayúsculas/minúsculas desde el HTML */
+    font-size: 1em; /* Asegura un tamaño consistente */
+}
+/* En móvil, el botón del menú desplegable se verá mejor */
+.mobile-nav .button {
+    margin-top: 1.5rem;
+    width: 80%;
+}
