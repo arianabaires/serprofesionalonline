@@ -1023,3 +1023,12 @@ main > .content-section:has(.quien-grid) {
     margin-top: 1.5rem;
     width: 80%;
 }
+/* --- PENDIENTE: NUEVO HERO PARA IMPULSO-INICIAL.HTML --- */
+.hero-impulso-v2 {
+    background-color: #f8f5f2; /* Color secundario del manual */
+    padding: 5rem 1.5rem;
+    text-align: center;
+}
+.hero-impulso-v2 h1 {
+    color: #d96c47; /* Color acento terracota */
+}
