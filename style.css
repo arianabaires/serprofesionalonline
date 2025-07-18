@@ -1163,3 +1163,43 @@ main > .content-section:has(.quien-grid) {
     color: #d96c47;
     margin-right: 0.25rem;
 }
+/* --- CORRECCIÓN ESTRUCTURAL Y DE ALINEACIÓN PARA IMPULSO-INICIAL.HTML --- */
+
+/* 1. Arreglo de la Navegación y el Header */
+/* Reafirmamos las reglas del flexbox para que todo se alinee correctamente */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+
+/* 2. Sistema de Contenedor Central para TODO el contenido */
+/* Esta es la regla más importante. Obliga a que el contenido de CADA sección
+   esté dentro de un contenedor centrado y con un ancho máximo. */
+.page-impulso-inicial main .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+/* Forzamos a que las secciones que tienen fondos de color ocupen todo el ancho,
+   pero el .container de adentro mantendrá el contenido alineado. */
+.page-impulso-inicial main > section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+
+/* 3. Aseguramos que los contenedores de grillas no generen conflicto */
+.value-prop-grid, .testimonial-grid, .faq-grid {
+    max-width: 900px; /* Unificamos el ancho máximo del contenido principal */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 4. Ajuste final para el título de la sección de precios */
+#pricing-section {
+    width: 100%; /* Asegura que el fondo de color ocupe toda la pantalla */
+}
