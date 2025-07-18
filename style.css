@@ -264,6 +264,11 @@ main > section { padding: 4rem 1.5rem; }
 .contact-form label { display: block; margin-bottom: 0.5rem; font-weight: 700; }
 .contact-form input, .contact-form textarea { width: 100%; padding: 14px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; background-color: #fff; box-sizing: border-box; }
 .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--color-accent-terracotta); box-shadow: 0 0 0 3px rgba(217, 108, 71, 0.2); }
+/* --- Añadir esta regla para desactivar el re-escalado del textarea --- */
+.contact-form textarea {
+    resize: none; /* Desactiva la opción de estirar la caja */
+    min-height: 150px; /* Opcional: puedes darle un poco más de altura por defecto */
+}
 .footer { text-align: center; padding: 3rem 1.5rem; background-color: var(--color-text-dark); color: var(--color-bg-light); }
 .footer-top strong { font-size: 1.2rem; }
 .footer-top p { color: #ccc; margin: 0.25rem 0 1.5rem 0; }
