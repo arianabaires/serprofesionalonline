@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
         threshold: 0.1, // El 10% del elemento debe estar visible
         rootMargin: '0px 0px -50px 0px' // Comienza a revelarse 50px antes de entrar
     });
-
     revealElements.forEach(el => {
         observer.observe(el);
     });
