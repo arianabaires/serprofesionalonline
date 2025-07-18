@@ -1267,3 +1267,71 @@ main > .content-section:has(.quien-grid) {
 @media (max-width: 991px) {
     .manifesto-pull-quote { border-left: none; border-top: 4px solid #d96c47; border-radius: 12px 12px 0 0; }
 }
+/* --- MÓDULO DE ESTILOS DEFINITIVO PARA IMPULSO-INICIAL.HTML --- */
+
+/* 1. SISTEMA DE ESPACIADO VERTICAL (Soluciona los "espacios brutales") */
+/* Se establece un padding consistente para todas las secciones principales de la página */
+.page-impulso-inicial main > section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    border-bottom: 1px solid #EAE6E1; /* Un sutil separador de secciones */
+}
+/* Se elimina el borde de la última sección para una transición limpia al footer */
+.page-impulso-inicial main > section:last-child {
+    border-bottom: none;
+}
+
+/* 2. CORRECCIÓN DEL MANIFIESTO Y LA "QUOTE BRUTA" */
+.founder-manifesto {
+    background-color: #f8f5f2;
+}
+
+.founder-manifesto .section-title {
+    margin-bottom: 2rem; /* Reduce el espacio debajo del título */
+}
+
+/* Arregla el diseño de la cita destacada para que sea elegante */
+.manifesto-pull-quote {
+    background-color: transparent; /* Elimina el fondo blanco */
+    padding: 1.5rem;
+    border-left: 3px solid #d96c47;
+    display: flex;
+    align-items: center;
+}
+.manifesto-pull-quote p {
+    font-size: 1.8rem; /* Reduce el tamaño de la letra "gigante" */
+    line-height: 1.5;
+    font-weight: 700;
+}
+@media (max-width: 991px) {
+    .manifesto-pull-quote { 
+        border-left: none; 
+        border-top: 3px solid #d96c47;
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+    }
+}
+
+
+/* 3. ARREGLO DE ESPACIOS EN "DUDAS COMUNES" */
+.faq-section {
+    background-color: #FFFFFF; /* Fondo blanco para enmarcarla */
+}
+.faq-section .section-title {
+    margin-bottom: 3rem; /* Espacio controlado para el título */
+}
+.faq-grid {
+    margin-top: 0; /* Elimina el "abismo" de espacio */
+}
+
+
+/* 4. ALINEACIÓN GENERAL Y COHERENCIA */
+/* Esta regla asegura que todo el contenido principal esté centrado y alineado */
+.page-impulso-inicial main .container,
+.investment-card,
+.faq-grid,
+.testimonial-grid {
+    max-width: 960px; /* Unificamos el ancho de todo el contenido */
+    margin-left: auto;
+    margin-right: auto;
+}
