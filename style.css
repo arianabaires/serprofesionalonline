@@ -1032,3 +1032,54 @@ main > .content-section:has(.quien-grid) {
 .hero-impulso-v2 h1 {
     color: #d96c47; /* Color acento terracota */
 }
+/* --- CORRECCIÓN GENERAL DE ESPACIADO Y DISEÑO PARA IMPULSO-INICIAL.HTML --- */
+
+/* 1. Sistema de Ritmo Vertical para Títulos de Sección */
+/* Esto establece una distancia consistente y controlada para TODOS los títulos */
+.page-impulso-inicial .section-title {
+    margin-bottom: 2.5rem; /* Reduce el "abismo" después de los títulos */
+    margin-top: 4rem;      /* Asegura que haya "aire" ANTES de cada nueva sección */
+}
+/* Caso especial para el primer título, que no necesita tanto aire arriba */
+.page-impulso-inicial .process-section .section-title {
+    margin-top: 2rem;
+}
+
+
+/* 2. Ajuste de Espacio para Contenedores Específicos */
+/* Le damos más aire al contenedor de testimonios para separarlo del "paso a paso" */
+.page-impulso-inicial .testimonial-grid {
+    margin-top: 0;
+}
+/* Corregimos el espacio superior del contenedor de las dudas */
+.page-impulso-inicial .faq-grid {
+    margin-top: 0; /* Quitamos cualquier margen extra que cause el "abismo" */
+}
+
+
+/* 3. Ajuste de Tamaño en las Tarjetas de "Dudas Comunes" */
+/* Reducimos el padding interno para que no se vean tan vacías */
+.faq-item {
+    padding: 1.5rem;
+}
+
+
+/* 4. Refinamiento y Corrección de la Tarjeta de Precios */
+#pricing-section {
+    text-align: center; /* Centra TODO el contenido de la sección, incluido el título */
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    background-color: #f8f5f2; /* Le damos un fondo para enmarcarla */
+}
+
+/* Hacemos los números más pequeños y elegantes */
+.amount-final {
+    font-size: 2.5rem; /* Reducimos el tamaño general */
+    font-weight: 700;  /* Un poco menos grueso */
+}
+.price-main-final .amount-final {
+    font-size: 4rem;  /* El precio principal sigue siendo grande, pero menos */
+}
+.old-price-final {
+    font-size: 1.3rem; /* Ajustamos también el precio tachado */
+}
