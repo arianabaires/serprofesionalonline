@@ -1064,22 +1064,102 @@ main > .content-section:has(.quien-grid) {
 }
 
 
-/* 4. Refinamiento y Corrección de la Tarjeta de Precios */
+/* --- REDISEÑO ESTRATÉGICO DE LA TARJETA DE PRECIOS --- */
+
 #pricing-section {
-    text-align: center; /* Centra TODO el contenido de la sección, incluido el título */
     padding-top: 4rem;
-    padding-bottom: 4rem;
-    background-color: #f8f5f2; /* Le damos un fondo para enmarcarla */
+    padding-bottom: 5rem;
+    background-color: #f8f5f2; /* Fondo secundario del manual */
+    text-align: center;
 }
 
-/* Hacemos los números más pequeños y elegantes */
-.amount-final {
-    font-size: 2.5rem; /* Reducimos el tamaño general */
-    font-weight: 700;  /* Un poco menos grueso */
+/* La nueva tarjeta de inversión */
+.investment-card {
+    background-color: #FFFFFF;
+    border: 1px solid #EAE6E1;
+    border-radius: 16px;
+    padding: 2.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+    text-align: center;
 }
-.price-main-final .amount-final {
-    font-size: 4rem;  /* El precio principal sigue siendo grande, pero menos */
+
+.investment-card .card-title {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
 }
-.old-price-final {
-    font-size: 1.3rem; /* Ajustamos también el precio tachado */
+
+.investment-card .price-anchor {
+    font-size: 1.1rem;
+    color: #555555;
+    margin: 0.5rem 0 2rem 0;
+}
+.investment-card .price-anchor s {
+    opacity: 0.7;
+}
+
+.investment-card .multi-price-container-final {
+    gap: 1rem;
+    margin: 1.5rem 0;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f0ebe4;
+}
+
+/* Estilos refinados para los números */
+.currency-final { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; }
+.amount-final { font-size: 2.2rem; font-weight: 700; }
+.price-main-final .amount-final { font-size: 3.8rem; font-weight: 800; }
+
+
+/* Sección de valor reforzado con checkmarks */
+.value-recap {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+    font-size: 1rem;
+    color: #333333;
+    line-height: 1.8;
+}
+
+.value-recap li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.value-recap .icon-check {
+    color: #d96c47; /* Acento terracota */
+}
+
+/* Nuevo botón de CTA con sub-etiqueta */
+.cta-button-container {
+    margin-top: 1.5rem;
+}
+
+.cta-button-container .button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.2rem;
+}
+
+.cta-button-container .sub-label {
+    font-size: 0.9rem;
+    margin-top: 0.75rem;
+    color: #555555;
+}
+
+/* Disclaimer mejorado */
+.investment-card .disclaimer-text {
+    font-size: 0.9rem;
+    color: #555555;
+    margin-top: 2rem;
+    line-height: 1.6;
+}
+.investment-card .disclaimer-text .icon-sparkle {
+    color: #d96c47;
+    margin-right: 0.25rem;
 }
